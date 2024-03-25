@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Cascadia Code';
+    src: url('../../fonts/Cascadia.ttf');
+}
+
+:root{
+    font-size: 16px;
+
+    --color-primary: blue;
+}
+
+/* body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+} */
