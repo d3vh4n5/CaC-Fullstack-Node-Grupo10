@@ -1,1 +1,4 @@
-console.log("script loaded")
+import './modules/navigationSolution.mjs'
+
+
+console.info("scripts loaded")

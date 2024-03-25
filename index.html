@@ -35,30 +35,6 @@
     <script>
         new WOW().init();
     </script>
-    <script src="./assets/js/main.js"></script>
+    <script type="module" src="./assets/js/main.js"></script>
 </body>
 </html>
-
-<script>
-
-    setTimeout(()=>{
-
-        if (document.location.hostname === 'd3vh4n5.github.io'){
-            console.warn('Creando redirección')
-
-            const basePath = 'https://d3vh4n5.github.io/CaC-Fullstack-Node-Grupo10'
-            const links = document.querySelectorAll('a')
-        
-            links.forEach( link => {
-
-                link.addEventListener('click', ()=> {
-                    const newPath = basePath + link.attributes.href
-
-                    console.log(newPath)
-                    document.location.href = newPath
-                })
-            })
-        }
-
-    }, 100)
-</script>
