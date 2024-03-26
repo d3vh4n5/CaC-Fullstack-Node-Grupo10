@@ -7,16 +7,14 @@ setTimeout(()=>{
         const links = document.querySelectorAll('.INSIDE-NAV')
     
         links.forEach( link => {
-            const aimendHref = link.attributes.href.value
+            const navHref = link.attributes.href.value
 
             link.addEventListener('click', (e)=> {
                 e.preventDefault()
-                const newPath = basePath + aimendHref
-                console.log(newPath)
-                console.log(newPath)
+                const newPath = basePath + navHref
                 document.location.href = newPath
             })
         })
     }
 
-}, 100)
+}, 500)

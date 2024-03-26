@@ -6,7 +6,7 @@
 :root{
     font-size: 16px;
 
-    --color-primary: blue;
+    --color-primary: rgb(160, 93, 49);
 }
 
 /* body{
