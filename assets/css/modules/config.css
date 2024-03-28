@@ -6,7 +6,13 @@
 :root{
     font-size: 16px;
 
-    --color-primary: rgb(160, 93, 49);
+    --color-primary: #f6f6f6;
+    --color-secondary-dark: #007F73;
+    --color-secondary: #008e6b;
+    --color-secondary-light: #4CCD99;
+    --color-acent: rgb(255, 160, 71);
+    --color-bg: var(--color-primary);
+    --color-font: #001f1c;
 }
 
 /* body{

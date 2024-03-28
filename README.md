@@ -7,3 +7,5 @@ Repositorio para el proyecto grupal del curso Full Stack en Node de Codo a Codo,
 * Hugo
 * Marina
 * Juan
+
+Optimizar imagenes: tener una para cada corte del responsive
