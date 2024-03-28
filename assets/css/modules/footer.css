@@ -1,3 +1,33 @@
 .footer{
-    background-color: bisque;
+    background-color: var(--color-secondary-dark);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    font-family: 'Cascadia Code';
+}
+
+.footer__social-list{
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+.footer__social-link{
+    display: inline-block;
+    font-size: 1.5rem;
+    color: currentColor;
+    opacity: .7;
+    transition: transform .2s;
+}
+
+.footer__social-link:hover{
+    opacity: 1;
+    color: currentColor;
+    transform: scale(1.1);
+}
+
+.footer__brand{
+    color: white;
 }

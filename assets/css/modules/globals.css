@@ -1,0 +1,11 @@
+body{
+    background-color: var(--color-primary);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: var(--color-font);
+}
+
+main {
+    flex: 1;
+}

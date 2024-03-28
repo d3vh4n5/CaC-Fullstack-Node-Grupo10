@@ -6,21 +6,30 @@
 :root{
     font-size: 16px;
 
-    --color-primary: #f6f6f6;
-    --color-secondary-dark: #007F73;
+    /* --color-primary: #fcf8ef;
+    --color-secondary-dark: #568281;
+    --color-secondary: #91BBc1;
+    --color-secondary-light: #C8D8D9;
+    --color-accent: rgb(255, 175, 71);
+    --color-bg: var(--color-primary);
+    --color-font: #2D3E44; */
+
+    --color-primary: #ecf0f8;
+    --color-secondary-dark: #304A6E;
+    --color-secondary: #668DC0;
+    --color-secondary-light: #C0D0EF;
+    --color-accent: rgb(255, 175, 71);
+    --color-accent: var(--color-secondary-dark);
+    --color-bg: var(--color-primary);
+    --color-font: #0f1c30;
+
+
+    /* --color-primary: #f6f6f6;
+    --color-secondary-dark: #015c48;
     --color-secondary: #008e6b;
     --color-secondary-light: #4CCD99;
-    --color-acent: rgb(255, 160, 71);
+    --color-accent: rgb(255, 160, 71);
     --color-bg: var(--color-primary);
-    --color-font: #001f1c;
+    --color-font: #001f1c; */
 }
 
-/* body{
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-main {
-    flex: 1;
-} */
