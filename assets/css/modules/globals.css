@@ -1,5 +1,5 @@
 body{
-    background-color: var(--color-primary);
+    background: linear-gradient(to bottom right, var(--color-primary), white);
     height: 100vh;
     display: flex;
     flex-direction: column;
