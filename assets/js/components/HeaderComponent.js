@@ -1,10 +1,11 @@
 import { ROUTES } from "../routes.js";
+import { basePath } from "../../../config/basePath.js";
 
 const headerTempalte = (basePath = '') => { return`
 <header class="header">
     <div class="header__container">
         <div class="header__logo-container">
-            <img src="../../assets/img/node.png" alt="Logo" class="header__logo-img">
+            <img src="${basePath === '' ? '../..' : basePath}/assets/img/node.png" alt="Logo" class="header__logo-img">
             <!-- <h2 class="header__logo-name">LOGO</h2> -->
         </div>
         <label class="header__burger-button" for="drawer">
@@ -40,19 +41,7 @@ const headerTempalte = (basePath = '') => { return`
 class HeaderComponent extends HTMLElement {
     constructor() {
       super();
-
-      if (document.location.hostname === 'd3vh4n5.github.io'){
-        console.warn('Creando redirección')
-        const basePath = 'https://d3vh4n5.github.io/CaC-Fullstack-Node-Grupo10'
-        this.innerHTML = headerTempalte(basePath)
-      } else {
-        this.innerHTML = headerTempalte()
-      }
-
-    }
-
-    connectedCallback(){
-      console.log('Navigation: normal')
+      this.innerHTML = headerTempalte(basePath())
     }
   }
   customElements.define('header-component', HeaderComponent);
