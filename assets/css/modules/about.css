@@ -45,7 +45,7 @@
 
 .about__devs-container{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(300px, 1fr) 1fr;
     gap: 20px;
 }
 
@@ -61,6 +61,9 @@
     display: flex;
 }
 
+.dev-card__title{
+    text-align: center;
+}
 .dev-card__person-img{
     width: 100px;
 }
@@ -69,5 +72,6 @@
     list-style: none;
 }
 .dev-card__contact-item i{
+    color: var(--color-secondary-dark);
     margin-right: 10px;
 }

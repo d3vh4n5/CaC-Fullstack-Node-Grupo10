@@ -1,7 +1,7 @@
 import { ROUTES } from "../routes.js";
 import { basePath } from "../../../config/basePath.js";
 
-const footerTempalte = (basePath = '') => { return`
+const footerTempalte = (basePath = '') => `
 <footer class="footer">
     <section class="footer__container">
         <div class="footer__logo">
@@ -79,7 +79,7 @@ const footerTempalte = (basePath = '') => { return`
             
         </section>
     </footer>
-`}
+`
 
 class FooterComponent extends HTMLElement {
     constructor() {
