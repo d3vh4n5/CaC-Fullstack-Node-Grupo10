@@ -56,45 +56,47 @@
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.0168881864!2d-58.38414532484151!3d-34.60373445749814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4aa9f0a6da5edb%3A0x11bead4e234e558b!2sObelisco!5e0!3m2!1ses-419!2sar!4v1712026972534!5m2!1ses-419!2sar" class="contact__map" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="col-12 col-lg-6">
-                    <form action="">
+                    
+                    <form action="/pages/show_data.html" target="_blank" id="contactForm">
 
                         <div class="row mb-3">
                             <div class="col">
                                 <label for="exampleFormControlInput1" class="form-label">Nombre</label>
-                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="John">
+                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="John" name="name">
                             </div>
                             <div class="col">
                                 <label for="exampleFormControlInput1" class="form-label">Apellido</label>
-                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Doe">
+                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Doe" name="surname">
                             </div>
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Asunto</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="...">
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Título brebe del tema" name="subject">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email">
                         </div>
-                        <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Descripción</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escriba su descripción aquí"></textarea>
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="description" name="description" style="height: 100px"></textarea>
+                            <label for="floatingTextarea2">Escribe tu mensaje aquí</label>
                         </div>
-                        <select class="form-select mb-3" aria-label="Default select example">
+                        <select class="form-select mb-3" aria-label="Default select example" id="type" name="type">
                             <option selected>Tipo de consulta</option>
                             <option value="1">Desarrolladores</option>
                             <option value="2">Atención al cliente</option>
                             <option value="3">Comentario</option>
                             <option value="3">Consulta</option>
+                            <option value="3">Tengo un problema</option>
                         </select>
                         
                         <div class="mb-3">
                             <label for="formFile" class="form-label">Puede subir una imagen o archivo de ser necesario</label>
-                            <input class="form-control" type="file" id="formFile">
+                            <input class="form-control" type="file" id="formFile" name="file">
                         </div>
                         
                         <div class="form-check mb-3">
-                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <input class="form-check-input" type="checkbox" value="" id="captcha" name="captcha">
                             <label class="form-check-label" for="defaultCheck1">
                               No soy un robot
                             </label>
