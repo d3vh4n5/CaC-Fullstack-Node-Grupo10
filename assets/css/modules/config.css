@@ -23,6 +23,14 @@
     --color-bg: var(--color-primary);
     --color-font: #0f1c30;
 
+    /* --blue: #668DC0;
+    --color-secondary-lighter: color-mix(in srgb, var(--blue), white 75%); 
+    --color-secondary-light: color-mix(in srgb, var(--blue), white); 
+    --color-secondary: var(--blue);
+    --color-secondary-dark: color-mix(in srgb, var(--blue), black 25%); 
+    --color-secondary-darker: color-mix(in srgb, var(--blue), black);  */
+
+    
 
     /* --color-primary: #f6f6f6;
     --color-secondary-dark: #015c48;

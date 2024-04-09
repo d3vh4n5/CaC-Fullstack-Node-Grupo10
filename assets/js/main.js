@@ -1,5 +1,5 @@
 import './components/index.js'
-import './modules/contactFormValidation.js'
+import './modules/formsSendingData.js'
 import './modules/navigationSolution.mjs'
 
 
