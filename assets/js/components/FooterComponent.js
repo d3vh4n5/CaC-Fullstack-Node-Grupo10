@@ -65,7 +65,7 @@ const footerTempalte = (basePath = '') => `
                     <code translate="no" class="footer__brand">
                         HealthUp Project.
                     </code>
-                    
+                    Todos los derechos reservados
                 </div>
                 <div>
                     Desarrollado por
