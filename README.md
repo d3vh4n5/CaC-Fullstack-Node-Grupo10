@@ -9,3 +9,8 @@ Repositorio para el proyecto grupal del curso Full Stack en Node de Codo a Codo,
 * Juan
 
 Optimizar imagenes: tener una para cada corte del responsive
+
+Herramientas:
+
+* Convertidor de logo a ICO: https://convertico.com/es/
+* Analizador de HTML: https://validator.w3.org/
