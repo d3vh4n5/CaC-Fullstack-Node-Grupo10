@@ -66,6 +66,8 @@ Entonces, subir y actualizar los archivos, es una secuencia de 3 pasos:
 
 > De más está decir que los nombres pasados como parámetros no incluyen los "< >", esto es solo para representar un nombre o variable.
 
+> Se recomienda trabajar sobre una rama "develop" en lugar de la main, y cada tanto probar el funcionamienta, si todo funciona bien se mergea con la main.
+
 <br>
 
 ### Más comandos:
