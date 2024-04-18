@@ -45,7 +45,7 @@ Entonces, subir y actualizar los archivos, es una secuencia de 3 pasos:
 2.  ```git commit -m``` "Modificada tal cosa o agregada tal funcionalidad o reparado tal error"
 3.  ```git push```
 
-Consejo: SIEMPRE antes de empezar a trabar en el proyecto luego de un rato, y justo antes de hacer un push, ejecutar un ```git pull``` para traer los cambios que hayan podido ser subidos por otra persona mientras nosotros estabamos trabajando, esto para evitar conflictos o colisiones.
+> Consejo: SIEMPRE antes de empezar a trabar en el proyecto luego de un rato, y justo antes de hacer un push, ejecutar un ```git pull``` para traer los cambios que hayan podido ser subidos por otra persona mientras nosotros estabamos trabajando, esto para evitar conflictos o colisiones.
 
 
 ### Comandos para manejar las ramas (branchs)
@@ -54,4 +54,4 @@ Consejo: SIEMPRE antes de empezar a trabar en el proyecto luego de un rato, y ju
 * ```git checkout <nombre de la rama>``` Cambiamos a la rama pasada como parámetro.
 * ```git merge <nombre-de-la-rama>``` Funde la rama nombrada, hacia la rama en la cual estamos parados.
 
-De más está decir que los nombres pasados como parámetros no incluyen los "< >", esto es solo para representar un nombre o variable.
+> De más está decir que los nombres pasados como parámetros no incluyen los "< >", esto es solo para representar un nombre o variable.
