@@ -52,10 +52,19 @@ Entonces, subir y actualizar los archivos, es una secuencia de 3 pasos:
 
 <br>
 
-### Comandos para manejar las ramas (branchs)
+### Comandos para manejar las ramas (branches)
 
-* ```git checkout -b <nombre-de-la-rama>``` Esto nos crea una nueva rama
+* ```git branch``` Muestra las ramas locales.
+* ```git branch -a``` Muestra las ramas locales y remotas.
+* ```git checkout -b <nombre-de-la-rama>``` Esto nos crea una nueva rama partiendo de la actual.
 * ```git checkout <nombre de la rama>``` Cambiamos a la rama pasada como parámetro.
 * ```git merge <nombre-de-la-rama>``` Funde la rama nombrada, hacia la rama en la cual estamos parados.
 
 > De más está decir que los nombres pasados como parámetros no incluyen los "< >", esto es solo para representar un nombre o variable.
+
+<br>
+
+### Más comandos:
+
+* Resetear todos los cambios no comiteados: ```git reset --hard HEAD```
+* Retroceder a un estado anterior: ```git revert <hash_commit>```  El hash al que hace referencia se obtiene explorando el historial de commits en github.
