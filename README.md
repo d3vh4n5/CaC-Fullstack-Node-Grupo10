@@ -28,6 +28,8 @@ Optimizar imagenes: tener una para cada corte del responsive
 Lo que llamemos como "dirección del repositorio" se obtiene yendo al link del repositorio > desplegable del boton verde "code" > copiando el enlace que nos aparece en esta ventanita.
 
 <br>
+Para comenzar, debemos crear una carpeta donde trabajaremos, y ejecutaremos el comando ```git init``` para iniciat git en esta carpeta, y así poder ejecutar los comandos de git, sino puede que no funcionen.
+<br>
 
 ### Comandos para traer archivos
 
