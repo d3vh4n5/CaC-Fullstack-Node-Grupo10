@@ -25,7 +25,7 @@ Optimizar imagenes: tener una para cada corte del responsive
 
 ## Comandos de git básicos para trabajar
 
-
+Lo que llamemos como "dirección del repositorio" se obtiene yendo al link del repositorio > desplegable del boton verde "code" > copiando el enlace que nos aparece en esta ventanita.
 
 ### Comandos para traer archivos
 
