@@ -41,9 +41,9 @@ Optimizar imagenes: tener una para cada corte del responsive
 * ```git push origin main```    Con este comando, actualizaremos los registros locales, con los del repositorio remoto, en este caso, GitHub. En ocaciones solo con ejecutar ```git push``` Es suficiente.
 
 Entonces, subir y actualizar los archivos, es una secuencia de 3 pasos: 
-- 1.  ```git add .```
-- 2.  ```git commit -m``` "Modificada tal cosa o agregada tal funcionalidad o reparado tal error"
-- 3.  ```git push```
+1.  ```git add .```
+2.  ```git commit -m``` "Modificada tal cosa o agregada tal funcionalidad o reparado tal error"
+3.  ```git push```
 
 Consejo: SIEMPRE antes de empezar a trabar en el proyecto luego de un rato, y justo antes de hacer un push, ejecutar un ```git pull``` para traer los cambios que hayan podido ser subidos por otra persona mientras nosotros estabamos trabajando, esto para evitar conflictos o colisiones.
 
