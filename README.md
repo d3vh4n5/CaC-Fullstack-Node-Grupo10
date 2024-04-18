@@ -10,7 +10,7 @@ Repositorio para el proyecto grupal del curso Full Stack en Node de Codo a Codo,
 
 Optimizar imagenes: tener una para cada corte del responsive
 
-
+<br><br>
 
 
 ## Herramientas:
@@ -19,7 +19,7 @@ Optimizar imagenes: tener una para cada corte del responsive
 * Analizador de HTML: https://validator.w3.org/
 
 
-
+<br><br>
 
 
 
@@ -27,11 +27,14 @@ Optimizar imagenes: tener una para cada corte del responsive
 
 Lo que llamemos como "dirección del repositorio" se obtiene yendo al link del repositorio > desplegable del boton verde "code" > copiando el enlace que nos aparece en esta ventanita.
 
+<br>
+
 ### Comandos para traer archivos
 
 * ```git clone <dirección-del-repositorio>```   Con este comando nos creamos una copia del proyecto en nuestra pc, dentro de la carpeta en la que estemos.
 * ```git pull```    Con este comando traemos las actualizaciones de los archivos que hayan modificado nuestros compañeros.
 
+<br>
 
 ### Comandos para cargar archivos
 
@@ -47,6 +50,7 @@ Entonces, subir y actualizar los archivos, es una secuencia de 3 pasos:
 
 > Consejo: SIEMPRE antes de empezar a trabar en el proyecto luego de un rato, y justo antes de hacer un push, ejecutar un ```git pull``` para traer los cambios que hayan podido ser subidos por otra persona mientras nosotros estabamos trabajando, esto para evitar conflictos o colisiones.
 
+<br>
 
 ### Comandos para manejar las ramas (branchs)
 
