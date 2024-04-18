@@ -29,8 +29,8 @@ Lo que llamemos como "dirección del repositorio" se obtiene yendo al link del r
 
 ### Comandos para traer archivos
 
-* git clone <dirección-del-repositorio>   Con este comando nos creamos una copia del proyecto en nuestra pc, dentro de la carpeta en la que estemos.
-* git pull    Con este comando traemos las actualizaciones de los archivos que hayan modificado nuestros compañeros.
+* ```git clone <dirección-del-repositorio>```   Con este comando nos creamos una copia del proyecto en nuestra pc, dentro de la carpeta en la que estemos.
+* ```git pull```    Con este comando traemos las actualizaciones de los archivos que hayan modificado nuestros compañeros.
 
 
 ### Comandos para cargar archivos
@@ -53,3 +53,5 @@ Consejo: SIEMPRE antes de empezar a trabar en el proyecto luego de un rato, y ju
 * ```git checkout -b <nombre-de-la-rama>``` Esto nos crea una nueva rama
 * ```git checkout <nombre de la rama>``` Cambiamos a la rama pasada como parámetro.
 * ```git merge <nombre-de-la-rama>``` Funde la rama nombrada, hacia la rama en la cual estamos parados.
+
+De más está decir que los nombres pasados como parámetros no incluyen los "< >", esto es solo para representar un nombre o variable.
