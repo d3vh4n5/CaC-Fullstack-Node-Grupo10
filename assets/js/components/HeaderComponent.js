@@ -1,4 +1,5 @@
-import { ROUTES } from "../routes.js";
+// import  ROUTES  from "../routes.json" assert { type: "json" }
+import  ROUTES  from "../routes.json" with { type: "json" }
 import { basePath } from "../../../config/basePath.js";
 
 const headerTempalte = (basePath = '') => { return`
