@@ -26,8 +26,14 @@
         <div class="contact__banner">
             <h1 class="contact__title">C o n t a c t o</h1>
             <picture class="contact__picture">
+                <!-- La primera no tiene media size, porque si el navegador la soporta será
+                    la preferida para usar, ya que es formato webp y tiene gran calidad por
+                    muy poco tamaño -->
+                <source class="about__banner-img" srcset="../assets/img/contact-health.webp">
+                <source class="about__banner-img" media="(min-width: 1024px)" srcset="../assets/img/contact-health-lg.png">
+                <source class="about__banner-img" media="(min-width: 768px)" srcset="../assets/img/contact-health-md.png">
                 
-                <img class="contact__banner-img" src="../assets/img/contact-medicine.webp" alt="Hand touches Health">
+                <img class="contact__banner-img" src="../assets/img/contact-health-sm.png" alt="Hand touches Health">
             </picture>
         </div>
 

@@ -51,3 +51,12 @@
     border-radius: 8px;
     aspect-ratio: 16/9;
 }
+
+
+
+@media (max-width: 860px) {
+    .contact__title{
+        width: 90%;
+        text-align: center;
+    }
+}

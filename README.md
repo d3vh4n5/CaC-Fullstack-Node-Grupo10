@@ -18,6 +18,9 @@ Optimizar imagenes: tener una para cada corte del responsive
 * Convertidor de logo a ICO: https://convertico.com/es/
 * Convertidor de logo a ICO: https://www.favicon-generator.org/
 * Analizador de HTML: https://validator.w3.org/
+* Resize img: https://www.iloveimg.com/resize-image
+* OPEN GRAPH  https://www.opengraph.xyz/
+* Font Awesome https://cdnjs.com/libraries/font-awesome  https://fontawesome.com/icons
 
 
 <br><br>

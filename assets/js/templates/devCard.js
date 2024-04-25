@@ -1,5 +1,5 @@
 // import  DEVS  from "../../data/devs.data.json" assert { type: "json" }
-import  DEVS  from "../../data/devs.data.json" with { type: "json" }
+import  DEVS  from "../data/devs.data.json" with { type: "json" }
 
 const $template = document.getElementById('$devCard')
 const $container = document.querySelector('.about__devs-container')

@@ -1,5 +1,5 @@
-import { ROUTES } from "../../constants/routes.js";
-import { basePath } from "../../../config/basePath.js";
+import { ROUTES } from "../constants/routes.js";
+import { basePath } from "../config/basePath.js";
 
 const footerTempalte = (basePath = '') => `
 <footer class="footer">
