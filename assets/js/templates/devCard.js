@@ -1,46 +1,10 @@
-const INFO = [
-    {
-        title: "Camila Valderrama",
-        img: '../assets/img/woman.svg',
-        linkedin: 'xxx',
-        location: 'xxx',
-        github: 'xxx',
-        portfolio: 'xxx',
-        description: 'xxx'
-    },
-    {
-        title: "Marina",
-        img: '../assets/img/woman.svg',
-        linkedin: 'xxx',
-        location: 'xxx',
-        github: 'xxx',
-        portfolio: 'xxx',
-        description: 'xxx'
-    },
-    {
-        title: "Hugo Terrile",
-        img: '../assets/img/man.svg',
-        linkedin: 'xxx',
-        location: 'xxx',
-        github: 'xxx',
-        portfolio: 'xxx',
-        description: 'FullStack Node | JavaScript | Python '
-    },
-    {
-        title: "Juan Angel Basgal",
-        img: 'https://media.licdn.com/dms/image/D4D35AQHwNe9PaBuY9Q/profile-framedphoto-shrink_400_400/0/1684111608385?e=1714593600&v=beta&t=l9Rw4-G2IV3lqNKVcT1btWmhqWmJyrmC9VWxw3rw5kM',
-        linkedin: 'https://www.linkedin.com/in/juanangelbasgall/"',
-        location: 'Campana, Bs As, Argentina',
-        github: 'https://github.com/d3vh4n5',
-        portfolio: 'https://d3vh4n5.com.ar/',
-        description: 'FullStack Node | Js - Ts | PHP | Python || React | Vue'
-    },
-]
+// import  DEVS  from "../../data/devs.data.json" assert { type: "json" }
+import  DEVS  from "../../data/devs.data.json" with { type: "json" }
 
 const $template = document.getElementById('$devCard')
 const $container = document.querySelector('.about__devs-container')
 
-INFO.forEach((person, index) => {
+DEVS.forEach((person, index) => {
     const $fragment = $template.content.cloneNode(true)
 
     const $card = $fragment.querySelector('.dev-card')
@@ -63,12 +27,23 @@ INFO.forEach((person, index) => {
 
     $linkedin_a.href = person.linkedin
     $github_a.href = person.github
-    $portfolio_a.href = person.portfolio
-
+    
     $location_s.innerText = person.location
     $title_h.innerText = person.title
     $description_p.innerText = person.description
-
+    
+    if (person.linkedin !== ''){
+        const $linkedinItem = $fragment.querySelector('.linkedin-item')
+        $linkedinItem.hidden = false
+        $linkedinItem.href = person.linkedin
+    }
+    if (person.portfolio !== ''){
+        const $portfolioItem = $fragment.querySelector('.portfolio-item')
+        $portfolioItem.hidden = false
+        $portfolio_a.href = person.portfolio
+    }
+    
+    
     $container.appendChild($fragment)
 })
 

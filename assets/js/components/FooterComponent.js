@@ -1,5 +1,4 @@
-// import  ROUTES  from "../routes.json" assert { type: "json" }
-import  ROUTES  from "../routes.json" with { type: "json" }
+import { ROUTES } from "../../constants/routes.js";
 import { basePath } from "../../../config/basePath.js";
 
 const footerTempalte = (basePath = '') => `
