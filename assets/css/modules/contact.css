@@ -52,6 +52,13 @@
     aspect-ratio: 16/9;
 }
 
+.contact input:valid, .contact textarea:valid { 
+    background:rgba(144, 238, 144, 0.3); 
+} 
+.contact input:invalid, .contact textarea:invalid { 
+    background:rgba(255, 192, 203, 0.3); 
+} 
+
 
 
 @media (max-width: 860px) {
