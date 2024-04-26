@@ -21,6 +21,8 @@ Optimizar imagenes: tener una para cada corte del responsive
 * Resize img: https://www.iloveimg.com/resize-image
 * OPEN GRAPH  https://www.opengraph.xyz/
 * Font Awesome https://cdnjs.com/libraries/font-awesome  https://fontawesome.com/icons
+* Robots txt: www.seoptimer.com
+* Sitemap.xml: https://www.xml-sitemaps.com/
 
 
 <br><br>

@@ -30,12 +30,8 @@
     top: -120px;
     margin: 0 auto;
     padding: 50px 20px;
-    background-color: white;
+    color: var(--color-secondary-dark);
     max-width: 900px;
-    /* mask-image: linear-gradient(black 50%, transparent); */
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0px 5px 20px 2px rgba(36, 66, 131, 0.1);
 }
 
 .about__brand-icon, .about__cac-logo{
@@ -47,15 +43,28 @@
     display: grid;
     grid-template-columns: repeat(2, minmax(400px, 100%));
     gap: 20px;
+    
+    &:hover{
+        & > :not(:hover){
+            transform: scale(.95);
+            filter: grayscale(1);
+        }
+    }
 }
 
 .dev-card{
     padding: 20px;
     background-color: white;
-    color: var(--color-secondary-dark);
     border-radius: 10px;
     border-right: 8px solid var(--color-secondary);
     box-shadow: 0px 5px 20px 2px rgba(36, 66, 131, 0.1);
+    transition: transform .4s;
+    
+    &:hover{
+        transform: scale(1.05);
+        box-shadow: 0px 5px 20px 5px rgba(81, 130, 236, 0.397);
+    }
+
 }
 
 .dev-card__header{
@@ -81,18 +90,31 @@
     margin-right: 10px !important;
 }
 
-@media (max-width: 860px) {
+@media (max-width: 980px) {
     .about__title{
         width: 90%;
         text-align: center;
     }
+
+    .about__banner{
+        height: 300px;
+    }
+
     .about__devs-container{
         grid-template-columns: minmax(300px, 100%);
     }
 }
-@media (max-width: 435px) {
+@media (max-width: 600px) {
     :root{
         font-size: 14px;
+    }
+
+    .about__banner{
+        height: 200px;
+    }
+
+    .about{
+        top: -110px;
     }
 
     .dev-card__person-img{

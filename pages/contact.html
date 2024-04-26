@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,16 +20,16 @@
     <noscript>
         <p>JavaScript está deshabilitado en tu navegador. Activa JavaScript para ver el contenido completo.</p>
     </noscript>
-    <!-- <div data-include="./partials/header.html"></div> -->
     <header-component></header-component>
     <main>
         <div class="contact__banner">
             <h1 class="contact__title">C o n t a c t o</h1>
             <picture class="contact__picture">
-                <!-- La primera no tiene media size, porque si el navegador la soporta será
+                <!-- La primera no tiene media size, y tiene el type
+                     porque si el navegador la soporta será
                     la preferida para usar, ya que es formato webp y tiene gran calidad por
                     muy poco tamaño -->
-                <source class="about__banner-img" srcset="../assets/img/contact-health.webp">
+                <source class="about__banner-img" type="image/webp" srcset="../assets/img/contact-health.webp">
                 <source class="about__banner-img" media="(min-width: 1024px)" srcset="../assets/img/contact-health-lg.png">
                 <source class="about__banner-img" media="(min-width: 768px)" srcset="../assets/img/contact-health-md.png">
                 
@@ -74,11 +74,11 @@
                         <div class="row mb-3">
                             <div class="col">
                                 <label for="name" class="form-label">Nombre</label>
-                                <input type="text" class="form-control" id="name" placeholder="John" name="name">
+                                <input type="text" class="form-control" id="name" placeholder="John" name="name" minlength="2">
                             </div>
                             <div class="col">
                                 <label for="surname" class="form-label">Apellido</label>
-                                <input type="text" class="form-control" id="surname" placeholder="Doe" name="surname">
+                                <input type="text" class="form-control" id="surname" placeholder="Doe" name="surname" minlength="2">
                             </div>
                         </div>
                         <div class="mb-3">
@@ -149,7 +149,8 @@
     </main>
     
     <footer-component></footer-component>
-    <!-- <div data-include="./partials/footer.html"></div> -->
+
+
     <!-- Bootstrapp 5.0.2 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="/assets/js/lib/wowjs/wow.min.js"></script>
@@ -157,6 +158,7 @@
         new WOW().init();
     </script>
     <script type="module" src="../assets/js/main.js"></script>
+    <script src="../assets/js/modules/contactFormValidator.js"></script>
     <script>
         const siteKey = atob("NkxmcUZyWXBBQUFBQUFDaVBYYm92TmNRUGtTbWJXV0tDcnk1NldjUw==")
 

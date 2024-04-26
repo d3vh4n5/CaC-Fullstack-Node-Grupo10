@@ -17,7 +17,7 @@ function handleSubmit(e, $form){
     });
     
     console.table(formData);
-    queryString = queryString + arrayData.join('&')
+    queryString += arrayData.join('&')
     
     const actionTarget = e.target.getAttribute('action');
     // let newActionTarget = (basePath()) + actionTarget
