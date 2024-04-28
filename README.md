@@ -23,6 +23,8 @@ Optimizar imagenes: tener una para cada corte del responsive
 * Font Awesome https://cdnjs.com/libraries/font-awesome  https://fontawesome.com/icons
 * Robots txt: www.seoptimer.com
 * Sitemap.xml: https://www.xml-sitemaps.com/
+* Hacer ejecrcicios o pruebas ed codigo: https://codepen.io/
+
 
 
 <br><br>

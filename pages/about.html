@@ -134,17 +134,14 @@
           
           
           <h4 class="animate__animated wow animate__fadeIn">Tecnologías utilizadas</h4>
-          <ul>
-            <li class="animate__animated wow animate__fadeIn">HTML</li>
-            <li class="animate__animated wow animate__fadeIn">CSS</li>
-            <li class="animate__animated wow animate__fadeIn">JavaScript</li>
-            <li class="animate__animated wow animate__fadeIn">Bootstrap</li>
-            <li class="animate__animated wow animate__fadeIn">Animate.css</li>
-            <li class="animate__animated wow animate__fadeIn">wow.js</li>
-            <li class="animate__animated wow animate__fadeIn">Awesome Icons</li>
-            <li class="animate__animated wow animate__fadeIn">Git</li>
-            <li class="animate__animated wow animate__fadeIn">Github</li>
-          </ul>
+          <div class="mask">
+            <ul id="techList">
+              <!-- https://www.youtube.com/watch?v=FuxAPMuW6SA -->
+              <template id="techPill">
+                <li class="techPill">$tech</li>
+              </template>
+            </ul>
+          </div>
         </article>
         
         <article class="animate__animated wow animate__fadeIn my-5">
@@ -178,5 +175,6 @@
     </script>
     <script type="module" src="../assets/js/main.js"></script>
     <script type="module" src="../assets/js/templates/devCard.js"></script>
+    <script type="module" src="../assets/js/templates/techPill.js"></script>
 </body>
 </html>

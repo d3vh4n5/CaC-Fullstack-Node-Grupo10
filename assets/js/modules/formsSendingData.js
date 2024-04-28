@@ -5,6 +5,14 @@ const $forms = document.forms
 
 function handleSubmit(e, $form){
     e.preventDefault()
+
+    const valid = e.target.checkValidity()
+
+    if( valid) {
+        alert("Formulario valido")
+    } else {
+        alert("formulario invalido")
+    }
     
     const $inputs = $form.querySelectorAll('input, select, textarea');
     const formData = {};

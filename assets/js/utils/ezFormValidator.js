@@ -15,19 +15,16 @@
  * @param { HTMLFormElement } $form - Formulario del documento
  */
 
+const specialChars = [ '<', '>', ';', '/', '\\', '(', ')', '"', "'"]
+const pink = 'rgba(255, 192, 203, 0.3)'
+const green = 'rgba(144, 238, 144, 0.3)'
 
 export const inputValidate = ($input, options = {}) => {
 
     const config = {
-        customValidity: options.customValidity || false,
-        customValidityMsg: options.customValidityMsg || '',
-        invalidBG: options.invalidColor || 'pink',
-        validBG: options.validColor || 'lightgreen',
+        invalidBG: options.invalidColor || pink,
+        validBG: options.validColor || green,
         debug: options.debug || false
-    }
-
-    function createCustomValidity() {
-        $input.setCustomValidity(config.customValidityMsg)
     }
 
     function handleInvalid(){
@@ -36,6 +33,14 @@ export const inputValidate = ($input, options = {}) => {
     }
 
     function validity(e){
+        $input.setCustomValidity('')
+        specialChars.forEach(ch => {
+            if ($input.value.includes(ch)){
+                console.log('Se detecto: ', ch)
+                $input.setCustomValidity('¡Este campo es inválido!')
+                $input.reportValidity();
+            }
+        })
         if(config.debug)console.log($input.name,': ', $input.value)
         if ($input.value.trim() === '') {
             handleInvalid()
@@ -63,8 +68,8 @@ export const inputValidate = ($input, options = {}) => {
 
 export const validate = ($form = document.forms[0], {
     debug = false,
-    invalidColor = ' ',
-    validColor= 'lightgreen',
+    invalidColor = pink,
+    validColor= green,
     typeExclude = []
 } = {}) => {
 
@@ -87,14 +92,16 @@ export const validate = ($form = document.forms[0], {
     });
     console.log('-------------------- ')
 
-    $form.addEventListener('submit', (event)=> {
-        event.preventDefault()
-        const valid = event.target.checkValidity()
-        if (valid) {
-            event.target.submit()
-            event.target.reset()
-        } else {
-            alert("Algo en el form no es valido")
-        }
-    })
+    // $form.addEventListener('submit', (event)=> {
+    //     event.preventDefault()
+    //     const valid = event.target.checkValidity()
+    //     if (valid) {
+    //         event.target.submit()
+    //         event.target.reset()
+    //     } else {
+    //         alert("Algo en el form no es valido")
+    //         console.warn(valid)
+    //         console.warn(event)
+    //     }
+    // })
 }
