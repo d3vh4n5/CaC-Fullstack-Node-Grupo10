@@ -10,7 +10,7 @@ function handleSubmit(e, $form){
     const captcha = e.target.captcha.checked
     // No implemento el captcha real
     if( !valid || !captcha) {
-        alert("formulario invalido, no queremos robots en nuestro sistema... ¡Hasta la vista, baby!")
+        alert("Formulario invalido! no queremos robots en nuestro sistema... ¡Hasta la vista, baby!")
     } else {
         if (!confirm("Formulario válido, confirma su envío?")) return
 
