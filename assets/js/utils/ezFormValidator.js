@@ -32,6 +32,15 @@ export const inputValidate = ($input, options = {}) => {
             $input.style.background = config.invalidBG
     }
 
+    function confirmValidity(e) {
+        const valid = e.target.validity.valid
+        if (valid) {
+            $input.style.background = config.validBG
+        } else {
+            handleInvalid()
+        }
+    }
+
     function validity(e){
         $input.setCustomValidity('')
         specialChars.forEach(ch => {
@@ -41,17 +50,15 @@ export const inputValidate = ($input, options = {}) => {
                 $input.reportValidity();
             }
         })
-        if(config.debug)console.log($input.name,': ', $input.value)
-        if ($input.value.trim() === '') {
+        if(config.debug)console.log($input.name,': ', $input.value || $input.checked)
+        if ( $input.value.trim() === '') {
+            if ($input.checked){
+                confirmValidity(e)
+                return
+            }
             handleInvalid()
         } else {
-            // const valid = $input.checkValidity()
-            const valid = e.target.validity.valid
-            if (valid) {
-                $input.style.background = config.validBG
-            } else {
-                handleInvalid()
-            }
+            confirmValidity(e)
         }
     }
 

@@ -4,5 +4,5 @@ const $form = document.querySelector('#contactForm')
 
 validate($form, { 
     debug: true, 
-    typeExclude: ['checkbox', 'file']
+    typeExclude: ['file']
 })

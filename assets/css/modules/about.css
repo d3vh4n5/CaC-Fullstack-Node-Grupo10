@@ -32,7 +32,6 @@
     padding: 50px 20px;
     color: var(--color-secondary-dark);
     max-width: 900px;
-    overflow: hidden;
 }
 
 .about__brand-icon, .about__cac-logo{
@@ -93,7 +92,8 @@
 
 
 .mask{
-    padding: 40px 0;
+    padding: 40px;
+    overflow: hidden;
     mask-image: linear-gradient( to right,
         transparent 0%,
         white 30%,
