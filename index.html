@@ -11,20 +11,122 @@
     <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 <body>
+    <noscript>
+        <p>JavaScript está deshabilitado en tu navegador. Activa JavaScript para ver el contenido completo.</p>
+    </noscript>
 
-    
     <header-component></header-component>
     
     <main>
+           <!-- Contenido editable de la sección -->
+           <div class="home__banner">
+            <h1 class="home__title">I n i c i o</h1>
+            <picture class="home__picture">
+                <source class="home__banner-img" media="(min-width: 1024px)" srcset="./assets/img/heartandmedicine-banner-big.jpg">
+                <source class="home__banner-img" media="(min-width: 768px)" srcset="./assets/img/heartandmedicine-banner-medium.jpg">
+          
+                <!-- La versión mas pequeña: -->
+                <img class="home__banner-img" src="./assets/img/heartandmedicine-banner-small.jpg" alt="Heart and medicine">
+            </picture>
+        </div>
+        <section class="home">
+            <img class="home__brand-icon animate__animated wow animate__fadeIn" src="../assets/img/favicon.ico" alt="">
+            <h2 class="animate__animated wow animate__fadeIn">Tu Salud, Siempre a tu Alcance.</h2>
+                
 
+            <article>
+                <div>
+                    <h3 class="animate__animated wow animate__fadeIn">¿Qué es HealthUp?</h3>
+                    <p>Centraliza tu información médica: Podés crear tu historial online y controlar tu salud.
+                        Tu historial médico, estará siempre contigo.
+                        <a href="./pages/about.html" class="INSIDE-NAV">Saber más</a>
+                    </p>
+                    
+                </div>
 
-        <!-- Contenido editable de la sección -->
-        
-        <h1 class="animate__animated wow animate__fadeIn">Aquí habrá una web</h1>
-        
-        <!-- FIN Contenido editable de la sección -->
-    
-    
+            </article>
+
+            <article>
+                <div>
+                    <h3 class="animate__animated wow animate__fadeIn" >¿Cómo cargo mi historial?</h3>
+                    <img src="./assets/img/" alt="Registro">
+                    <ol>
+                        <li>
+                            <p>Crea una cuenta:
+                                Regístrate en la página web con tu correo electrónico y una contraseña segura.
+                                <a href="./pages/contact.html" class="INSIDE-NAV">¡Registrate ahora!</a>
+                                <p>¿Ya tienes una cuenta? <a href="./pages/show_data.html" class="INSIDE-NAV">¡Ingresa ahora!</a></p>
+                            </p>
+                            
+                        </li>
+                        <li>
+                            <p>Completa tu perfil médico:
+                                Agrega tu información médica relevante como alergias, medicamentos que consumes, 
+                                enfermedades crónicas y cirugías previas.
+                            </p>
+
+                        </li>
+                        <li>
+                            <p> Registra tu historial médico:
+                                Crea una nueva entrada para cada consulta médica que tengas. Puedes agregar notas adicionales
+                                sobre la consulta.
+                            </p>
+                        </li>
+                        <li>
+                            <p> Sube imágenes y documentos:
+                                Adjunta imágenes o documentos relacionados con tu historial médico, 
+                                como radiografías, tomografías o resultados de laboratorio.
+
+                            </p>
+                        </li>
+                        <li>
+                            <p>Revisa y actualiza tu historial:
+                                Revisa tu historial médico periódicamente para asegurarte de que esté actualizado.
+                            </p>
+                        </li>
+                    </ol>
+                    <h4>¡Listo! Tu historial médico, siempre contigo en solo 5 pasos: Crea y gestiona tu salud online.</h4>
+                </div>
+            </article>
+
+            <article>
+                <div>
+                    <h4 class="animate__animated wow animate__fadeIn">Guía paso a paso</h4>
+                    <p> Sigue los pasos de manera sencilla en este video ilustrativo. ¡No dudes que tu salud,
+                        está siempre a tu alcance con HealthUp!
+                    </p>
+                </div>
+                    
+                <div>        
+                    <aside>
+                        <iframe src="https://www.youtube.com/embed/XCkeaMs9nqA" title="Use su historial de carga en linea" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                    </aside>
+                </div>
+            </article>
+
+            <article>
+                <div>
+                    <h4>¡Registrate gratis!</h4>
+                    <p> En HealthUp creas y actualizas tu historial médico de forma gratuita. ¡Ingresa y registrate ahora!
+                        <a href="./pages/contact.html" class="INSIDE-NAV">Sign up</a>
+                    </p>
+                    <p>¿Ya estás registrado? Entra y completa tu historial médico. <a href="./pages/show_data.html" class="INSIDE-NAV">Log in</a></p>
+                </div>
+            </article>
+
+            <article>
+                <div>
+                    <h5>¿Tenés alguna duda?</h5>
+                    <p> ¿No sabes por dónde empezar? ¿Tuviste algún problema con la carga? 
+                        ¿La imagen no se abre? Estamos para ayudarte.
+                     <a href="./pages/contact.html" class="INSIDE-NAV">Escribinos.</a>
+                    </p>
+                </div>
+            </article>
+            
+        </section>
+
     </main>
 
     <footer-component></footer-component>
