@@ -5,7 +5,7 @@ const headerTempalte = (basePath = '') => { return`
 <header class="header">
     <div class="header__container">
         <div class="header__logo-container">
-            <img src="${basePath === '' ? '../..' : basePath}/assets/img/node.png" alt="Logo" class="header__logo-img">
+            <img src="${basePath === '' ? '../..' : basePath}/assets/img/hu.svg" alt="Logo" class="header__logo-img">
             <!-- <h2 class="header__logo-name">LOGO</h2> -->
         </div>
         <label class="header__burger-button" for="drawer">
