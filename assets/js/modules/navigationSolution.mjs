@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', ()=> {
  
-    if (document.location.hostname !== 'd3vh4n5.github.io'){
+    if (document.location.hostname === 'd3vh4n5.github.io'){
         console.warn('Creando redirección')
 
         const basePath = 'https://d3vh4n5.github.io/CaC-Fullstack-Node-Grupo10'
