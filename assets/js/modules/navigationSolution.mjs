@@ -9,10 +9,14 @@ document.addEventListener('DOMContentLoaded', ()=> {
         links.forEach( link => {
             const navHref = link.attributes.href.value
             const arrNav = navHref.split('/')
+            let parsedHref = ''
 
-            if (arrNav[0].includes('.')) arrNav.shift()
-            
-            const parsedHref = '/' + arrNav.join('/')
+            if (arrNav[0].includes('.')) {
+                arrNav.shift()
+                parsedHref = '/' + arrNav.join('/')
+            } else {
+                parsedHref = navHref
+            }
 
             link.addEventListener('click', (e)=> {
                 e.preventDefault()
