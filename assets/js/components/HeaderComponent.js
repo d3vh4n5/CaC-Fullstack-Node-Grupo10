@@ -41,7 +41,7 @@ const headerTempalte = (basePath = '') => { return`
 class HeaderComponent extends HTMLElement {
     constructor() {
       super();
-      this.innerHTML = headerTempalte(basePath())
+      this.innerHTML = headerTempalte(basePath)
     }
   }
   customElements.define('header-component', HeaderComponent);

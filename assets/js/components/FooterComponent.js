@@ -84,7 +84,7 @@ const footerTempalte = (basePath = '') => `
 class FooterComponent extends HTMLElement {
     constructor() {
       super();
-      this.innerHTML = footerTempalte(basePath())
+      this.innerHTML = footerTempalte(basePath)
     }
   }
   customElements.define('footer-component', FooterComponent);
