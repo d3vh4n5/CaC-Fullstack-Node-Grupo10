@@ -97,3 +97,7 @@
 .home__intro-nav:active {
     background-color: #3e8e41;
 }
+
+.home__instructions-container {
+background-color: #c0d0ef;
+}
