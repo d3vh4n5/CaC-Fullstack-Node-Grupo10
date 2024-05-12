@@ -40,7 +40,7 @@
 
 .home__slogan-container {
     width: 42%;
-    height: 150px;
+    height: 50%;
     margin-top: 25px;
     background-color: #668DC0;
     border-radius: 20px;
@@ -91,7 +91,6 @@
 }
 .home__intro-nav:hover {
     background-color: #c0d0ef;
-
 }
 
 .home__intro-nav:active {
@@ -99,5 +98,51 @@
 }
 
 .home__instructions-container {
-background-color: #c0d0ef;
+    background-color: #c0d0ef;
+    width: 90%;
+    height: 40%;
+    border-radius: 20px;
+    margin-top: 100px;
+    margin-left: 30px;
+}
+
+.home__instructions-title {
+    text-align: center;
+    padding: 10px;
+}
+
+.home__steps li p {
+    text-align: justify;
+    padding: 10px;
+}
+
+.home__steps a {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #0f1c30;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.home__steps a:hover {
+    background-color: #304A6E;
+}
+
+.home__steps a:active {
+    background-color: #3e8e41;
+}
+
+.home__phrase-container {
+    background-color: #0f1c30;
+    width: 40%;
+    height: 160px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.home__phrase-container h4 {
+    text-align: justify;
+    color: white;
 }
