@@ -1,11 +1,12 @@
 import { ROUTES } from "../constants/routes.js";
-import { basePath } from "../config/basePath.js";
+import { basePath } from "../constants/basePath.js";
+import { logoPath } from "../constants/logoPath.js";
 
 const footerTempalte = (basePath = '') => `
 <footer class="footer">
     <section class="footer__container">
         <div class="footer__logo">
-            <img src="${basePath === '' ? '../..' : basePath}/assets/img/favicon.ico" alt="Logo" class="footer__logo-img">
+            <img src="${logoPath}" alt="Logo" class="footer__logo-img">
         </div>
         <article class="footer__top-content">
 

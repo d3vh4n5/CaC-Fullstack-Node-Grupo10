@@ -1,4 +1,4 @@
-import { basePath } from "../config/basePath.js"
+import { basePath } from "../constants/basePath.js"
 
 const $forms = document.forms
 
