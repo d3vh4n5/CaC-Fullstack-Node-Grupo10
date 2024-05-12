@@ -1,0 +1,21 @@
+{
+  "name": "parcel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.html pages/*.html",
+    "build": "parcel build index.html pages/*.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "1.12.5",
+    "sass": "^1.77.1"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}

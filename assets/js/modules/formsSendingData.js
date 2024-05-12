@@ -28,8 +28,8 @@ function handleSubmit(e, $form){
         queryString += arrayData.join('&')
         
         const actionTarget = e.target.getAttribute('action');
-        // let newActionTarget = (basePath()) + actionTarget
-        let newActionTarget = (basePath()) + '/pages/show_data.html'
+        // let newActionTarget = (basePath()) + actionTarget // Esta es para cuando esté el back
+        let newActionTarget = basePath + '/pages/show_data.html'
         
         
         var windowOptions = "toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=600, height=400";
