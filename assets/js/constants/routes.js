@@ -4,6 +4,10 @@ export const ROUTES = [
         label: "Inicio"
     },
     {
+        href: "/pages/historia.html",
+        label: "Historia"
+    },
+    {
         href: "/pages/about.html",
         label: "Acerca de"
     },
