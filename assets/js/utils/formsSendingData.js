@@ -1,7 +1,4 @@
-import { basePath } from "../config/basePath.js"
-
-const $forms = document.forms
-
+import { basePath } from "../constants/basePath.js"
 
 function handleSubmit(e, $form){
     e.preventDefault()
@@ -28,8 +25,8 @@ function handleSubmit(e, $form){
         queryString += arrayData.join('&')
         
         const actionTarget = e.target.getAttribute('action');
-        // let newActionTarget = (basePath()) + actionTarget
-        let newActionTarget = (basePath()) + '/pages/show_data.html'
+        // let newActionTarget = (basePath()) + actionTarget // Esta es para cuando esté el back
+        let newActionTarget = basePath + '/pages/show_data.html'
         
         
         var windowOptions = "toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=600, height=400";
@@ -42,8 +39,12 @@ function handleSubmit(e, $form){
     
 }
 
-if($forms)
-for (let i = 0; i< $forms.length; i++){
-    $forms[i].addEventListener('submit', (e)=> handleSubmit(e, $forms[i]))
+export function sendToShowData(){
+    const $forms = document.forms
+    if($forms)
+    for (let i = 0; i< $forms.length; i++){
+        $forms[i].addEventListener('submit', (e)=> handleSubmit(e, $forms[i]))
+    }
 }
+
 

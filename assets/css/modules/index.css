@@ -37,3 +37,112 @@
 .home__brand-icon, .home__cac-logo{
     width: 100px;
 }
+
+.home__slogan-container {
+    width: 42%;
+    height: 50%;
+    margin-top: 25px;
+    background-color: #668DC0;
+    border-radius: 20px;
+}
+
+.home__slogan-title {
+    text-align: center;
+    color: white;
+    text-decoration: solid;
+    padding: 30px;
+}
+
+.home__intro-container {
+    width: 50%;
+    height: 210px;
+    margin-top: -150px;
+    margin-left: -30px;
+    background-color: #304A6E;
+    float: right;
+    border-radius: 20px;
+}
+
+.home__intro-title {
+    text-align: left;
+    color: white;
+    padding: 30px;
+}
+
+.home__intro-paragraph {
+    color: white;
+    text-align: justify;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: -10px;
+}
+
+.home__intro-nav {
+    text-decoration: none;
+    margin-top: -30px;
+    margin-right: 20px;
+    padding: 10px 20px; 
+    background-color: #0f1c30;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right;
+}
+.home__intro-nav:hover {
+    background-color: #c0d0ef;
+}
+
+.home__intro-nav:active {
+    background-color: #3e8e41;
+}
+
+.home__instructions-container {
+    background-color: #c0d0ef;
+    width: 90%;
+    height: 40%;
+    border-radius: 20px;
+    margin-top: 100px;
+    margin-left: 30px;
+}
+
+.home__instructions-title {
+    text-align: center;
+    padding: 10px;
+}
+
+.home__steps li p {
+    text-align: justify;
+    padding: 10px;
+}
+
+.home__steps a {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #0f1c30;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.home__steps a:hover {
+    background-color: #304A6E;
+}
+
+.home__steps a:active {
+    background-color: #3e8e41;
+}
+
+.home__phrase-container {
+    background-color: #0f1c30;
+    width: 40%;
+    height: 160px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.home__phrase-container h4 {
+    text-align: justify;
+    color: white;
+}

@@ -1,11 +1,12 @@
 import { ROUTES } from "../constants/routes.js";
-import { basePath } from "../config/basePath.js";
+import { basePath } from "../constants/basePath.js";
+import { logoPath } from "../constants/logoPath.js";
 
 const headerTempalte = (basePath = '') => { return`
 <header class="header">
     <div class="header__container">
         <div class="header__logo-container">
-            <img src="${basePath === '' ? '../..' : basePath}/assets/img/hu.svg" alt="Logo" class="header__logo-img">
+            <img src="${logoPath}" alt="Logo" class="header__logo-img">
             <!-- <h2 class="header__logo-name">LOGO</h2> -->
         </div>
         <label class="header__burger-button" for="drawer">

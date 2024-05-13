@@ -41,3 +41,12 @@
     --color-font: #001f1c; */
 }
 
+.inside-link{
+    color: #2468fd;
+    text-decoration: underline;
+
+    &:hover{
+        cursor: pointer;
+        color: #1b55d1;
+    }
+}

@@ -1,6 +1,6 @@
 export const ROUTES = [
     {
-        href: "/",
+        href: "/index.html",
         label: "Inicio"
     },
     {
