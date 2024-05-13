@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto - Grupo 10</title>
+    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/lib/animatecss/animate.min.css">
+    <script src="https://kit.fontawesome.com/d90748bc75.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/estilo.css">
+</head>
+<body>
+    <header-component></header-component>
+    <main>
+        <!-- Contenido editable de la sección -->
+        <!-- <h1 class="animate__animated wow animate__fadeIn">Content</h1> -->
+
+        <h1>Mi Historia Clinica</h1>
+    <form action="" method="post" class="form-register">
+        <h3 class="form-titulo">Datos Personales</h3>
+        <div class="contenedor-inputs">
+            <input type="text" id="nombre" name="user_nombre" placeholder="Nombres" class="input-33" required/>
+            <input type="text" id="apellido" name="user_apellido" placeholder="Apellidos" class="input-33" required/>
+            <input type="number" id="dni" name="user_dni" placeholder="DNI" class="input-15" required/>
+            <br>
+            <input type="text" id="usuario" name="user_id" placeholder="Id_usuario" class="input-15" required/>
+            <input type="email" id="correo" name="user_correo" placeholder="Mail" class="input-33" required/>
+            <input type="tel" id="telefono" name="user_telefono" placeholder="Teléfono" class="input-15" required/>
+            <br>
+            <input type="text" id="dirección" name="user_direccion" placeholder="Dirección donde reside" class="input-33" required/>
+            <input type="text" id="localidad" name="user_localidad" placeholder="Localidad" class="input-33" required/>
+            <input type="text" id="provincia" name="user_provincia" placeholder="Provincia" class="input-15" required/>
+            <select class="input-15" id="user_provincia" name="user_provincia">
+                <option value="" selected="">Provincia</option>
+                <option value="Ciudad Autónoma de buenos Aires">Ciudad Autónoma de Buenos Aires</option>
+                <option value="Buenos Aires">Buenos Aires</option>
+                <option value="Catamarca">Catamarca</option>
+                <option value="Chaco">Chaco</option>
+                <option value="Chubut">Chubut</option>
+                <option value="Córdoba">Córdoba</option>
+                <option value="Corrientes">Corrientes</option>
+                <option value="Entre Ríos">Entre Ríos</option>
+                <option value="Formosa">Formosa</option>
+                <option value="Jujuy">Jujuy</option>
+                <option value="La Pampa">La Pampa</option>
+                <option value="La Rioja">La Rioja</option>
+                <option value="Mendoza">Mendoza</option>
+                <option value="Misiones">Misiones</option>
+                <option value="Neuquén">Neuquén</option>
+                <option value="Río Negro">Río Negro</option>
+                <option value="Salta">Salta</option>
+                <option value="San Juan">San Juan</option>
+                <option value="Santa Cruz">Santa Cruz</option>
+                <option value="Santa Fe">Santa Fe</option>
+                <option value="Santiago del Estero">Santiago del Estero</option>
+                <option value="Tierra del Fuego">Tierra del Fuego</option>
+                <option value="Tucumán">Tucumán</option>        
+            </select>
+            <br>
+            <input type="number" id="edad" name="user_edad" placeholder="Edad" min="1" max="120" class="input-15" required/>
+            <input type="number" id="peso" name="user_peso" placeholder="Peso" min="1" max="250" class="input-15" required/>
+            <input type="number" id="altura" name="user_altura" placeholder="Altura" min="1" max="250" class="input-15" required/>
+            
+            <br><br>
+            <!-- Con tipo de sangre puedo hacer una lista -->
+            <!-- Tabla
+
+Grupo Sanguíneo	Antígenos en Glóbulos Rojos	Anticuerpos en el Suero	Compatibilidad de Donación
+A+	A	Anti-B	Puede donar a A+, AB+
+A-	A	Anti-B	Puede donar a A+, A-, AB+, AB-
+B+	B	Anti-A	Puede donar a B+, AB+
+B-	B	Anti-A	Puede donar a B+, B-, AB+, AB-
+AB+	A, B	Ninguno	Puede donar a AB+
+AB-	A, B	Ninguno	Puede donar a AB+, AB-
+O+	Ninguno	Anti-A, Anti-B	Puede donar a A+, B+, AB+, O+
+O-	Ninguno	Anti-A, Anti-B	Puede donar a A+, A-, B+, B-, AB+, AB-, O+, O- -->
+
+            <label for="grupo_sang">Grupo Sanguíneo:</label>
+            <!-- <textarea id="msg" name="user_message"></textarea>           -->
+                <select id="grupo_sang" name="user_grupo_sang" class="input-15" required>            
+                <option selected>A RH+</option>
+                <option>A RH-</option>
+                <option>B RH+</option>
+                <option>B RH-</option>
+                <option>AB RH+</option>
+                <option>AB RH-</option>
+                <option>O+</option>
+                <option>O-</option>
+                <option></option>
+            </select>
+            
+            
+            <label for="fecha_nac">Fecha de Nacimiento:</label>
+            <input type="date" id="fecha_nac" name="user_fecha_nac" class="input-15" required/>
+            <label for="sexo">Sexo:</label>
+                <select id="sexo" name="user_sexo" class="input-15" required> 
+                <option value="" selected="">Sexo</option>           
+                <option>Femenino</option>
+                <option>Masculino</option>
+                <option>Otro</option>
+            </select>
+            <label for="estadoCivil">Estado civil</label>
+            <select id="estadoCivil" name="user_estadoCivil" class="input-15" required>
+             <option value="" selected="">Estado civil</option>
+             <option value="">Soltero/a</option>
+             <option value="">Casado/a</option>
+             <option value="">Divorciado/a</option>
+             <option value="">Viudo/a</option>
+             <option value="">Vínculo de hecho</option>
+             <option value="">Separado/a</option>
+           </select>
+           
+
+       <h3 class="form-titulo">Datos Clinicos</h3>
+       <div class="contenedor-enfermedades">
+       <h4>Antecedentes Familiares</h4>
+        <form action="/submit-form" method="post">
+            <label>
+                <input type="checkbox" name="enfermedad" value="hipertension">
+                Hipertensión
+            </label><br>    
+            <label>
+                <input type="checkbox" name="enfermedad" value="diabetes">
+                Diabetes
+            </label><br>    
+            <label>
+                <input type="checkbox" name="enfermedad" value="asma">
+                Asma
+            </label><br>    
+            <label>
+                <input type="checkbox" name="enfermedad" value="alergias">
+                Alergias
+            </label><br>    
+            <label>
+                <input type="checkbox" name="enfermedad" value="enfermedad_cardiaca">
+                Enfermedad Cardíaca
+            </label><br>
+            <h4>Consumos Problemáticos</h4>
+            <form action="/submit-form" method="post">
+                <label>
+                    <input type="checkbox" name="consumo" value="Tabaco">
+                    Tabaco
+                </label><br>    
+                <label>
+                    <input type="checkbox" name="consumo" value="Alcohol">
+                    Alcohol
+                </label><br>    
+                <label>
+                    <input type="checkbox" name="consumo" value="Marihuana">
+                    Marihuana
+                </label><br>    
+                <label>
+                    <input type="checkbox" name="enfermedad" value="Cocaína">
+                    Cocaína
+                </label><br>    
+                <label>
+                    <input type="checkbox" name="enfermedad" value="Otras drogas peligrosas">
+                    Otras drogas peligrosas
+                </label>
+                <br><br>
+                <h3>Consulta Médica</h3>
+                <label for="fecha_consulta">Fecha de Consulta:</label>
+                <input type="date" id="fecha_consulta" name="user_fecha_consulta" class="input-15" required/>
+                <input type="text" id="especialista" name="especialista" placeholder="Médico Especialista" class="input-33" required>
+                <input type="text" id="matricula" name="matricula" placeholder="Matricula" class="input-15" required>
+                <input type="tel" id="tel_medico" name="tel_medico" placeholder="Teléfono Médico" class="input-15" required>
+                <br>                
+                <input type="text" id="sintoma" name="sintoma" placeholder="Sintoma" class="input-33" required>
+                <input type="text" id="diagnostico" name="diagnostico" placeholder="Diagnóstico" class="input-33" required>
+                <input type="text" id="tratamiento" name="tratamiento" placeholder="Tratamiento" class="input-33" required>
+                <br>
+                <!-- <label for="medicamentos">Medicamentos:</label> -->
+                <textarea id="medicamentos" name="user_medicamentos" placeholder="Indicacíón y Receta de Medicamentos" class="input-66" ></textarea>
+
+                <br>
+                <input type="text" id="orden_medica" name="orden_medica" placeholder="Resultado Estudios Médicos" class="input-33" required>
+                <form action="/upload" method="post" enctype="multipart/form-data">
+                    <label for="file">Adjuntar estudios médico:</label>
+                    <input type="file" id="file" name="image">
+                    <input type="submit" value="Subir">
+                </form>
+                <!-- <input type="email" id="correo" name="correo" placeholder="Correo" class="input-100" required>
+                <input type="text" id="usuario" name="usuario" placeholder="Usuario" class="input-48" required>
+                <input type="password" id="clave" name="clave" placeholder="Contraseña" class="input-48"required >
+                <input type="text" id="telefono" name="telefono" placeholder="Teléfono" class="input-100" required>
+                 -->
+                <!-- Submit -->
+                <input type="submit" value="Enviar"><br><br>
+
+                <!-- Reset -->
+                <input type="reset" value="Resetear"><br><br><input type="submit" value="Registrar" class="btn-enviar">
+                
+            <p class="form-link">Ya tienes una cuenta?<a href="#">Ingresa aquí</a></p>
+        </div>
+        
+        <!-- FIN Contenido editable de la sección -->
+
+        
+    </main>
+    
+    <footer-component></footer-component>
+
+
+    <!-- Bootstrapp 5.0.2 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../assets/js/lib/wowjs/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <script type="module" src="../assets/js/main.js"></script>
+</body>
+</html>
