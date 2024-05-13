@@ -1,7 +1,7 @@
 [
   {
     "title": "Camila Valderrama",
-    "img": "https://media.licdn.com/dms/image/D5635AQEiqs0tp5Y30g/profile-framedphoto-shrink_800_800/0/1690990546651?e=1715544000&v=beta&t=r5yOn8ytLM_i4FsN9zFY1THhW8DDC09ZEU4OMdIWpx0",
+    "img": "https://avatars.githubusercontent.com/u/145812193?v=4",
     "linkedin": "https://www.linkedin.com/in/camilavalderrama",
     "location": "San Fernando del Valle de Catamarca, Catamarca.",
     "github": "https://github.com/camila-valderrama",
@@ -10,7 +10,7 @@
   },
   {
     "title": "Marina Benitez",
-    "img": "../assets/img/woman.svg",
+    "img": "https://raw.githubusercontent.com/d3vh4n5/CaC-Fullstack-Node-Grupo10/92691eec0b889e64f32c1729af7beec9aea8c518/assets/img/woman.svg",
     "linkedin": "",
     "location": "Moron, Bs As, Argentina",
     "github": "https://github.com/MarinaMaruka",
@@ -28,7 +28,7 @@
   },
   {
     "title": "Juan Angel Basgal",
-    "img": "https://media.licdn.com/dms/image/D4D35AQHwNe9PaBuY9Q/profile-framedphoto-shrink_400_400/0/1684111608385?e=1715544000&v=beta&t=sPB23lI_o63V03qYsML8TjRwzq7wBvVdIDBj8QeL1Kw",
+    "img": "https://d3vh4n5.com.ar/me.png",
     "linkedin": "https://www.linkedin.com/in/juanangelbasgall/",
     "location": "Campana, Bs As, Argentina",
     "github": "https://github.com/d3vh4n5",

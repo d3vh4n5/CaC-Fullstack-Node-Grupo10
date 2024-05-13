@@ -1,5 +1,4 @@
 import './components/index.js'
-import './utils/formsSendingData.js'
 import './utils/insideNav.mjs'
 
 

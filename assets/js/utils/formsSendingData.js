@@ -1,8 +1,5 @@
 import { basePath } from "../constants/basePath.js"
 
-const $forms = document.forms
-
-
 function handleSubmit(e, $form){
     e.preventDefault()
 
@@ -42,8 +39,12 @@ function handleSubmit(e, $form){
     
 }
 
-if($forms)
-for (let i = 0; i< $forms.length; i++){
-    $forms[i].addEventListener('submit', (e)=> handleSubmit(e, $forms[i]))
+export function sendToShowData(){
+    const $forms = document.forms
+    if($forms)
+    for (let i = 0; i< $forms.length; i++){
+        $forms[i].addEventListener('submit', (e)=> handleSubmit(e, $forms[i]))
+    }
 }
+
 
