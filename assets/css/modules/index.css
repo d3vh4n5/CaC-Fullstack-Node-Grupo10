@@ -1,5 +1,6 @@
 /* Estilos de la página home */
 
+/*Comienzo de la imagen principal, título de la página, logo*/
 .home__banner{
     position: relative;
     height: 400px;
@@ -38,6 +39,7 @@
     width: 100px;
 }
 
+/* Comienzo del slogan*/
 .home__slogan-container {
     width: 42%;
     height: 50%;
@@ -53,6 +55,7 @@
     padding: 30px;
 }
 
+/*Comienzo de la presentación. Redirige a la página Nosotros*/
 .home__intro-container {
     width: 50%;
     height: 210px;
@@ -97,6 +100,7 @@
     background-color: #3e8e41;
 }
 
+/*Comienzo de las instrucciones para la carga*/
 .home__instructions-container {
     background-color: #c0d0ef;
     width: 90%;
@@ -134,15 +138,146 @@
     background-color: #3e8e41;
 }
 
-.home__phrase-container {
-    background-color: #0f1c30;
-    width: 40%;
-    height: 160px;
+/*Comienzo de la guía en video para la carga y una frase llamativa*/
+.home__guide-container {
+    background-color: #668DC0;
+    width: 50%;
+    height: fit-content;
+    margin-top: 30px;
     padding: 20px;
     border-radius: 20px;
 }
 
-.home__phrase-container h4 {
+.home__guide-container h4{
+    text-align: left;
+    color: white;
+}
+
+.home__guide-container p {
     text-align: justify;
     color: white;
 }
+
+.home__video-container {
+    background-color: #c0d0ef;
+    width: 40%;
+    height: 250px;
+    margin-top: 20px;
+    margin-left: 35px;
+    padding: 20px;
+    border-radius: 20px;  
+}
+
+.home__video-container iframe {
+    border-radius: 20px;
+    width: 300px;
+    height: 210px;
+}
+
+.home__phrase-container {
+    background-color: #0f1c30;
+    width: 40%;
+    height: fit-content;
+    margin-top: -280px;
+    margin-right: 30px;
+    padding: 20px;
+    border-radius: 20px;
+    float: right;
+}
+
+.home__phrase-container h4 {
+    text-align: center;
+    color: white;
+}
+
+/*Comienzo de final llamando a registrarse de nuevo. Redirige a las páginas login y registro*/
+.home__registration-container {
+    background-color: white;
+    width: 100%;
+    height: 60%;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.home__registration-container p{
+    text-align: justify;
+}
+
+.home__registration-container a {
+    text-decoration: none;
+    padding: 10px 20px; 
+    background-color: #0f1c30;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.home__registration-container a:hover {
+    background-color: #304A6E;
+}
+
+.home__registration-container a:active {
+    background-color: #3e8e41;
+}
+
+/*Comienzo de aviso por dudas que surjan. Redirige a la página contacto*/
+.home__doubts-container {
+    background-color: white;
+    width: 100%;
+    height: 60%;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.home__doubts-container a {
+    text-decoration: none;
+    padding: 10px 20px; 
+    background-color: #0f1c30;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.home__doubts-container a:hover {
+    background-color: #304A6E;
+}
+
+.home__doubts-container a:active {
+    background-color: #3e8e41;
+}
+
+/*Comienzo de la parte responsive tablet*/
+
+@media (max-width: 980px) {
+    .about__title {
+        width: 90%;
+        text-align: center;
+    }
+
+    .about__banner{
+        height: 300px;
+    }
+}
+
+/*Comienzo de la parte responsive celular*/
+
+@media (max-width: 600px) {
+    :root{
+        font-size: 14px;
+    }
+
+    .about__banner{
+        height: 200px;
+    }
+
+    .about{
+        top: -110px;
+    }
+
+}
+    
+
+    
+    
