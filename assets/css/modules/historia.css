@@ -3,17 +3,10 @@
     margin: 0 auto;
     width: 400px;
     /* Esquema del formulario 
-<<<<<<< HEAD
    padding: 1em;
     border: 1px solid #ccc;
     border-radius: 1em;
   */
-=======
-    padding: 1em;
-    border: 1px solid #ccc;
-    border-radius: 1em;
- */
->>>>>>> 1e350d85f8109aed2e99b7f80332c4bd4c67a4c0
 
 input{
 	margin-bottom: 10px;

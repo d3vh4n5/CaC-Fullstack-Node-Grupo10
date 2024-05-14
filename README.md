@@ -25,6 +25,10 @@ Optimizar imagenes: tener una para cada corte del responsive
 * Sitemap.xml: https://www.xml-sitemaps.com/
 * Hacer ejecrcicios o pruebas ed codigo: https://codepen.io/
 
+### Para back
+
+* https://sqlbolt.com/
+
 
 
 <br><br>
