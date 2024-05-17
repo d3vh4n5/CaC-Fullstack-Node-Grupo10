@@ -7,179 +7,301 @@
     <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/lib/animatecss/animate.min.css">
-    <script src="https://kit.fontawesome.com/d90748bc75.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/d90748bc75.js" crossorigin="anonymous"></script>  
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://unpkg.com/gijgo@1.9.14/js/gijgo.min.js"></script>
+    <link href="https://unpkg.com/gijgo@1.9.14/css/gijgo.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="../assets/css/styles.css">
-    <link rel="stylesheet" href="../assets/css/modules/historia.css">
+
 </head>
 <body>
     <header-component></header-component>
     <main>
+        <section class="container">
+        <h1>Mi Historia Clinica</h1>
+        <h3 class="form-titulo">Datos Personales</h3>
         <!-- Contenido editable de la sección -->
         <!-- <h1 class="animate__animated wow animate__fadeIn">Content</h1> -->
 
-        <h1>Mi Historia Clinica</h1>
-        <form action="" method="post" class="form-register">
-            <h3 class="form-titulo">Datos Personales</h3>
-            <div class="contenedor-inputs">
-                <input type="text" id="user_nombre" name="user_nombre" placeholder="Nombres" class="input-33" required/>
-                <input type="text" id="user_apellido" name="user_apellido" placeholder="Apellidos" class="input-33" required/>
-                <input type="number" id="user_dni" name="user_dni" placeholder="DNI" class="input-15" required/>
-                <br>
-                <input type="text" id="user_id" name="user_id" placeholder="Id_usuario" class="input-15" required/>
-                <input type="email" id="user_correo" name="user_correo" placeholder="Mail" class="input-33" required/>
-                <input type="tel" id="user_telefono" name="user_telefono" placeholder="Teléfono" class="input-15" required/>
-                <br>
-                <input type="text" id="user_dirección" name="user_direccion" placeholder="Dirección donde reside" class="input-33" required/>
-                <input type="text" id="user_localidad" name="user_localidad" placeholder="Localidad" class="input-33" required/>
-                <input type="text" id="user_provincia" name="user_provincia" placeholder="Provincia" class="input-15" required/>
-                <!-- <select class="input-15" id="user_provincia" name="user_provincia">
-                    <option value="" selected="">Provincia</option>
-                    <option value="Ciudad Autónoma de buenos Aires">Ciudad Autónoma de Buenos Aires</option>
-                    <option value="Buenos Aires">Buenos Aires</option>
-                    <option value="Catamarca">Catamarca</option>
-                    <option value="Chaco">Chaco</option>
-                    <option value="Chubut">Chubut</option>
-                    <option value="Córdoba">Córdoba</option>
-                    <option value="Corrientes">Corrientes</option>
-                    <option value="Entre Ríos">Entre Ríos</option>
-                    <option value="Formosa">Formosa</option>
-                    <option value="Jujuy">Jujuy</option>
-                    <option value="La Pampa">La Pampa</option>
-                    <option value="La Rioja">La Rioja</option>
-                    <option value="Mendoza">Mendoza</option>
-                    <option value="Misiones">Misiones</option>
-                    <option value="Neuquén">Neuquén</option>
-                    <option value="Río Negro">Río Negro</option>
-                    <option value="Salta">Salta</option>
-                    <option value="San Juan">San Juan</option>
-                    <option value="Santa Cruz">Santa Cruz</option>
-                    <option value="Santa Fe">Santa Fe</option>
-                    <option value="Santiago del Estero">Santiago del Estero</option>
-                    <option value="Tierra del Fuego">Tierra del Fuego</option>
-                    <option value="Tucumán">Tucumán</option>        
-                </select> -->
-                <br>
-                <input type="number" id="user_edad" name="user_edad" placeholder="Edad" min="1" max="120" class="input-15" required/>
-                <input type="number" id="user_peso" name="user_peso" placeholder="Peso" min="1" max="250" class="input-15" required/>
-                <input type="number" id="user_altura" name="user_altura" placeholder="Altura" min="1" max="250" class="input-15" required/>
-                <br><br>
-                <label for="grupo_sang">Grupo Sanguíneo:</label>
-                <select id="user_grupo_sang" name="user_grupo_sang" class="input-15" required>            
-                    <option selected>A RH+</option>
-                    <option>A RH-</option>
-                    <option>B RH+</option>
-                    <option>B RH-</option>
-                    <option>AB RH+</option>
-                    <option>AB RH-</option>
-                    <option>O+</option>
-                    <option>O-</option>
-                    <option></option>
-                </select>
-                <label for="fecha_nac">Fecha de Nacimiento:</label>
-                <input type="date" id="user_fecha_nac" name="user_fecha_nac" class="input-15" required/>
-                <label for="sexo">Sexo:</label>
-                    <select id="sexo" name="user_sexo" class="input-15" required> 
-                    <option value="" selected="">Sexo</option>           
-                    <option>Femenino</option>
-                    <option>Masculino</option>
-                    <option>Otro</option>
-                </select>
-                <label for="estadoCivil">Estado civil</label>
-                <select id="user_estadoCivil" name="user_estadoCivil" class="input-15" required>
-                    <option value="" selected="">Estado civil</option>
-                    <option value="">Soltero/a</option>
-                    <option value="">Casado/a</option>
-                    <option value="">Divorciado/a</option>
-                    <option value="">Viudo/a</option>
-                    <option value="">Vínculo de hecho</option>
-                    <option value="">Separado/a</option>
-                </select>
-                <br>
-            <h3 class="form-titulo">Datos Clinicos</h3>
-            <div class="flex-container">          
-                <div>
-                    <h4>Antecedentes Familiares</h4>            
-                    <form action="/submit-form" method="post">
-                    <label>
-                        <input type="checkbox" name="enfermedad" value="hipertension">
-                        Hipertensión
-                    </label><br>    
-                    <label>
-                        <input type="checkbox" name="enfermedad" value="diabetes">
-                        Diabetes
-                    </label><br>    
-                    <label>
-                        <input type="checkbox" name="enfermedad" value="asma">
-                        Asma
-                    </label><br>    
-                    <label>
-                        <input type="checkbox" name="enfermedad" value="alergias">
-                        Alergias
-                    </label><br>    
-                    <label>
-                        <input type="checkbox" name="enfermedad" value="enfermedad_cardiaca">
-                        Enfermedad Cardíaca
-                    </label><br>
-                    </form>
-                </div>    
-                <div>
-                    <h4>Consumos Problemáticos</h4>
-                    <form action="/submit-form" method="post">
-                        <label>
-                            <input type="checkbox" name="consumo" value="Tabaco">
-                            Tabaco
-                        </label><br>    
-                        <label>
-                            <input type="checkbox" name="consumo" value="Alcohol">
-                            Alcohol
-                        </label><br>    
-                        <label>
-                            <input type="checkbox" name="consumo" value="Marihuana">
-                            Marihuana
-                        </label><br>    
-                        <label>
-                            <input type="checkbox" name="enfermedad" value="Cocaína">
-                            Cocaína
-                        </label><br>    
-                        <label>
-                            <input type="checkbox" name="enfermedad" value="Otras drogas peligrosas">
-                            Otras drogas peligrosas
-                        </label>
-                    </form>
-                </div>
-            </div>
-            <div>            
-            <br>
-            <h3>Consulta Médica</h3>
-                <label for="fecha_consulta">Fecha de Consulta:</label>
-                <input type="date" id="fecha_consulta" name="user_fecha_consulta" class="input-15" required/>
-                <input type="text" id="especialista" name="especialista" placeholder="Médico Especialista" class="input-33" required>
-                <input type="text" id="matricula" name="matricula" placeholder="Matricula" class="input-15" required>
-                <input type="tel" id="tel_medico" name="tel_medico" placeholder="Teléfono Médico" class="input-15" required>
-                <br>                
-                <input type="text" id="sintoma" name="sintoma" placeholder="Sintoma" class="input-33" required>
-                <input type="text" id="diagnostico" name="diagnostico" placeholder="Diagnóstico" class="input-33" required>
-                <input type="text" id="tratamiento" name="tratamiento" placeholder="Tratamiento" class="input-33" required>
-                <br>
-                <!-- <label for="medicamentos">Medicamentos:</label> -->
-                <textarea id="medicamentos" name="user_medicamentos" placeholder="Indicacíón y Receta de Medicamentos" class="input-66" ></textarea>
+        <form class="row g-3">
 
-                <br>
-                <input type="text" id="orden_medica" name="orden_medica" placeholder="Resultado Estudios Médicos" class="input-66">
-                <form action="/upload" method="post" enctype="multipart/form-data">
-                    <label for="file">Estudios médico:</label>
-                    <input type="file" id="file" name="image">
-                    <input type="submit" value="Subir">
-                </form>
-                <input type="submit" value="Enviar" >
-                <input type="reset" value="Resetear"><br><br>
-                <input type="submit" value="Registrar" class="btn-enviar">
-                
-            <p class="form-link">Ya tienes una cuenta?<a href="#">Ingresa aquí</a></p>
+            <div class="col-md-6">
+              <label for="inputNombre" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="inputNombre" placeholder=""> <!-- Entre su Nombre"-->
             </div>
-        </div>
-        </form>    
-        
+
+            <div class="col-md-6">
+              <label for="inputApellido" class="form-label">Apellido</label>
+              <input type="text" class="form-control" id="inputApellido">
+            </div>
+
+            <div class="col-md-6">
+                <label for="inputEmail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="inputEmail">
+            </div>
+            <div class="col-md-6">
+                <label for="inputIdUser" class="form-label">ID Usuario</label>
+                <input type="text" class="form-control" id="inputIdUser">
+            </div>
+            <div class="col-md-6">
+                <label for="inputDNI" class="form-label">DNI</label>
+                <input type="text" class="form-control" id="inputDNI">
+            </div>
+            <div class="col-md-6">
+                <label for="inputTelefono" class="form-label">Teléfono</label>
+                <input type="text" class="form-control" id="inputTelefono">
+            </div>
+  
+            <div class="col-12">
+              <label for="inputAddress" class="form-label">Dirección</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="Avenida Siempreviva 123">
+            </div>
+            <div class="col-12">
+              <label for="inputAddress2" class="form-label">Dirección cont.</label>
+              <input type="text" class="form-control" id="inputAddress2" placeholder="Departamento, casa, etc">
+            </div>
+            <div class="col-md-6">
+              <label for="inputCity" class="form-label">Ciudad</label>
+              <input type="text" class="form-control" id="inputCity">
+            </div>
+            <div class="col-md-4">
+              <label for="inputState" class="form-label">Provincia</label>
+              <select id="inputState" class="form-select">
+                <option value="" selected="">Provincia</option>
+                        <option value="Ciudad Autónoma de buenos Aires">Ciudad Autónoma de Buenos Aires</option>
+                        <option value="Buenos Aires">Buenos Aires</option>
+                        <option value="Catamarca">Catamarca</option>
+                        <option value="Chaco">Chaco</option>
+                        <option value="Chubut">Chubut</option>
+                        <option value="Córdoba">Córdoba</option>
+                        <option value="Corrientes">Corrientes</option>
+                        <option value="Entre Ríos">Entre Ríos</option>
+                        <option value="Formosa">Formosa</option>
+                        <option value="Jujuy">Jujuy</option>
+                        <option value="La Pampa">La Pampa</option>
+                        <option value="La Rioja">La Rioja</option>
+                        <option value="Mendoza">Mendoza</option>
+                        <option value="Misiones">Misiones</option>
+                        <option value="Neuquén">Neuquén</option>
+                        <option value="Río Negro">Río Negro</option>
+                        <option value="Salta">Salta</option>
+                        <option value="San Juan">San Juan</option>
+                        <option value="Santa Cruz">Santa Cruz</option>
+                        <option value="Santa Fe">Santa Fe</option>
+                        <option value="Santiago del Estero">Santiago del Estero</option>
+                        <option value="Tierra del Fuego">Tierra del Fuego</option>
+                        <option value="Tucumán">Tucumán</option>        
+                    </select>
+
+            </div>
+            <div class="col-md-2">
+              <label for="inputZip" class="form-label">Código Postal</label>
+              <input type="text" class="form-control" id="inputZip">
+            </div>
+                    <br>
+                    <div class="col-md-1">
+                        <label for="inputEdad" class="form-label">Edad</label>
+                        <input type="number" class="form-control" id="inputEdad">
+                    </div>
+
+                    <div class="col-md-2">
+                        <label for="inputFechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+                        <input id="inputFechaNacimiento">
+                        <script>
+                            $('#inputFechaNacimiento').datepicker({
+                                uiLibrary: 'bootstrap5'
+                            });
+                        </script>
+                    </div>
+
+                      <div class="col-md-2">
+                        <label for="inputSexo" class="form-label">Sexo</label>
+                        <select id="inputSexo" class="form-select">
+                          <option value="" selected="">Sexo</option>
+                          <option value="">Femenino</option>
+                          <option value="">Masculino</option>
+                          <option value="">Binario</option>
+                          <option value="">Prefiere No indicarlo</option>                      
+                        </select>
+                      </div>
+    
+                      <div class="col-md-3">
+                        <label for="inputEstadoCivil" class="form-label">Estado Civil</label>
+                        <select id="inputEstadoCivil" class="form-select">
+                          <option value="" selected="">Estado civil</option>
+                          <option value="">Soltero/a</option>
+                          <option value="">Casado/a</option>
+                          <option value="">Divorciado/a</option>
+                          <option value="">Viudo/a</option>
+                          <option value="">Vínculo de hecho</option>
+                          <option value="">Separado/a</option>        
+                        </select>
+                      </div>               
+  
+                    <div class="col-md-1">
+                        <label for="inputPeso" class="form-label">Peso</label>
+                        <input type="number" class="form-control" id="inputPeso">
+                    </div>
+                    <div class="col-md-1">
+                        <label for="inputAltura" class="form-label">Altura</label>
+                        <input type="number" class="form-control" id="inputAltura">
+                    </div>               
+                    
+                
+                    <div class="col-md-2">
+                        <label for="inputGrupoSanguineo" class="form-label">Grupo Sanguíneo</label>
+                        <select id="inputGrupoSanguineo" class="form-select">
+                          <option value="" selected="">Grupo Sanguíneo</option>
+                          <option>A RH+</option>
+                          <option>A RH-</option>
+                          <option>B RH+</option>
+                          <option>B RH-</option>
+                          <option>AB RH+</option>
+                          <option>AB RH-</option>
+                          <option>O+</option>
+                          <option>O-</option>
+                        </select>
+                      </div>
+  
+                    <br>
+                <h3 class="form-titulo">Datos Clínicos</h3>
+                    <div class="container text">
+                        <div class="row align-items-start">
+                            <div class="col">
+                                <h4>Antecedentes Familiares</h4> 
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckHipertension">
+                                    <label class="form-check-label" for="flexCheckHipertension">
+                                    Hipertensión
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDiabetes">
+                                    <label class="form-check-label" for="flexCheckDiabetes">
+                                    Diabetes
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckAsma">
+                                    <label class="form-check-label" for="flexCheckAsma">
+                                    Asma
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckAlergias">
+                                    <label class="form-check-label" for="flexCheckAlergias">
+                                    Alergias
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckCorazon">
+                                    <label class="form-check-label" for="flexCheckCorazon">
+                                    Insuficiencia Cardíaca
+                                    </label>
+                                </div>
+                                                    
+                            </div>
+                            <div class="col">
+                                <h4>Consumos Problemáticos</h4>  
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckTabaco">
+                                    <label class="form-check-label" for="flexCheckTabaco">
+                                    Tabaco
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckAlcohol">
+                                    <label class="form-check-label" for="flexCheckAlcohol">
+                                    Alcohol
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckMarihuana">
+                                    <label class="form-check-label" for="flexCheckMarihuana">
+                                    Marihuana
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckCocaina">
+                                    <label class="form-check-label" for="flexCheckCocaina">
+                                    Cocaína
+                                    </label>
+                                </div>                        
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckOtras">
+                                    <label class="form-check-label" for="flexCheckOtras">
+                                    Otras Drogas Peligrosas
+                                    </label>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>            
+                <br>
+                
+                <div class="row g-3 col">
+                    <h3>Consulta Médica</h3>                                 
+                        <div class="col-md-2">
+                            <label for="inputFechaConsulta" class="form-label">Fecha de Consulta</label>
+                            <input id="inputFechaConsulta">
+                            <script>
+                                $('#inputFechaConsulta').datepicker({
+                                    uiLibrary: 'bootstrap5'
+                                });
+                            </script>
+                        </div>
+                        
+                        <div class="col-md-3">                    
+                            <label for="inputEspecialista" class="form-label">Nombre Especialista</label>
+                            <input type="text" class="form-control" id="inputEspecialista" placeholder="Médico Especialista"> <!-- Entre su Nombre"-->
+                        </div>
+
+                        <div class="col-md-3">                    
+                            <label for="inputEspecialidad" class="form-label">Especialidad Médica</label>
+                            <input type="text" class="form-control" id="inputEspecialidad" placeholder="Especialidad"> <!-- Entre su Nombre"-->
+                        </div>
+
+                        <div class="col-md-3">                    
+                            <label for="inputTelEspecialista" class="form-label">Teléfono Médico</label>
+                            <input type="text" class="form-control" id="inputTelEspecialista" placeholder="Teléfono"> <!-- Entre su Nombre"-->
+                        </div>
+
+                        <div class="mb-3 mt-3">
+                            <label for="inputSintomas">Descripción Síntomas</label>
+                            <textarea class="form-control" rows="2" id="inputSintomas" name="text" placeholder="Síntomas"></textarea>
+                        </div>
+                        
+                        <div class="mb-3 mt-3">
+                            <label for="inputDiagnostico">Diagnóstico</label>
+                            <textarea class="form-control" rows="2" id="inputDiagnostico" name="text" placeholder="Diagnóstico Profesional"></textarea>
+                        </div>
+                        
+                        <div class="mb-3 mt-3">
+                            <label for="inputTratamiento">Tratamiento</label>
+                            <textarea class="form-control" rows="2" id="inputTratamiento" name="text" placeholder="Indicación Tratamiento"></textarea>
+                        </div>
+                        
+
+                        <div class="mb-3 mt-3">
+                            <label for="comment">Comentarios:</label>
+                            <textarea class="form-control" rows="3" id="comment" name="text"></textarea>
+                        </div>
+                        
+                        <div class="mb-2">
+                            <label for="formFile" class="form-label">Estudios Médicos: </label>
+                            <input class="col-md-6" type="file" id="formFile">
+
+                            <button type="submit" class="btn btn-primary btn-sm btn-block">Subir Archivo</button>
+                        </div>
+                </div>
+                <div class="mb-2">
+                    <input class="btn btn-success col-md-2" type="submit" value="Registrar" >
+                    <input class="btn btn-warning col-md-2" type="reset" value="Resetear">
+                    <br>               
+                </div>
+            </form>    
+            
+        </section>
         <!-- FIN Contenido editable de la sección -->
 
         
@@ -190,7 +312,7 @@
 
     <!-- Bootstrapp 5.0.2 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="../assets/js/lib/wowjs/wow.min.js"></script>
+    <script src="../assets/js/lib/wowjs/wow.min.js"></script>
     <script>
         new WOW().init();
     </script>
