@@ -121,6 +121,7 @@
 }
 
 .home__steps a {
+    display: inline-block;
     text-decoration: none;
     padding: 10px 20px;
     background-color: #0f1c30;
