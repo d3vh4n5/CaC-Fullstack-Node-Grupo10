@@ -12,6 +12,7 @@
     <script src="https://kit.fontawesome.com/d90748bc75.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="stylesheet" href="../assets/css/modules/login.css">
+    <link rel="stylesheet" href="../assets/css/modules/register.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
     </style>
@@ -36,29 +37,34 @@
             </div>
 
             <div class="posiciontexto">
-                <h2 class="salud">Tu salud</h2>
-                <h2 class="salud"> <span class="posicionsiempre">Siempre a tu alcance</span></h2>
+                <h2 class="salud"> <span class="posicionsiempre">Registro de Usuario</span></h2>
             </div>
+
             <form method="POST">
                 <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre y apellido</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre y Apellido" required>
+                </div>
+                <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
-                    <input type="email" class="form-control" class="form-control1" id="email" name="email"
+                    <input type="email" class="form-control" id="email" name="email"
                         placeholder="nombre@ejemplo.com">
                 </div>
                 <div class="mb-3">
 
                     <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" class="form-control2" id="password" name="password" placeholder="contraseña">
+                    <input type="password" class="form-control" class="form-control2" id="password" name="password"
+                        placeholder="contraseña">
                 </div>
-                <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+                <div class="mb-3">
+
+                    <label for="exampleInputPassword1" class="form-label">Repetir contraseña</label>
+                    <input type="password" class="form-control" class="form-control2" id="password" name="password"
+                        placeholder="contraseña">
+                </div>
+                <button type="submit" class="btn btn-primary"> Registrarme </button>
             </form>
-            <div>
-                <a href="../pages/forgotten-passsword.html">olvide mi contraseña</a>
-            </div>
-            </div>
-            <div>
-                <a href="../pages/forgotten-passsword.html">Registrarme</a>
-            </div>
+            
         </section>
 
         <!-- FIN Contenido editable de la sección -->
@@ -73,7 +79,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-    <script type="text/javascript" src="../assets/js/lib/wowjs/wow.min.js"></script>
+    <script src="../assets/js/lib/wowjs/wow.min.js"></script>
     <script>
         new WOW().init();
     </script>
