@@ -29,7 +29,9 @@
                 </picture>
             </div>
             <div class="logo">
-                <img class="logo-img" src="../assets/img/favicon.ico" alt="logo de HealthUp">
+                <picture>
+                    <img class="logo-img" src="../assets/img/favicon.ico" alt="logo de HealthUp">
+                </picture>
             </div>
             <div>
                 <h1 class="HealthUp"><span class="colorHealth">Health</span><span class="colorUp">Up</span></h1>
@@ -42,21 +44,26 @@
             <form method="POST">
                 <div class="mb-3">
                     <label for="email" class="form-label">Correo electrónico</label>
-                    <input type="email" class="form-control" id="email" name="email"
-                        placeholder="nombre@ejemplo.com">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="nombre@ejemplo.com">
                 </div>
                 <div class="mb-3">
 
                     <label for="password" class="form-label">Contraseña</label>
                     <input type="password" class="form-control" id="password" name="password" placeholder="contraseña">
                 </div>
-                <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+                <div class="container-forgotten">
+                    <a href="../pages/historia.html" class="boton">Iniciar sesión</a>
+                </div>
+
             </form>
             <div class="container-forgotten">
                 <a class="omcontraseña" href="../pages/forgotten-passsword.html">olvide mi contraseña</a>
             </div>
             <div class="container-reg">
                 <a class="register" href="../pages/register.html">Registrarme</a>
+            </div>
+            <div class="container-reg">
+                <a class="register" href="../index.html">Ir a inicio</a>
             </div>
         </section>
 
