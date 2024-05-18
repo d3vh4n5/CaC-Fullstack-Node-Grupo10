@@ -28,46 +28,46 @@
 
             <div class="col-md-6">
               <label for="inputNombre" class="form-label">Nombre</label>
-              <input type="text" class="form-control" id="inputNombre" placeholder=""> <!-- Entre su Nombre"-->
+              <input type="text" class="form-control" id="inputNombre" name="inputNombre" placeholder="Nombre"> 
             </div>
 
             <div class="col-md-6">
               <label for="inputApellido" class="form-label">Apellido</label>
-              <input type="text" class="form-control" id="inputApellido">
+              <input type="text" class="form-control" id="inputApellido" name="inputApellido" placeholder="Apellido">
             </div>
 
             <div class="col-md-6">
                 <label for="inputEmail" class="form-label">Email</label>
-                <input type="email" class="form-control" id="inputEmail">
+                <input type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="@">
             </div>
             <div class="col-md-6">
                 <label for="inputIdUser" class="form-label">ID Usuario</label>
-                <input type="text" class="form-control" id="inputIdUser">
+                <input type="text" class="form-control" id="inputIdUser" name="inputIdUser">
             </div>
             <div class="col-md-6">
                 <label for="inputDNI" class="form-label">DNI</label>
-                <input type="text" class="form-control" id="inputDNI">
+                <input type="text" class="form-control" id="inputDNI" name="inputDNI" placeholder="123456789">
             </div>
             <div class="col-md-6">
                 <label for="inputTelefono" class="form-label">Teléfono</label>
-                <input type="text" class="form-control" id="inputTelefono">
+                <input type="text" class="form-control" id="inputTelefono" name="inputTelefono" placeholder="123456789">
             </div>
   
             <div class="col-12">
               <label for="inputAddress" class="form-label">Dirección</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="Avenida Siempreviva 123">
+              <input type="text" class="form-control" id="inputAddress" name="inputAddress" placeholder="Avenida Siempreviva 123">
             </div>
             <div class="col-12">
               <label for="inputAddress2" class="form-label">Dirección cont.</label>
-              <input type="text" class="form-control" id="inputAddress2" placeholder="Departamento, casa, etc">
+              <input type="text" class="form-control" id="inputAddress2" name="inputAddress2" placeholder="Departamento, casa, etc">
             </div>
             <div class="col-md-6">
               <label for="inputCity" class="form-label">Ciudad</label>
-              <input type="text" class="form-control" id="inputCity">
+              <input type="text" class="form-control" id="inputCity" name="inputCity" placeholder="Ciudad">
             </div>
             <div class="col-md-4">
               <label for="inputState" class="form-label">Provincia</label>
-              <select id="inputState" class="form-select">
+              <select id="inputState" name="inputState" class="form-select">
                 <option value="" selected="">Provincia</option>
                         <option value="Ciudad Autónoma de buenos Aires">Ciudad Autónoma de Buenos Aires</option>
                         <option value="Buenos Aires">Buenos Aires</option>
@@ -97,17 +97,17 @@
             </div>
             <div class="col-md-2">
               <label for="inputZip" class="form-label">Código Postal</label>
-              <input type="text" class="form-control" id="inputZip">
+              <input type="text" class="form-control" id="inputZip" name="inputZip" placeholder="AA1243">
             </div>
                     <br>
                     <div class="col-md-1">
                         <label for="inputEdad" class="form-label">Edad</label>
-                        <input type="number" class="form-control" id="inputEdad">
+                        <input type="number" class="form-control" id="inputEdad" name="inputEdad" placeholder="99">
                     </div>
 
                     <div class="col-md-2">
                         <label for="inputFechaNacimiento" class="form-label">Fecha de Nacimiento</label>
-                        <input id="inputFechaNacimiento">
+                        <input id="inputFechaNacimiento" name="inputFechaNacimiento">
                         <script>
                             $('#inputFechaNacimiento').datepicker({
                                 uiLibrary: 'bootstrap5'
@@ -117,7 +117,7 @@
 
                       <div class="col-md-2">
                         <label for="inputSexo" class="form-label">Sexo</label>
-                        <select id="inputSexo" class="form-select">
+                        <select id="inputSexo" name="inputSexo" class="form-select">
                           <option value="" selected="">Sexo</option>
                           <option value="">Femenino</option>
                           <option value="">Masculino</option>
@@ -128,7 +128,7 @@
     
                       <div class="col-md-3">
                         <label for="inputEstadoCivil" class="form-label">Estado Civil</label>
-                        <select id="inputEstadoCivil" class="form-select">
+                        <select id="inputEstadoCivil" name="inputEstadoCivil" class="form-select">
                           <option value="" selected="">Estado civil</option>
                           <option value="">Soltero/a</option>
                           <option value="">Casado/a</option>
@@ -141,17 +141,17 @@
   
                     <div class="col-md-1">
                         <label for="inputPeso" class="form-label">Peso</label>
-                        <input type="number" class="form-control" id="inputPeso">
+                        <input type="number" class="form-control" id="inputPeso" name="inputPeso" placeholder="99">
                     </div>
+
                     <div class="col-md-1">
                         <label for="inputAltura" class="form-label">Altura</label>
-                        <input type="number" class="form-control" id="inputAltura">
-                    </div>               
-                    
+                        <input type="number" class="form-control" id="inputAltura" name="inputAltura" placeholder="99">
+                    </div>                                   
                 
                     <div class="col-md-2">
                         <label for="inputGrupoSanguineo" class="form-label">Grupo Sanguíneo</label>
-                        <select id="inputGrupoSanguineo" class="form-select">
+                        <select id="inputGrupoSanguineo" name="inputGrupoSanguineo" class="form-select">
                           <option value="" selected="">Grupo Sanguíneo</option>
                           <option>A RH+</option>
                           <option>A RH-</option>
@@ -171,31 +171,31 @@
                             <div class="col">
                                 <h4>Antecedentes Familiares</h4> 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckHipertension">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckHipertension" name="flexCheckHipertension">
                                     <label class="form-check-label" for="flexCheckHipertension">
                                     Hipertensión
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDiabetes">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDiabetes" name="flexCheckDiabetes">
                                     <label class="form-check-label" for="flexCheckDiabetes">
                                     Diabetes
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckAsma">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckAsma" name="flexCheckAsma">
                                     <label class="form-check-label" for="flexCheckAsma">
                                     Asma
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckAlergias">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckAlergias" name="flexCheckAlergias">
                                     <label class="form-check-label" for="flexCheckAlergias">
                                     Alergias
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckCorazon">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckCorazon" name="flexCheckCorazon">
                                     <label class="form-check-label" for="flexCheckCorazon">
                                     Insuficiencia Cardíaca
                                     </label>
@@ -205,31 +205,31 @@
                             <div class="col">
                                 <h4>Consumos Problemáticos</h4>  
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckTabaco">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckTabaco" name="flexCheckTabaco">
                                     <label class="form-check-label" for="flexCheckTabaco">
                                     Tabaco
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckAlcohol">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckAlcohol" name="flexCheckAlcohol">
                                     <label class="form-check-label" for="flexCheckAlcohol">
                                     Alcohol
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckMarihuana">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckMarihuana" name="flexCheckMarihuana">
                                     <label class="form-check-label" for="flexCheckMarihuana">
                                     Marihuana
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckCocaina">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckCocaina" name="flexCheckCocaina">
                                     <label class="form-check-label" for="flexCheckCocaina">
                                     Cocaína
                                     </label>
                                 </div>                        
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckOtras">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckOtras" name="flexCheckOtras">
                                     <label class="form-check-label" for="flexCheckOtras">
                                     Otras Drogas Peligrosas
                                     </label>
@@ -243,7 +243,7 @@
                     <h3>Consulta Médica</h3>                                 
                         <div class="col-md-2">
                             <label for="inputFechaConsulta" class="form-label">Fecha de Consulta</label>
-                            <input id="inputFechaConsulta">
+                            <input id="inputFechaConsulta" name="inputFechaConsulta">
                             <script>
                                 $('#inputFechaConsulta').datepicker({
                                     uiLibrary: 'bootstrap5'
@@ -253,46 +253,46 @@
                         
                         <div class="col-md-3">                    
                             <label for="inputEspecialista" class="form-label">Nombre Especialista</label>
-                            <input type="text" class="form-control" id="inputEspecialista" placeholder="Médico Especialista"> <!-- Entre su Nombre"-->
+                            <input type="text" class="form-control" id="inputEspecialista" name="inputEspecialista" placeholder="Médico Especialista"> <!-- Entre su Nombre"-->
                         </div>
 
                         <div class="col-md-3">                    
                             <label for="inputEspecialidad" class="form-label">Especialidad Médica</label>
-                            <input type="text" class="form-control" id="inputEspecialidad" placeholder="Especialidad"> <!-- Entre su Nombre"-->
+                            <input type="text" class="form-control" id="inputEspecialidad" name="inputEspecialidad" placeholder="Especialidad"> <!-- Entre su Nombre"-->
                         </div>
 
                         <div class="col-md-3">                    
                             <label for="inputTelEspecialista" class="form-label">Teléfono Médico</label>
-                            <input type="text" class="form-control" id="inputTelEspecialista" placeholder="Teléfono"> <!-- Entre su Nombre"-->
+                            <input type="text" class="form-control" id="inputTelEspecialista" name="inputTelEspecialista" placeholder="Teléfono"> <!-- Entre su Nombre"-->
                         </div>
 
                         <div class="mb-3 mt-3">
                             <label for="inputSintomas">Descripción Síntomas</label>
-                            <textarea class="form-control" rows="2" id="inputSintomas" name="text" placeholder="Síntomas"></textarea>
+                            <textarea class="form-control" rows="2" id="inputSintomas" name="inputSintomas" placeholder="Síntomas"></textarea>
                         </div>
                         
                         <div class="mb-3 mt-3">
                             <label for="inputDiagnostico">Diagnóstico</label>
-                            <textarea class="form-control" rows="2" id="inputDiagnostico" name="text" placeholder="Diagnóstico Profesional"></textarea>
+                            <textarea class="form-control" rows="2" id="inputDiagnostico" name="inputDiagnostico" placeholder="Diagnóstico Profesional"></textarea>
                         </div>
                         
                         <div class="mb-3 mt-3">
                             <label for="inputTratamiento">Tratamiento</label>
-                            <textarea class="form-control" rows="2" id="inputTratamiento" name="text" placeholder="Indicación Tratamiento"></textarea>
+                            <textarea class="form-control" rows="2" id="inputTratamiento" name="inputTratamiento" placeholder="Indicación Tratamiento"></textarea>
                         </div>
                         
 
                         <div class="mb-3 mt-3">
-                            <label for="comment">Comentarios:</label>
-                            <textarea class="form-control" rows="3" id="comment" name="text"></textarea>
+                            <label for="inputComentarios">Comentarios:</label>
+                            <textarea class="form-control" rows="3" id="inputComentarios" name="inputComentarios" placeholder="Comentarios"></textarea>
                         </div>
                         
-                        <div class="mb-2">
-                            <label for="formFile" class="form-label">Estudios Médicos: </label>
-                            <input class="col-md-6" type="file" id="formFile">
-
+                        <div class="col-md-8">
+                            <label for="fileEstudiosMedicos" class="form-label">Estudios Médicos: </label>
+                            <input class="col-md-6" type="file" id="fileEstudiosMedicos" name="fileEstudiosMedicos">
                             <button type="submit" class="btn btn-primary btn-sm btn-block">Subir Archivo</button>
                         </div>
+                        
                 </div>
                 <div class="mb-2">
                     <input class="btn btn-success col-md-2" type="submit" value="Registrar" >
