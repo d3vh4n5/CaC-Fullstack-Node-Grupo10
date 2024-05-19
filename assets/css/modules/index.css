@@ -57,8 +57,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 20px;
-    margin-right: 20px;
     padding: 20px;
     background-color: #668DC0;
     border-radius: 20px;
@@ -74,8 +72,6 @@
     flex-direction: column;
     display: flex;
     justify-content: center;
-    margin-left: 20px;
-    margin-right: 20px;
     background-color: #304A6E;
     border-radius: 20px;
     padding: 20px;
@@ -131,9 +127,15 @@
     border-radius: 20px;
 }
 
-.home__instructions-title {
-    text-align: center;
+.home__instructions-container h3 {
+    text-align: justify;
     padding: 10px;
+}
+
+.home__instructions-container i {
+    font-size: 50px;
+    color: #0f1c30;
+    display: flex;
 }
 
 .home__steps li p {
@@ -145,8 +147,6 @@
     display: inline-block;
     text-decoration: none;
     padding: 10px 20px;
-    margin-left: 500px;
-    margin-right: 20px;
     background-color: #0f1c30;
     color: white;
     border: none;
@@ -225,6 +225,12 @@
     border-radius: 20px;
 }
 
+.home__phrase-container i {
+    font-size: 50px;
+    color: white;
+    flex-direction: column;
+}
+
 .home__phrase-container h4 {
     text-align: center;
     color: white;
@@ -247,8 +253,6 @@
     display: inline-block;
     text-decoration: none;
     padding: 10px 20px; 
-    margin-left: 550px;
-    margin-right: 20px;
     background-color: #0f1c30;
     color: white;
     border: none;
@@ -277,8 +281,6 @@
     display: inline-block;
     text-decoration: none;
     padding: 10px 20px; 
-    margin-left: 550px;
-    margin-right: 20px;
     background-color: #0f1c30;
     color: white;
     border: none;
@@ -305,18 +307,7 @@
     .about__banner{
         height: 300px;
     }
-    .home__steps a {
-        margin-left: 350px;
-        margin-right: 20px;
-    }
-    .home__help-container a {
-        margin-left: 350px;
-        margin-right: 20px;
-    }
-    .home__doubts-container a {
-        margin-left: 350px;
-        margin-right: 20px;
-    }
+    
 }
 
 /*Comienzo de la parte responsive celular*/
@@ -340,25 +331,13 @@
     .home__guide {
         flex-direction: column;
     }
-    .home__steps a {
-        margin-left: 60px;
-        margin-right: 20px;
-    }
     .home__help-container {
         width: auto;
         height: auto;
     }
-    .home__help-container a {
-        margin-left: 100px;
-        margin-right: 10px;
-    }
     .home__doubts-container {
         width: auto;
         height: auto;
-    }
-    .home__doubts-container a {
-        margin-left: 100px;
-        margin-right: 10px;
     }
 
 }
