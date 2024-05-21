@@ -1,5 +1,6 @@
 * {
     margin: 0;
+    padding: 0%;
 }
 header {
     display: none;
@@ -9,7 +10,7 @@ footer  {
 }
 
 .healt-login {
-    height: 300px;
+    height: 400px;
 }
 
 .login-img {
@@ -18,21 +19,40 @@ footer  {
     object-fit: cover;
     mask-image: linear-gradient(black 60%, transparent);
 }
-
-.logo-img {
+.logo{
     position: absolute;
-    top: 20px;
-    left: 25px;
+    top: 110px;
+    left: 300px;
+}
+.logoForg{
+    position: absolute;
+    top: 180px;
+    left: 270px;
+ }
+.logo-img {
+
+    max-width: 40%; /* Ajusta la imagen al 100% del contenedor */
+    max-height: 40%; /* Ajusta la imagen al 100% del contenedor */
+    height: auto; /* Mantiene la proporción de aspecto */ 
 }
 
 .HealthUp {
     font-family: "Courgette", cursive;
     font-weight: 400;
     font-style: normal;
-    font-size: 30px;
+    font-size: 25px;
     position: absolute;
-    top: 250px;
-    left: 90px;
+    top: 210px;
+    left: 290px;
+}
+.HealthUpForg {
+    font-family: "Courgette", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+    position: absolute;
+    top: 268px;
+    left: 270px;
 }
 
 .colorHealth {
@@ -48,11 +68,14 @@ footer  {
     top: 20%;
     left: 38%;
 }
-
+.posiciontextoForg {
+    position: absolute;
+    top: 30%;
+    left: 38%;
+}
 .salud {
     font-family: Arial, Helvetica, sans-serif;
-    font-style: oblique;
-    color: rgb(71, 144, 166);
+    color: rgb(58, 142, 168);;
     font-size: 35px;
     text-align: center;
 }
@@ -60,16 +83,16 @@ footer  {
 .input-group {
     border-radius: 10px;
 }
-
 .form-control {
     position: relative;
-    width: 30%;
-    left: 35%;
+    width: 100%;
+    left: 90%;
+    border-color: rgb(33, 88, 105);
 }
 .form-label {
     position: relative;
-    width: 20%;
-    left: 40%;
+    width: 100%;
+    left: 90%;
     font-family: Arial, Helvetica, sans-serif;
     font-style: oblique;
     color: rgb(71, 144, 166);
@@ -82,8 +105,12 @@ footer  {
 
 }
 .container-reg, .container-forgotten{
-    display: flex; 
-    justify-content: center;
+    position: relative;
+    width: 100%;
+    left: 90%;
+    text-align: center;
+    line-height: 2;
+    text-decoration: none;
     
 }
 .omcontraseña, .register{
@@ -95,7 +122,6 @@ footer  {
 .boton {
     display: block;
     margin:auto;
-    padding: 10px 20px;
     font-size: 16px;
     color: #fff;
     background-color: rgb(71, 144, 166);
@@ -118,4 +144,40 @@ footer  {
 .boton:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgb(71, 144, 166);;
+}
+.formRegister {
+    position: absolute;
+    top: 220px;
+    left: 25%;
+}
+.formRegisterLogin {
+
+    position: absolute;
+    top: 270px;
+    left: 28%;
+}
+.formRegisterForg {
+
+    position: absolute;
+    top: 350px;
+    left: 25%;
+}
+
+.h3Forgotten {
+    position: absolute;
+    top: 260px;
+    left: 30%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(31, 121, 148);
+    font-size: 25px;
+    text-align: center;
+}
+
+.formRegister1 {
+    line-height: 3;
+}
+.form-control.falla input {
+    border: 0.1px solid;
+    border-color: #fe5f55;
+
 }

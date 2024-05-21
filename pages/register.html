@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto - Grupo 10</title>
+    <title>Registrarme</title>
     <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -12,7 +12,6 @@
     <script src="https://kit.fontawesome.com/d90748bc75.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="stylesheet" href="../assets/css/modules/login.css">
-    <link rel="stylesheet" href="../assets/css/modules/register.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
     </style>
@@ -37,41 +36,48 @@
             </div>
 
             <div class="posiciontexto">
-                <h2 class="salud"> <span class="posicionsiempre">Registro de Usuario</span></h2>
+                <h2 class="salud">Registrarme</h2>
             </div>
+        </section>
+        <section>
             <div class="formRegister">
-                <form method="POST">
+                <form id="formulario" method="post">
 
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre y apellido</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre"
-                            placeholder="Nombre y Apellido" required>
+                        <input type="text" id="nombre" class="form-control" name="nombre"
+                            placeholder="Nombre y Apellido">
+                        <p></p>
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
+                        <label for="email" class="form-label">Correo electrónico</label>
                         <input type="email" class="form-control" id="email" name="email"
                             placeholder="nombre@ejemplo.com">
+                        <p></p>
                     </div>
                     <div class="mb-3">
 
-                        <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" class="form-control2" id="password" name="password"
+                        <label for="password" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="password" name="password"
                             placeholder="contraseña">
+                        <p></p>
                     </div>
                     <div class="mb-3">
 
-                        <label for="exampleInputPassword1" class="form-label">Repetir contraseña</label>
-                        <input type="password" class="form-control" class="form-control2" id="password" name="password"
-                            placeholder="contraseña">
+                        <label for="passConfirma" class="form-label">Repetir contraseña</label>
+                        <input type="password" class="form-control" id="passConfirma" name="passConfirma"
+                            placeholder=" Repetir contraseña">
+                        <p></p>
                     </div>
                     <div class="container-forgotten">
-                        <a href="../pages/historia.html" class="boton">Registrarme</a>
+                        <a href="../pages/login.html" class="boton">Registrarme</a>
                     </div>
                     <div class="container-forgotten">
-                        <a class="omcontraseña" href="../pages/login.html">Volver</a>
+                        <a href="../index.html">Inicio</a>
                     </div>
-
+                    <!--<button>enviar</button>-->
                 </form>
+
             </div>
         </section>
 
@@ -92,6 +98,7 @@
         new WOW().init();
     </script>
     <script type="module" src="../assets/js/main.js"></script>
+    <script src="../assets/js/modules/login.js"></script>
 </body>
 
 </html>
