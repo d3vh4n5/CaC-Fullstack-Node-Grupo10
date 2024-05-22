@@ -16,7 +16,7 @@ window.addEventListener('load', () => {
         const emailValor = email.value.trim()
         const passwordValor = password.value.trim()
       //  const passConfirmaValor = passConfirma.value.trim();
- 
+      
         //validando campo email
         const validaEmail = (email) => {
             return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);        
