@@ -15,54 +15,36 @@
 </head>
 
 <body>
-    <header-component></header-component>
+
     <main>
         <!-- Contenido editable de la sección -->
 
-        <div class="healt-login">
-            <picture>
-                <img class="login-img" src="../assets/img/healt-login.png" alt="banner login">
-            </picture>
-        </div>
-        <div class="logoForg">
-            <img class="logo-img" src="../assets/img/favicon.ico" alt="logo de HealthUp">
-        </div>
-        <div>
-            <h2 class="HealthUpForg"><span class="colorHealth">Health</span><span class="colorUp">Up</span></h2>
-        </div>
-
-        <div class="posiciontextoForg">
-            <h1 class="salud">Olvide mi contraseña</h1>
-
-        </div>
-        <div class="formRegister1">
-            <div>
-                <h3 class="h3Forgotten">Ingresa tu email y recibí instrucciones para recuperarla </h3>
+        <div class="container-1">
+            <div class="logo">
+                <img class="logo-img" src="../assets/img/healthup-imagotipo.png" alt="logo de HealthUp">
             </div>
-            <div class="formRegisterForg">
-                <form id="formulario" method="post">
-
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Correo electrónico</label>
-                            <input type="email" class="form-control" id="email" name="email"
-                                placeholder="nombre@ejemplo.com">
-                            <P></P>
-                        </div>
-                    </form>
+            <div class="h2-1">
+                <h2>Registrarme</h2>
+                <h3>Ingresa tu email y recibí instrucciones para recuperarla </h3>
             </div>
-            <div class="container-forgotten">
-                <a href="../pages/login.html" class="boton">Recuperar contraseña</a>
+        </div>
+        <form id="formulario" method="post">
+            <div class="mb-3">
+                <label for="email" class="form-label">Correo electrónico</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="nombre@ejemplo.com" required>
+                <P></P>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-primary">Recuperar contraseña</button>
             </div>
             <div class="container-forgotten">
                 <a class="omcontraseña" href="../pages/login.html">Volver</a>
             </div>
-        </div>
+        </form>
         <!-- FIN Contenido editable de la sección -->
 
 
     </main>
-
-    <footer-component></footer-component>
 
 
     <!-- Bootstrapp 5.0.2 -->
