@@ -29,26 +29,26 @@
             <form id="formulario" method="post">
                 <div class="mb-3">
                     <label for="email" class="form-label">Correo electrónico</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="nombre@ejemplo.com">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="nombre@ejemplo.com" required>
                     <p></p>
                 </div>
                 <div class="mb-3">
 
                     <label for="password" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="contraseña">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="contraseña" required>
                     <p></p>
                 </div>
-                <!--<div class="container-forgotten">
-                        <a href="../pages/historia.html" class="boton">Iniciar sesión</a>
-                    </div>-->
-                <button class="btn btn-primary">enviar</button>
+                    <div class="text-center">
+                        <button class="btn btn-primary" >enviar</button>
+                    </div>
+
                 <div class="container-forgotten">
-                    <a class="omcontraseña" href="../pages/forgotten-passsword.html">olvide mi contraseña</a>
-                </div>
-                <div class="container-reg">
+                    <a class="omcontraseña" href="../pages/forgotten-passsword.html">olvide mi contraseña<a>
+                    </div>
+                    <div class="container-forgotten">
                     <a class="register" href="../pages/register.html">Registrarme</a>
                 </div>
-                <div class="container-reg">
+                <div class="container-forgotten">
                     <a class="register" href="../index.html">Inicio</a>
                 </div>
             </form>
