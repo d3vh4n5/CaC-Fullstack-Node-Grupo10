@@ -16,7 +16,7 @@ window.addEventListener('load', () => {
         const emailValor = email.value.trim()
         const passwordValor = password.value.trim()
         const passConfirmaValor = passConfirma.value.trim();
- }
+        
         //validando campo email
 
         if(!emailValor){
