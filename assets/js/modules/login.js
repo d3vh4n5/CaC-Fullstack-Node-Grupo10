@@ -1,6 +1,6 @@
 window.addEventListener('load', () => {
     const form = document.getElementById('formulario')
-    const nombre = document.getElementById('nombre')
+    const nombre = document.getElementById('nombre')*/
     const email = document.getElementById('email')
     const password = document.getElementById('password')
     const passConfirma = document.getElementById('passConfirma')
@@ -12,12 +12,27 @@ window.addEventListener('load', () => {
 
     const validaCampos = () => {
         //capturar los valores ingresados por el usuario
-        const nombreValor = nombre.value.trim() //trim elimina espacios vacios delante y detras del string
+       // const nombreValor = nombre.value.trim() //trim elimina espacios vacios delante y detras del string
         const emailValor = email.value.trim()
         const passwordValor = password.value.trim()
-        const passConfirmaValor = passConfirma.value.trim();
-        
+      //  const passConfirmaValor = passConfirma.value.trim();
+      
         //validando campo email
+        const validaEmail = (email) => {
+            return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);        
+        }
+        const validaFalla = (input, msje) => {
+            const formControl = input.parentElement
+            const aviso = formControl.querySelector('p')
+            aviso.innerText = msje
+            console.log(formControl)
+            formControl.className = 'form-control falla'
+
+        }
+        const validaOk = (input, msje) => {
+            const formControl = input.parentElement
+            formControl.className = 'form-control ok'
+        }
 
         if(!emailValor){
             validaFalla(email, 'Campo vacio')
@@ -37,20 +52,9 @@ window.addEventListener('load', () => {
             validaOk(nombre)
         }
 
-        const validaFalla = (input, msje) => {
-            const formcontrol = input.parentElement
-            const aviso = formcontrol.querySelector('p')
-            aviso.innerText = msje
-            formControl.className = 'form-control falla'
-
-        }
-        const validaOk = (input, msje) => {
-            const formControl = input.parentElement
-            formControl.className = 'form-control ok'
-        }
-        const validaEmail = (email) => {
-            return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);        
-        }
+        
+       
+        
 
         //validando campo password
         const er = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,18}$/
@@ -73,4 +77,5 @@ window.addEventListener('load', () => {
             validaOk(passConfirma)
         } 
     
-    } )
+    }
+}) 
