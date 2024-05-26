@@ -15,8 +15,8 @@ main {
     background: url("../../img/healt-login.png");
     background-size: cover;
     height: 40%;
-    background-position: 50%;
     mask-image: linear-gradient(black 60%, transparent);
+    background-position: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,20 +25,32 @@ main {
 
 .logo {
     position: absolute;
-    left: 1.5%;
-    top: 10%;
-}
+    left: 10px;
+    }
 
 .login-img {
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    height: 70%;
     object-fit: cover;
 }
-
-h1 {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+.centrado {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+h2{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #0d6efd;
     font-size: 30px;
+    text-align: center;
+}
+h3{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #0d6efd;
+    font-size: 20px;
 }
 
 .h1-1 {
@@ -50,10 +62,13 @@ h1 {
 
 #formulario {
     max-width: 400px;
-    position: relative;
-    z-index: 99;
     margin-inline: auto;
     padding: 20px;
+    position: relative;
+    z-index: 50;
+}
+.fomularioRegister{
+    line-height: 0.7;
 }
 
 #formularioR {
@@ -66,23 +81,56 @@ h1 {
 
 .container-forgotten {
     text-align: center;
-    padding: 5px;
-    margin-top: 15px;
+    padding: 5px;    
 }
-
-@media (max-width: 600px) {
-    .logo-img {
-        width: 90px;
+.subrayado{
+    text-decoration: none;
+}
+@media (max-width: 850px){
+    .logo-img{
+        width: 70px;
     }
+    .logo{
+        top: 30px;
+        
 
-    .logo {
-        top: 15px;
     }
-
-    h2 {
-        font-size: 40px;
+    h2{
+        font-size: 20px;
         text-align: center;
     }
-      
+    #formulario{
+        margin-inline: auto;
+        position: relative;
+        padding: 1px;
+        z-index: 20;
     }
-}
+    .fomularioRegister{
+        line-height: 0.4;
+    }
+ }
+
+@media (max-width: 600px){
+    .logo-img{
+        width: 50px;
+    }
+    .logo{
+        top: 20px;
+        
+
+    }
+    h2{
+        font-size: 20px;
+        text-align: center;
+    }
+    #formulario{
+        margin-inline: auto;
+        position: relative;
+        padding: 0;
+        z-index: 18;
+    }
+    .fomularioRegister{
+        line-height: 0.2;
+    }
+ }
+
