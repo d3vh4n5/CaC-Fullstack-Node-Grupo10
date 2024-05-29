@@ -5,7 +5,7 @@ export const ROUTES = [
     },
     {
         href: "/pages/historia.html",
-        label: "Historia"
+        label: "Mi Historial"
     },
     {
         href: "/pages/about.html",
