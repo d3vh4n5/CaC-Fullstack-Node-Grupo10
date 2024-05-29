@@ -16,7 +16,6 @@
 .home__title{
     padding: 10px 40px;
     position: absolute;
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
     top: 40%;
     left: 50%;
@@ -299,12 +298,12 @@
 /*Comienzo de la parte responsive tablet*/
 
 @media (max-width: 980px) {
-    .about__title {
+    .home__title {
         width: 90%;
         text-align: center;
     }
 
-    .about__banner{
+    .home__banner{
         height: 300px;
     }
     
@@ -317,11 +316,11 @@
         font-size: 14px;
     }
 
-    .about__banner{
+    .home__banner{
         height: 200px;
     }
 
-    .about{
+    .home{
         top: -110px;
     }
     .home__intro {
