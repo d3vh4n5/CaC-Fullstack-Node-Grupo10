@@ -1,4 +1,5 @@
 import { basePath } from "../constants/basePath.js"
+import { API_URL } from "../constants/apiURL.js"
 
 function handleSubmit(e, $form){
     e.preventDefault()
@@ -47,4 +48,90 @@ export function sendToShowData(){
     }
 }
 
+export async function submitJsonData(url, jsonData){
+    fetch(url, {
+        method: 'POST',
+        headers: { 
+            'Content-Type': 'application/json' 
+        },
+        body: JSON.stringify(jsonData)
+    }).then(resp => {
+        console.log(resp)
+        alert("Información enviada correctamente")
+    }).catch(e => {
+        console.error("Hubo un error al enviar el mensaje: ", e)
+        alert("Ocurrió un error al enviar la data")
+    })
+}
 
+export async function submitFormData(event) {
+    // Funcion obtenida de este articulo: https://www.freecodecamp.org/news/upload-files-with-javascript/
+    const $form = event.currentTarget;
+    const url = new URL($form.action);
+    const formData = new FormData($form);
+    const searchParams = new URLSearchParams(formData);
+  
+    /** @type {Parameters<fetch>[1]} */
+
+    const fetchOptions = {
+      method: $form.method
+    };
+
+    if ($form.method.toLowerCase() === 'post') {
+        if ($form.enctype === 'multipart/form-data') {
+          fetchOptions.body = formData;
+        } else {
+          fetchOptions.body = searchParams;
+        }
+    } else {
+        url.search = searchParams;
+    }
+  
+    fetch(url, fetchOptions)
+        .then(resp => {
+            console.log(resp)
+            alert("Información enviada correctamente")
+        })
+        .catch(err => {
+            console.log("Hubo un error al enviar la información: ", err)
+            alert("Ocurrió un error al enviar la información")
+        })
+  
+    event.preventDefault();
+}
+
+export async function submitFormData2(event) {
+    // Funcion obtenida de este articulo: https://www.freecodecamp.org/news/upload-files-with-javascript/
+    const $form = event.currentTarget;
+    const url = new URL(API_URL + '/contact-messages');
+    const formData = new FormData($form);
+    const searchParams = new URLSearchParams(formData);
+  
+    /** @type {Parameters<fetch>[1]} */
+
+    const fetchOptions = {
+      method: $form.method
+    };
+
+    if ($form.method.toLowerCase() === 'post') {
+        if ($form.enctype === 'multipart/form-data') {
+          fetchOptions.body = formData;
+        } else {
+          fetchOptions.body = searchParams;
+        }
+    } else {
+        url.search = searchParams;
+    }
+  
+    fetch(url, fetchOptions)
+        .then(resp => {
+            console.log(resp)
+            alert("Información enviada correctamente")
+        })
+        .catch(err => {
+            console.log("Hubo un error al enviar la información: ", err)
+            alert("Ocurrió un error al enviar la información")
+        })
+  
+    event.preventDefault();
+}

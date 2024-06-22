@@ -1,10 +1,5 @@
 import { validate } from "../utils/ezFormValidator.js"
-import { sendToShowData } from "../utils/formsSendingData.js"
-// import { createApp } from "vue";
-// import App from "../components/App.vue";
-
-// const app = createApp(App);
-// app.mount("#app");
+import { submitFormData2 } from "../utils/formsSendingData.js"
 
 const $form = document.querySelector('#contactForm')
 
@@ -13,4 +8,20 @@ validate($form, {
     typeExclude: ['file']
 })
 
-sendToShowData()
+$form.addEventListener('submit', async (event)=> {
+    event.preventDefault()
+    console.log(event)
+
+    const { captcha, file } = event.target
+    
+    // Validacion de los inputs
+
+    if (captcha.checked){
+        
+        await submitFormData2(event)
+        
+        event.target.reset()
+    } else {
+        alert("Debe checkear el captcha")
+    }
+})

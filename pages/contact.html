@@ -68,7 +68,7 @@
                 </div>
                 <div class="col-12 col-lg-6">
                     
-                    <form action="/pages/show_data.html" target="_blank" id="contactForm" onsubmit="handleSubmit(event)">
+                    <form  id="contactForm" onsubmit="handleSubmit(event)" method="POST" action="/api/v1/contact-messages" enctype="multipart/form-data">
 
                         <div class="row mb-3">
                             <div class="col">
@@ -89,7 +89,7 @@
                             <input type="text" class="form-control" id="subject" placeholder="Título breve del tema" name="subject" required pattern="[A-Za-z0-9\s]{5,50}" title="Letras y números. min 5 max 40">
                         </div>
                         <div class="form-floating mb-3">
-                            <textarea class="form-control" placeholder="Leave a comment here" id="description" name="description" style="height: 100px" minlength="20" maxlength="500" required></textarea>
+                            <textarea class="form-control" placeholder="Leave a comment here" id="message" name="message" style="height: 100px" minlength="20" maxlength="500" required></textarea>
                             <label for="description">Escribe tu mensaje aquí</label>
                         </div>
                         <select class="form-select mb-3" aria-label="Default select example" id="type" name="type" required>
@@ -103,6 +103,7 @@
                         
                         <div class="mb-3">
                             <label for="formFile" class="form-label">Puede subir una imagen o archivo de ser necesario</label>
+                            <small for="formFile" class="form-label">⚠️ Archivos permitidos: .png .jpg .jpeg .txt .pdf y .doc</small>
                             <input class="form-control" type="file" id="formFile" name="file">
                         </div>
                         
