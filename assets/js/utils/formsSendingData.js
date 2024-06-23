@@ -55,12 +55,16 @@ export async function submitJsonData(url, jsonData){
             'Content-Type': 'application/json' 
         },
         body: JSON.stringify(jsonData)
-    }).then(resp => {
-        console.log(resp)
-        alert("Información enviada correctamente")
+    })
+        .then(resp => resp.json())
+        .then(data => {
+        console.log(data)
+        console.log("Información enviada correctamente")
+        return data
     }).catch(e => {
         console.error("Hubo un error al enviar el mensaje: ", e)
         alert("Ocurrió un error al enviar la data")
+        return null
     })
 }
 

@@ -1,81 +1,71 @@
+import { submitJsonData } from "../utils/formsSendingData.js"
+import { API_URL } from "../constants/apiURL.js"
+import { basePath } from "../constants/basePath.js"
+
 window.addEventListener('load', () => {
     const form = document.getElementById('formulario')
-    const nombre = document.getElementById('nombre')
     const email = document.getElementById('email')
     const password = document.getElementById('password')
-    const passConfirma = document.getElementById('passConfirma')
 
-    form.addEventListener('submit', (e) => {
+    const isSignedIn = localStorage.getItem('accessToken')
+
+    if (isSignedIn !== null) {
+        alert("Ya estás logeado, serás redirigido..")
+        document.location.href =  basePath + '/pages/dashboard.html'
+    }
+
+    form.addEventListener('submit', async (e) => {
         e.preventDefault()
-        validaCampos()
+        const valid = validaCampos()
+
+        if (!valid) return console.log("Campos no validos, reintentar")
+        
+        try {
+            const resp = await fetch(API_URL + '/auth/login', {
+                method: 'POST',
+                headers: { 
+                    'Content-Type': 'application/json' 
+                },
+                body: JSON.stringify({
+                    email: email.value,
+                    password: CryptoJS.SHA256(password.value).toString()
+                })
+            })
+
+            console.log(resp.status)
+
+            if (resp.status >= 200 && resp.status <= 300){
+                alert("Logeado correctamente, será redirigido..")
+                const data = await resp.json()
+                console.log(data)
+                const { user, accessToken, refreshToken } = data
+
+                localStorage.setItem("user", JSON.stringify(user))
+                localStorage.setItem("accessToken", accessToken)
+                localStorage.setItem("refreshToken", refreshToken)
+                
+                document.location.href = basePath + '/pages/dashboard.html'
+            } else {
+                const data = await resp.json()
+                alert("Algo salió mal: " + data.error)
+            }
+            
+        } catch (error) {
+            console.log(error)
+            alert("Hubo un error")
+        }
+        
     })
 
     const validaCampos = () => {
-        //capturar los valores ingresados por el usuario
-       // const nombreValor = nombre.value.trim() //trim elimina espacios vacios delante y detras del string
+        //Verifico que los campos tengan contenido y no sean un espacio vacio
         const emailValor = email.value.trim()
         const passwordValor = password.value.trim()
-      //  const passConfirmaValor = passConfirma.value.trim();
       
-        //validando campo email
-        const validaEmail = (email) => {
-            return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);        
+        if (emailValor === '' || passwordValor === ''){
+            alert("Por favor, complete todos los campos")
+            return false
         }
-        const validaFalla = (input, msje) => {
-            const formControl = input.parentElement
-            const aviso = formControl.querySelector('p')
-            aviso.innerText = msje
-            console.log(formControl)
-            formControl.className = 'form-control falla'
-
-        }
-        const validaOk = (input, msje) => {
-            const formControl = input.parentElement
-            formControl.className = 'form-control ok'
-        }
-
-        if(!emailValor){
-            validaFalla(email, 'Campo vacio')
-        }else if(!validaEmail(emailValor)){
-            validaFalla(email, 'El e-mail no es valido')
-        }else{
-            validaOk(email)
-        }
-
-        //validando campo nombre
-        //(!nombreValor) ? console.log('CAMPO VACIO') : console.log(nombreValor)
-
-        if(!nombreValor) {
-            console.log('Campo vacío')
-            validaFalla(nombre, 'Campo vacío')
-        }else{
-            validaOk(nombre)
-        }
-
-        
-       
-        
-
-        //validando campo password
-        const er = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,18}$/
-        if (!passwordValor) {
-            validaFalla(password, 'Campo vacío')
-        } else if (passwordValor.length < 8) {
-            validaFalla(passpasword, 'Debe tener 8 caracteres cómo mínimo.')
-        } else if (!passwordValor.match(er)) {
-            validaFalla(password, 'Debe tener al menos una may., una min. y un núm.')
-        } else {
-            validaOk(password)
-        }
-
-        //validando campo password Confirmación
-        if (!passConfirmaValor) {
-            validaFalla(passConfirma, 'Confirme su password')
-        } else if (passValor !== passConfirmaValor) {
-            validaFalla(passConfirma, 'La password no coincide')
-        } else {
-            validaOk(passConfirma)
-        } 
-    
+        return true
     }
 }) 
