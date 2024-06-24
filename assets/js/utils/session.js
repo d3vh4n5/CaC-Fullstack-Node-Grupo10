@@ -28,6 +28,10 @@ class Session {
         return this.#isSignedIn
     }
 
+    get userName() {
+        return this.#name
+    }
+
     async destroy(){
         // solicitd de logout al back para que borre el refresh token
         localStorage.removeItem('user')
@@ -37,7 +41,7 @@ class Session {
         document.location.href = basePath + '/'
     }
 
-    show(){
+    show(){ // Por motivos didáctios, pero esto no debería existir
         console.table({
             Nombre: this.#name,
             email: this.#email,
