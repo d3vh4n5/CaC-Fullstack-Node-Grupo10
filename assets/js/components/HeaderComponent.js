@@ -1,6 +1,7 @@
-import { ROUTES } from "../constants/routes.js";
+import { ROUTES, PROTECTED_ROUTES } from "../constants/routes.js";
 import { basePath } from "../constants/basePath.js";
 import { logoPath } from "../constants/logoPath.js";
+import session from "../utils/session.js";
 
 const headerTempalte = (basePath = '') => { return`
 <header class="header">
@@ -26,12 +27,30 @@ const headerTempalte = (basePath = '') => { return`
                   </li>
                   `
                 )).join('')}
+                ${
+                    session.isSignedIn  
+                        ? PROTECTED_ROUTES.map(R => (
+                            `
+                            <li class="header__nav-item">
+                                <a class="header__nav-link" href="${basePath + R.href}">${R.label}</a>
+                            </li>
+                            `
+                            )).join('')
+                        : ''
+                }
             </ul>
             <div class="header__login-container">
-                <a href="/pages/login.html" class="INSIDE-NAV header__login-btn">
-                    <i class="fa-solid fa-user"></i>
-                    Login
-                </a>
+                ${session.isSignedIn 
+                    ? `
+                        <a href="/pages/logout.html" class="INSIDE-NAV header__logout-btn" id="logoutBtn">
+                            Cerrar Sesión
+                        </a>
+                    ` 
+                    : `
+                        <a href="/pages/login.html" class="INSIDE-NAV header__login-btn">
+                            Ingreso
+                        </a>
+                    `}
             </div>
         </nav>
         <label class="header__darkscreen" for="drawer"></label>

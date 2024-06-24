@@ -4,10 +4,6 @@ export const ROUTES = [
         label: "Inicio"
     },
     {
-        href: "/pages/historia.html",
-        label: "Mi Historial"
-    },
-    {
         href: "/pages/about.html",
         label: "Acerca de"
     },
@@ -15,4 +11,11 @@ export const ROUTES = [
         href: "/pages/contact.html",
         label: "Contacto"
     }
+]
+
+export const PROTECTED_ROUTES = [
+    {
+        href: "/pages/dashboard.html",
+        label: "Dashboard"
+    },
 ]

@@ -1,4 +1,3 @@
-import { submitJsonData } from "../utils/formsSendingData.js"
 import { API_URL } from "../constants/apiURL.js"
 import { basePath } from "../constants/basePath.js"
 

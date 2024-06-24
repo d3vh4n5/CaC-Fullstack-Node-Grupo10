@@ -61,6 +61,13 @@
     color: currentColor;
     border-radius: 5px;
 }
+.header__logout-btn{
+    padding: 6px 20px;
+    background-color: rgb(207, 20, 20);
+    text-decoration: none;
+    color: currentColor;
+    border-radius: 5px;
+}
 
 .header__login-btn:hover{
     background-color: var(--color-secondary-light);
