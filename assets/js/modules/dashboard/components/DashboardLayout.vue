@@ -11,6 +11,13 @@ const logout = ()=>{
     session.destroy()
 }
 
+const sidebarCollapse = ()=> {
+  const $sidebar = document.getElementById('sidebar')
+  const $body = document.body
+  $sidebar.classList.toggle('hide')
+  $body.classList.toggle('expand')
+}
+
 </script>
 <template>
     <main class="d-flex bg-body-secondary" id="dashboard">
@@ -27,7 +34,7 @@ const logout = ()=>{
         <section class="container-fluid p-0">
             <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
                 <div class="container-fluid">
-                  <button class="burger-menu" id="sidebarCollapseBtn">
+                  <button @click="sidebarCollapse" class="burger-menu" id="sidebarCollapseBtn">
                     <span class="navbar-toggler-icon"></span>
                   </button>
                   <inside-link  class="navbar-brand ms-3" href="/pages/dashboard.html">HealthUp User Dashboard</inside-link >

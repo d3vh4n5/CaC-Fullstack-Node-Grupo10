@@ -1,0 +1,2 @@
+# Redirigir todas las rutas bajo /pages/dashboard a /pages/dashboard.html
+/pages/dashboard/*   /pages/dashboard.html   200
