@@ -1,5 +1,10 @@
 const template = document.createElement('template')
 template.innerHTML = `
+<style>
+div{
+    background-color: lightgreen;
+}
+</style>
     <div class="bg-danger">
         <hr>
             <slot></slot>

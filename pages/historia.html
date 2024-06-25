@@ -6,58 +6,65 @@
     <title>Document</title>
 
     <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/lib/animatecss/animate.min.css">
     <script src="https://kit.fontawesome.com/d90748bc75.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/modules/dashboard.css">
 </head>
 <body>
-    <main class="row bg-body-secondary">
-        <aside class="col-2 bg-dark text-light">
-            <ul>
-                <li>Item</li>
-                <li>Item</li>
-                <li>Item</li>
-                <li>Item</li>
-            </ul>
+    <main class="d-flex bg-body-secondary">
+        <aside class="bg-dark text-light sidebar pt-2" id="sidebar">
+            <div class="list-group mt-5 rounded-0" data-bs-theme="dark">
+              <!-- <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                The current link item
+              </a> -->
+              <inside-link 
+                href="/pages/historia.html"
+                class="list-group-item list-group-item-action text-decoration-none text-light">
+                👤 Historia clinica
+              </inside-link>
+              <inside-link 
+                href="/pages/user-studies.html"
+                class="list-group-item list-group-item-action text-decoration-none text-light">
+                📃 Mis estudios
+              </inside-link>
+              <inside-link 
+                href="/pages/admin.html"
+                class="list-group-item list-group-item-action text-decoration-none text-light">
+                👑 Otra ruta
+              </inside-link>
+              <inside-link 
+                href="/pages/doc.html"
+                class="list-group-item list-group-item-action text-decoration-none text-light">
+                👨‍⚕️ Otra ruta
+              </inside-link>
+            </div>
         </aside>
-        <section class="col-10 p-0">
+        <section class="container-fluid p-0">
             <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
                 <div class="container-fluid">
-                  <a class="navbar-brand" href="#">Navbar</a>
+                  <button class="burger-menu" id="sidebarCollapseBtn">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <inside-link  class="navbar-brand ms-3" href="/pages/dashboard.html">HealthUp User Dashboard</inside-link >
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                      <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                      </li>
-                      <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Dropdown
-                        </a>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">Action</a></li>
-                          <li><a class="dropdown-item" href="#">Another action</a></li>
-                          <li><hr class="dropdown-divider"></li>
-                          <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                      </li>
+                      <!-- Nada -->
                     </ul>
-                    <button id="$logoutBtn" class="btn btn-danger">Cerrar Sesión</button>
+                    <div class="text-light">
+                      <span id="$userName" class="text-primary me-3">UserName</span>
+                      <button id="$logoutBtn" class="btn btn-danger">Cerrar Sesión</button>
+                    </div>
                   </div>
                 </div>
               </nav>
             <div class="container bg-white mt-4">
-
-                <!-- Contenido editable de la sección -->
+              
+              <!-- Comienzo Contenido editable -->
 
 
 
@@ -150,11 +157,7 @@
                             <div class="col-md-2">
                                 <label for="inputFechaNacimiento" class="form-label">Fecha de Nacimiento</label>
                                 <input id="inputFechaNacimiento" name="inputFechaNacimiento">
-                                <script>
-                                    $('#inputFechaNacimiento').datepicker({
-                                        uiLibrary: 'bootstrap5'
-                                    });
-                                </script>
+                                
                             </div>
 
                             <div class="col-md-2">
@@ -286,11 +289,7 @@
                                 <div class="col-md-2">
                                     <label for="inputFechaConsulta" class="form-label">Fecha de Consulta</label>
                                     <input id="inputFechaConsulta" name="inputFechaConsulta">
-                                    <script>
-                                        $('#inputFechaConsulta').datepicker({
-                                            uiLibrary: 'bootstrap5'
-                                        });
-                                    </script>
+                                    
                                 </div>
                                 
                                 <div class="col-md-3">                    
@@ -345,7 +344,8 @@
                     
                 </section>
 
-        <!-- FIN Contenido editable de la sección -->
+
+                <!-- Fin contenido editable -->
 
             </div>
         </section>
@@ -354,10 +354,11 @@
 
 
 
-    <!-- Bootstrapp 5.0.2 -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
+    <!-- Bootstrapp 5.3.3 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
     <script type="module" src="../assets/js/main.js"></script>
     <script type="module" src="../assets/js/modules/dashboard.js"></script>
+    <script type="module" src="../assets/js/modules/historia.js"></script>
 </body>
 </html>
