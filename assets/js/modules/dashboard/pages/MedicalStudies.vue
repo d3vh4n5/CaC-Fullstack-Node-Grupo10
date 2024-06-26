@@ -1,25 +1,17 @@
 <script setup>
+import axios from 'axios';
+import {API_URL} from '../../../constants/apiURL';
+import { ref, onMounted } from 'vue'
 
-const data = [
-    {
-        file: "Archivo",
-        name: "Archivo",
-        date: "26-06-2024",
-        type: "Blood"
-    },
-    {
-        file: "Archivo",
-        name: "Archivo",
-        date: "26-06-2024",
-        type: "Blood"
-    },
-    {
-        file: "Archivo",
-        name: "Archivo",
-        date: "26-06-2024",
-        type: "Blood"
-    },
-]
+const studies = ref([])
+
+async function loadTable (){
+const resp = await axios.get (API_URL + "/medical-studies")
+console.log(resp.data);
+studies.value = resp.data
+}
+
+onMounted(() => {loadTable()})
 
 </script>
 
@@ -29,19 +21,21 @@ const data = [
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
-                    <th>Titulo</th>
-                    <th>Titulo</th>
-                    <th>Titulo</th>
-                    <th>Titulo</th>
-                    <th>Action</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Fecha</th>
+                    <th>Tipo</th>
+                    <th>Archivo</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="item in data">
-                    <td>{{ item.file }}</td>
-                    <td>{{ item.name }}</td>
-                    <td>{{ item.type }}</td>
-                    <td>{{ item.date }}</td>
+                <tr v-for="study in studies">
+                    <td>{{ study.name }}</td>
+                    <td>{{ study.description }}</td>
+                    <td>{{ study.date }}</td>
+                    <td>{{ study.type }}</td>
+                    <td>{{ study.file }}</td>
                     <td>
                         <button class="btn">✏️</button>
                         <button class="btn">❌</button>

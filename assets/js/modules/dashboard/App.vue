@@ -1,9 +1,6 @@
 <script setup>
-import { ref } from 'vue';
 import DashboardLayout from './components/DashboardLayout.vue'
 import { RouterView } from 'vue-router'
-
-const name = ref('Juan')
 
 </script>
 
