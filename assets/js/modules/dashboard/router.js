@@ -3,12 +3,20 @@ import { createWebHistory , createRouter } from 'vue-router'
 import Dashboard from './pages/Dashboard.vue'
 import ClinicHistory from './pages/ClinicHistory.vue'
 import MedicalStudies from './pages/MedicalStudies.vue'
+import Test from './pages/Test.vue'
 
 export const routes = [
   { 
     path: '/pages/dashboard',               
     label: "🎛️ Dashboard",       
-    component: Dashboard 
+    component: Dashboard ,
+    children: [
+      {
+        path: 'test',               
+        label: "🎛️ Dashboard",       
+        component: Test ,
+      }
+    ]
   },
   { 
     path: '/pages/dashboard/clinic-history', 

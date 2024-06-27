@@ -1,3 +1,7 @@
+<script setup>
+import { RouterView, RouterLink } from 'vue-router';
+</script>
+
 <template>
     <div class="p-3">
         <article>
@@ -39,7 +43,7 @@
                 y ahorrar tiempo al reutilizar el código del Layout y demás componentes, 
                 así como también facilitar las solicitudes HTTP.
             </p>
-            <!-- <h3 class="my-4">Consumo del backend</h3>
+            <h3 class="my-4">Consumo del backend</h3>
             <p>Donde están presente las solicitudes:</p>
             <ul>
                 <li>
@@ -52,8 +56,11 @@
                 &#9432; Los Flujos del usuario tipo Doctor, y tipo ADMIN 
                 (Eq. de desarrollo) no fueron implementadas por el corto 
                 tiempo del curso. Pero las solicitudes pueden probarse 
-                <a href="#">AQUÍ</a>
-            </div> -->
+                <RouterLink to="/pages/dashboard/test">AQUI</RouterLink>
+            </div>
         </article>
+        <div>
+            <RouterView />
+        </div>
     </div>
 </template>

@@ -32,6 +32,13 @@ class Session {
         return this.#name
     }
 
+    get accessToken(){
+        return this.#accessToken
+    }
+    get refreshToken(){
+        return this.#refreshToken
+    }
+
     async destroy(){
         // solicitd de logout al back para que borre el refresh token
         localStorage.removeItem('user')

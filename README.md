@@ -8,7 +8,28 @@ Repositorio para el proyecto grupal del curso Full Stack en Node de Codo a Codo,
 * Marina
 * Juan
 
-Optimizar imagenes: tener una para cada corte del responsive
+Proyecto visitable en: https://healthupcac.netlify.app/
+
+
+## Ejecutar el proyecto:
+
+Este proyecto, en su segunda versión luego de la entrega del TP1, usa un bundler (Parcel), el cual nos permite usar Vue con una sintaxis más cómoda. Por ello es que necesita Node para poder ejecutarlo:
+
+Instalar dependencias:
+```bash
+npm i
+```
+
+Crear archivo .env
+```bash
+PARCEL_BUILD=true
+```
+
+
+Ejecutar proyecto:
+```bash
+npm run dev
+```
 
 <br><br>
 

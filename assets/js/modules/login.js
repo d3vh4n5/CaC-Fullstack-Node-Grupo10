@@ -43,7 +43,7 @@ window.addEventListener('load', () => {
                 localStorage.setItem("accessToken", accessToken)
                 localStorage.setItem("refreshToken", refreshToken)
                 
-                document.location.href = basePath + '/pages/dashboard.html'
+                document.location.href = basePath + '/pages/dashboard'
             } else {
                 const data = await resp.json()
                 alert("Algo salió mal: " + data.error)

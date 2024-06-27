@@ -15,7 +15,7 @@ export const ROUTES = [
 
 export const PROTECTED_ROUTES = [
     {
-        href: "/pages/dashboard.html",
+        href: "/pages/dashboard",
         label: "Dashboard"
     },
 ]
