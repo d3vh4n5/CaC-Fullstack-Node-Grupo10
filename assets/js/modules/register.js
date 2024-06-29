@@ -7,7 +7,6 @@ window.addEventListener('load', () => {
 
     $form.addEventListener('submit', async (event)=>{
         event.preventDefault()
-        console.log("Se hizo submit en register")
         const $nombre = document.getElementById('nombre')
         const $email = document.getElementById('email')
         const $password = document.getElementById('password')
@@ -20,17 +19,56 @@ window.addEventListener('load', () => {
         
         if (password === passwordConfirmation) {
 
-            await submitJsonData(API_URL + '/auth/register', {
-                name,
-                email,
-                password
-            })
+           
 
-            alert("Usuario registrado correctamente, será redirigido al login.")
-            document.location.href = basePath + "/pages/login.html"
+            axios.post(API_URL + '/auth/register', {
+                    name,
+                    email,
+                    password
+                })
+                .then(resp => {
+                    
+                    // console.log(resp)
+    
+                    Swal.fire({
+                        position: "center",
+                        icon: "success",
+                        title: "¡Usuario creado con éxito! Será redirigido al login..",
+                        showConfirmButton: false,
+                        timer: 3000
+                      });
+    
+                    setTimeout(()=>{
+                        document.location.href = basePath + "/pages/login.html"
+                    }, 3000)
+                    
+                })
+                .catch(error => {
+                    // El objeto de error que devuelve axios es distinto 
+                    // al nativo, por eso lo fui desarmando para ver el
+                    // contenido.
+                    console.error(error)
+                    console.error(error.message)
+                    console.error(error.code)
+                    console.error(error.request.status)
+                    console.error(error.response.data.error)
+                    Swal.fire({
+                        title: "Error",
+                        text: error.response.data.error,
+                        icon: "error"
+                    });
+                })
+            
+          
+
+           
 
         } else {
-            alert("Contraseñas no coinciden")
+            Swal.fire({
+                title: "Error",
+                text: "Las contraseñas no coinciden",
+                icon: "error"
+            });
         }
     
     })
