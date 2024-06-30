@@ -3,10 +3,10 @@ import { submitFormData2 } from "../utils/formsSendingData.js"
 
 const $form = document.querySelector('#contactForm')
 
-// validate($form, { 
-//     // debug: true, 
-//     typeExclude: ['file']
-// })
+validate($form, { 
+    // debug: true, 
+    typeExclude: ['file']
+})
 
 $form.addEventListener('submit', async (event)=> {
     event.preventDefault()
