@@ -66,7 +66,7 @@
                 </div>
                 <div class="col-12 col-lg-6">
                     
-                    <form  id="contactForm" onsubmit="handleSubmit(event)" method="POST" action="/api/v1/contact-messages" enctype="multipart/form-data">
+                    <form  id="contactForm" method="POST" action="/api/v1/contact-messages" enctype="multipart/form-data">
 
                         <div class="row mb-3">
                             <div class="col">
@@ -114,7 +114,7 @@
                         <div class="g-recaptcha" data-sitekey="6LfqFrYpAAAAAACiPXbovNcQPkSmbWWKCry56WcS" data-action="CONTACT" class="my-3"></div>
                         <div class="my-3">
                             <button type="reset" class="btn btn-danger">Resetear</button>
-                            <button class="btn btn-success">ENVIAR</button>
+                            <button class="btn btn-success" id="submitBtn">ENVIAR</button>
                         </div>
                     </form>
                 </div>
@@ -136,30 +136,8 @@
     <script>
         new WOW().init();
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="module" src="../assets/js/main.js"></script>
     <script type="module" src="../assets/js/modules/contact.js"></script>
-    <script>
-        // const siteKey = atob("NkxmcUZyWXBBQUFBQUFDaVBYYm92TmNRUGtTbWJXV0tDcnk1NldjUw==")
-
-        // var onloadCallback = function() {
-        //     widgetId = grecaptcha.render('$captchaContainer', {
-        //         'sitekey' : siteKey,
-        //         'callback' : ()=> {
-        //             // Esto se ejecuta una vez aprobado el captcha
-        //             console.log("El captcha se aprobó correctamente")
-        //         },
-        //         'theme' : 'light'
-        //     });
-        // };
-
-        // function handleSubmit(event){
-        //     event.preventDefault()
-        //     console.log("Se hizo submit")
-
-        //     console.log(
-        //         grecaptcha.getResponse(widgetId)
-        //     )
-        // }
-    </script>
 </body>
 </html>

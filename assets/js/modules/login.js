@@ -1,5 +1,6 @@
 import { API_URL } from "../constants/apiURL.js"
 import { basePath } from "../constants/basePath.js"
+import LoadSpinner from "../components/LoadSpinner.js"
 
 
 window.addEventListener('load', () => {
@@ -43,9 +44,7 @@ window.addEventListener('load', () => {
 
                 const $loginBtn = document.getElementById('loginBtn')
                 $loginBtn.setAttribute("disabled", true)
-                $loginBtn.innerHTML = `
-                    <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
-                `
+                $loginBtn.innerHTML = LoadSpinner
 
                 const data = await resp.json()
                 console.log(data)

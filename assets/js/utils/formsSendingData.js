@@ -126,16 +126,16 @@ export async function submitFormData2(event) {
     } else {
         url.search = searchParams;
     }
-  
-    fetch(url, fetchOptions)
-        .then(resp => {
-            console.log(resp)
-            alert("Información enviada correctamente")
-        })
-        .catch(err => {
-            console.log("Hubo un error al enviar la información: ", err)
-            alert("Ocurrió un error al enviar la información")
-        })
+    
+    const resp = await fetch(url, fetchOptions)
+    console.log(resp.status)
+    if (resp.status >= 200 && resp.status <= 300) {
+        return true
+    } else if (resp.status >= 400) {
+        return false
+    }
+
+    // return false
   
     event.preventDefault();
 }
