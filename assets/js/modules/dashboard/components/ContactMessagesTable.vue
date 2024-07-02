@@ -1,0 +1,9 @@
+<template>
+    <table>
+        <thead>
+            <tr>
+                <th>asdf</th>
+            </tr>
+        </thead>
+    </table>
+</template>

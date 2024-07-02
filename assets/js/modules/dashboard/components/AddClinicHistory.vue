@@ -1,14 +1,36 @@
 <script setup>
 import { ref } from 'vue';
-import session from '../../../utils/session';
 
-const userName = ref(session.userName)
 
+const form = ref({})
+
+const handleChange = (e) => {
+    form.value = {
+        ...form.value,
+        [e.target.name]: e.target.value
+    }
+
+    console.log(form.value)
+}
+const handleCheckbox = (e) => {
+    form.value = {
+        ...form.value,
+        [e.target.name]: e.target.checked
+    }
+
+    console.log(form.value)
+}
+
+const handleSubmit = () => {
+    // Hacer petición post
+}
 
 </script>
 <template>
-    <form>
-        
+    <form @submit.prevent="handleSubmit">
+        <pre>
+            {{ form }}
+        </pre>
         <fieldset class="border rounded p-3 mb-3">
             <legend>
                 <h3 class="form-titulo">Datos Personales</h3>
@@ -16,25 +38,40 @@ const userName = ref(session.userName)
             <div class="row g3">
                 <div class="col-md-6">
                     <label for="inputNombre" class="form-label">Nombre y apellido</label>
-                    <input type="text" class="form-control" id="inputNombre" name="inputNombre" placeholder="Nombre" :value="userName" disabled> 
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="name" 
+                        name="name"
+                        @input="handleChange"
+                        > 
                 </div>
             
                 
 
                 <div class="col-md-3">
                     <label for="inputFechaNacimiento" class="form-label">Fecha de Nacimiento</label>
-                    <input type="date" id="inputFechaNacimiento" class="form-control" name="inputFechaNacimiento">
+                    <input 
+                        @change="handleChange"
+                        type="date" 
+                        id="dateOfBirth" 
+                        class="form-control" 
+                        name="dateOfBirth">
                     
                 </div>
 
                 <div class="col">
                     <label for="inputSexo" class="form-label">Sexo</label>
-                    <select id="inputSexo" name="inputSexo" class="form-select">
-                    <option value="" selected>Sexo</option>
-                    <option value="">Femenino</option>
-                    <option value="">Masculino</option>
-                    <option value="">Binario</option>
-                    <option value="">Prefiere No indicarlo</option>                      
+                    <select 
+                        @change="handleChange"
+                        id="gender"
+                        name="gender" 
+                        class="form-select">
+                    <option disabled selected>Sexo</option>
+                    <option>Femenino</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Binario">Binario</option>
+                    <option value="Prefiere No indicarlo">Prefiere No indicarlo</option>                      
                     </select>
                 </div>
             </div>
@@ -42,30 +79,50 @@ const userName = ref(session.userName)
             <div class="row g4">
                 <div class="col-md-3">
                     <label for="inputEstadoCivil" class="form-label">Estado Civil</label>
-                    <select id="inputEstadoCivil" name="inputEstadoCivil" class="form-select">
-                    <option value="" selected>Estado civil</option>
-                    <option value="">Soltero/a</option>
-                    <option value="">Casado/a</option>
-                    <option value="">Divorciado/a</option>
-                    <option value="">Viudo/a</option>
-                    <option value="">Vínculo de hecho</option>
-                    <option value="">Separado/a</option>        
+                    <select 
+                        @change="handleChange"
+                        id="maritalStatus" 
+                        name="maritalStatus" 
+                        class="form-select">
+                    <option disabled selected>Estado civil</option>
+                    <option>Soltero/a</option>
+                    <option>Casado/a</option>
+                    <option>Divorciado/a</option>
+                    <option>Viudo/a</option>
+                    <option>Vínculo de hecho</option>
+                    <option>Separado/a</option>        
                     </select>
                 </div>               
 
                 <div class="col-md-3">
                     <label for="inputPeso" class="form-label">Peso</label>
-                    <input type="number" class="form-control" id="inputPeso" name="inputPeso" required>
+                    <input 
+                        @change="handleChange"
+                        type="number" 
+                        class="form-control" 
+                        id="weight" 
+                        name="weight" 
+                        required>
                 </div>
 
                 <div class="col-md-3">
                     <label for="inputAltura" class="form-label">Altura</label>
-                    <input type="number" class="form-control" id="inputAltura" name="inputAltura" required>
+                    <input 
+                        @change="handleChange"
+                        type="number" 
+                        class="form-control" 
+                        id="height" 
+                        name="height"
+                        required>
                 </div>                                   
             
                 <div class="col-md-3">
                     <label for="inputGrupoSanguineo" class="form-label">Grupo Sanguíneo</label>
-                    <select id="inputGrupoSanguineo" name="inputGrupoSanguineo" class="form-select">
+                    <select 
+                        @change="handleChange"
+                        id="bloodType" 
+                        name="bloodType" 
+                        class="form-select">
                     <option value="" selected>Grupo Sanguíneo</option>
                     <option>A RH+</option>
                     <option>A RH-</option>
@@ -89,31 +146,56 @@ const userName = ref(session.userName)
                     <div class="col">
                         <h4>Antecedentes Familiares</h4> 
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckHipertension" name="flexCheckHipertension">
+                            <input 
+                                @input="handleCheckbox"
+                                class="form-check-input" 
+                                type="checkbox" 
+                                id="hypertension" 
+                                name="hypertension">
                             <label class="form-check-label" for="flexCheckHipertension">
                             Hipertensión
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDiabetes" name="flexCheckDiabetes">
+                            <input 
+                                @input="handleCheckbox"
+                                class="form-check-input" 
+                                type="checkbox" 
+                                id="diabetes" 
+                                name="diabetes">
                             <label class="form-check-label" for="flexCheckDiabetes">
                             Diabetes
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckAsma" name="flexCheckAsma">
+                            <input 
+                                @input="handleCheckbox"
+                                class="form-check-input" 
+                                type="checkbox" 
+                                id="asthma" 
+                                name="asthma">
                             <label class="form-check-label" for="flexCheckAsma">
                             Asma
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckAlergias" name="flexCheckAlergias">
+                            <input 
+                                @input="handleCheckbox"
+                                class="form-check-input" 
+                                type="checkbox" 
+                                id="allergies" 
+                                name="allergies">
                             <label class="form-check-label" for="flexCheckAlergias">
                             Alergias
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckCorazon" name="flexCheckCorazon">
+                            <input 
+                                @input="handleCheckbox"
+                                class="form-check-input" 
+                                type="checkbox" 
+                                id="hearthFailure" 
+                                name="hearthFailure">
                             <label class="form-check-label" for="flexCheckCorazon">
                             Insuficiencia Cardíaca
                             </label>
@@ -123,31 +205,56 @@ const userName = ref(session.userName)
                     <div class="col">
                         <h4>Consumos Problemáticos</h4>  
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckTabaco" name="flexCheckTabaco">
+                            <input 
+                                @input="handleCheckbox"
+                                class="form-check-input" 
+                                type="checkbox"  
+                                id="tobacco" 
+                                name="tobacco">
                             <label class="form-check-label" for="flexCheckTabaco">
                             Tabaco
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckAlcohol" name="flexCheckAlcohol">
+                            <input 
+                                @input="handleCheckbox" 
+                                class="form-check-input" 
+                                type="checkbox" 
+                                id="alcohol" 
+                                name="alcohol">
                             <label class="form-check-label" for="flexCheckAlcohol">
                             Alcohol
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckMarihuana" name="flexCheckMarihuana">
+                            <input 
+                                @input="handleCheckbox" 
+                                class="form-check-input" 
+                                type="checkbox" 
+                                id="dope" 
+                                name="dope">
                             <label class="form-check-label" for="flexCheckMarihuana">
                             Marihuana
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckCocaina" name="flexCheckCocaina">
+                            <input 
+                                @input="handleCheckbox" 
+                                class="form-check-input" 
+                                type="checkbox" 
+                                id="cocaine" 
+                                name="cocaine">
                             <label class="form-check-label" for="flexCheckCocaina">
                             Cocaína
                             </label>
                         </div>                        
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckOtras" name="flexCheckOtras">
+                            <input 
+                                @input="handleCheckbox" 
+                                class="form-check-input" 
+                                type="checkbox" 
+                                id="otherDrugs" 
+                                name="otherDrugs">
                             <label class="form-check-label" for="flexCheckOtras">
                             Otras Drogas Peligrosas
                             </label>
