@@ -69,7 +69,7 @@ export const inputValidate = ($input, options = {}) => {
     // $input.addEventListener('change', ()=> {
     //     validity()
     // })
-    validity()
+    // validity()
 }
 
 

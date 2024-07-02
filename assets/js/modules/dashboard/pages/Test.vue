@@ -19,6 +19,7 @@ const protectedGETRequestExample = async () => {
         // Ahora, al estar la request interceptada por el axios.interceptor
         // Que esta en el archivo app.js, hago la request como si fuese normal
         const resp = await axios.get(API_URL + '/auth/protected')
+        console.log({ API_URL })
         dataGET.value = resp.data
     } catch (error) {
         console.error(error)
@@ -42,6 +43,11 @@ const protectedPOSTRequestExample = async () => {
 </script>
 <template>
     <div class="border rounded p-3 my-3">
+        pestañas, donde incluya las vistas de admin?
+        <P>
+            API en: <a href="https://healthup.alwaysdata.net/" target="_blank">https://healthup.alwaysdata.net/</a>
+        </P>
+
         <h3>Consulta GET a protected (ruta de pruebas protegida por jwt):</h3>
         <button @click="protectedGETRequestExample" class="btn btn-primary">
             Pedir Información Protegida

@@ -1,5 +1,6 @@
 <script setup>
-import { RouterView, RouterLink } from 'vue-router';
+import { RouterLink } from 'vue-router';
+import Callout from '../components/Callout.vue'
 </script>
 
 <template>
@@ -23,13 +24,9 @@ import { RouterView, RouterLink } from 'vue-router';
                 nuevos.
             </p>
         </article>
-
-        <div 
-            class="bg-info-subtle text-info-emphasis p-4
-                    border-start border-5 border-info-subtle">
-            &#9432; Advertencia: Aplicacion en desarrollo
-        </div>
-
+        <Callout type="info">
+            Advertencia: Aplicacion en desarrollo
+        </Callout>
         <article>
             <h1 class="text-danger my-5">INFORMACIÓN DESARROLLO - TESTING - PROFESOR:</h1>
             <p>
@@ -43,24 +40,15 @@ import { RouterView, RouterLink } from 'vue-router';
                 y ahorrar tiempo al reutilizar el código del Layout y demás componentes, 
                 así como también facilitar las solicitudes HTTP.
             </p>
-            <h3 class="my-4">Consumo del backend</h3>
-            <p>Donde están presente las solicitudes:</p>
-            <ul>
-                <li>
-                    <b>GET:</b>
-                </li>
-            </ul>
-            <div 
-                class="bg-danger-subtle text-danger-emphasis p-4
-                        border-start border-5 border-danger-subtle">
-                &#9432; Los Flujos del usuario tipo Doctor, y tipo ADMIN 
+            <Callout type="warning">
+                Los Flujos del usuario tipo Doctor, y tipo ADMIN 
                 (Eq. de desarrollo) no fueron implementadas por el corto 
                 tiempo del curso. Pero las solicitudes pueden probarse 
-                <RouterLink to="/pages/dashboard/test">AQUI</RouterLink>
-            </div>
+                <RouterLink 
+                    to="/pages/dashboard/test"
+                    class="btn btn-primary"
+                    >AQUI</RouterLink>
+            </Callout>
         </article>
-        <div>
-            <RouterView />
-        </div>
     </div>
 </template>

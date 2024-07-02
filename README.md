@@ -45,6 +45,8 @@ npm run dev
 * Robots txt: www.seoptimer.com
 * Sitemap.xml: https://www.xml-sitemaps.com/
 * Hacer ejecrcicios o pruebas ed codigo: https://codepen.io/
+* Manejar imagnes con el input file: https://www.youtube.com/watch?v=nG2Rk01FB7k
+* Loading spinners: https://loading.io/css/
 
 ### Para back
 
