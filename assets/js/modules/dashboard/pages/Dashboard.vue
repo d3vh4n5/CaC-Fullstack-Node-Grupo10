@@ -25,13 +25,16 @@ import Callout from '../components/Callout.vue'
             </p>
         </article>
         <Callout type="info">
-            Advertencia: Aplicacion en desarrollo
+            Advertencia: Aplicacion en desarrollo, No se hicieron pruebas 
+            de responsive en el dashboard, ya que priorizamos el correcto 
+            funcionamiento de la integracion con el backend sobre todas las
+            demás cuestiones.
         </Callout>
         <article>
             <h1 class="text-danger my-5">INFORMACIÓN DESARROLLO - TESTING - PROFESOR:</h1>
             <p>
-                Para el desarrollo de este Dashboard se implemetó Vue.js, el cual está
-                en el material brindado por el aula virtual. Se agregó tambien el uso de un bundler (Parcel)
+                Para el desarrollo de este Dashboard se implemetó <b>Vue.js</b>, el cual está
+                en el material brindado por el aula virtual. Se agregó tambien el uso de un <b>bundler (Parcel)</b>
                 para empaquetar el front-end y poder usar así una sintaxis más cómoda de Vue, así 
                 como variables de entorno y demás ventajas de tener el front empaquetado.
             </p>
@@ -40,10 +43,14 @@ import Callout from '../components/Callout.vue'
                 y ahorrar tiempo al reutilizar el código del Layout y demás componentes, 
                 así como también facilitar las solicitudes HTTP.
             </p>
+            <p>
+                De lo que vimos en axios hemos agregado también los <b>Axios Interceptors</b>, que
+                no es más que una función que interceptar todas las requests de la app 
+                y les agrega el token de JWT. Con ello logramos simplificar las request
+                y ahorrar trabajo al no tener que agregar en todas los headers de Auth.
+            </p>
             <Callout type="warning">
-                Los Flujos del usuario tipo Doctor, y tipo ADMIN 
-                (Eq. de desarrollo) no fueron implementadas por el corto 
-                tiempo del curso. Pero las solicitudes pueden probarse 
+                Página de pruebas para requests
                 <RouterLink 
                     to="/pages/dashboard/test"
                     class="btn btn-primary"

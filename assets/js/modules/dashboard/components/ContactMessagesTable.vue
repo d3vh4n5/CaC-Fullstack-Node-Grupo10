@@ -1,11 +1,24 @@
 <script setup>
 import { ref, onMounted  } from 'vue'
 import axios from 'axios'
+import Swal from 'sweetalert2'
 import { API_URL } from '../../../constants/apiURL.js'
 import Callout from './Callout.vue'
-
+import LoadingSpinner from './LoadingSpinner.vue'
 
 const contactMessages = ref(null)
+const Toast = Swal.mixin({
+  toast: true,
+  position: "bottom",
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.onmouseenter = Swal.stopTimer;
+    toast.onmouseleave = Swal.resumeTimer;
+  }
+});
+
 
 const getAllMsgs = async () => {
     try {
@@ -22,9 +35,16 @@ const read = async (id) => {
         await axios.put(API_URL + "/contact-messages/" + id, {
             read: true
         })
+        Toast.fire({
+            icon: "success",
+            title: "Mensaje cambiado a 'Leído'"
+        });
         getAllMsgs()
     } catch (error) {
-        alert("Hubo un error al actualizar")
+        Toast.fire({
+            icon: "error",
+            title: "Hubo un error al actualizar"
+        });
     }
 }
 
@@ -34,7 +54,9 @@ onMounted(() => {
 
 </script>
 <template>
-     <div v-if="contactMessages === null">Cargando...</div>
+     <div v-if="contactMessages === null">
+        <LoadingSpinner />
+     </div>
         <div v-else>
             <h1>Mensajes de contacto</h1>
             <Callout type="warning" class="my-4">

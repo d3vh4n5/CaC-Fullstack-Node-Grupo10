@@ -1,8 +1,10 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import axios from 'axios'
+import Swal from 'sweetalert2'
 import { API_URL } from '../../../constants/apiURL.js'
 import Callout from './Callout.vue'
+import LoadingSpinner from './LoadingSpinner.vue'
 
 
 const users = ref(null)
@@ -23,10 +25,21 @@ const deleteUser = async (id) => {
     if(confirmation){
         try {
             await axios.delete(API_URL + "/auth/users/" + id)
-            alert ("El usuario se bloqueó correctamente.")
+            Swal.fire({
+                text: "El usuario se bloqueó correctamente.",
+                icon: "success",
+                toast: true,
+                position: 'bottom',
+                timer: 3000,
+                showConfirmButton: false
+            });
             await getAllUsers()
         } catch (error) {
-            alert("Ocurrió un error con el servidor")
+            Swal.fire({
+                title: "Error",
+                text: "Hubo un problema en el servidor.",
+                icon: "error"
+            });
         }
     }
 }
@@ -46,7 +59,9 @@ onMounted(()=>{
 </script>
 
 <template>
-    <div v-if="users === null">Cargando...</div>
+    <div v-if="users === null">
+        <LoadingSpinner />
+    </div>
     <div v-else>
         <h1>Usuarios</h1>
         <Callout type="info" class="my-4">

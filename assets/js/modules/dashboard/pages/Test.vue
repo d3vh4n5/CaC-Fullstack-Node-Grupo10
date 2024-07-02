@@ -3,6 +3,7 @@ import { ref, onMounted } from 'vue'
 import axios from 'axios'
 import { API_URL } from '../../../constants/apiURL'
 import session from '../../../utils/session'
+import Callout from '../components/Callout.vue'
 
 const dataGET = ref([])
 const dataPOST = ref([])
@@ -42,8 +43,11 @@ const protectedPOSTRequestExample = async () => {
 
 </script>
 <template>
-    <div class="border rounded p-3 my-3">
-        pestañas, donde incluya las vistas de admin?
+    <div class="p-3 my-3">
+        <h1>Test Page</h1>
+        <Callout type="warning" class="my-5">
+            Esta pag es solo para el staff de desarrollo
+        </Callout>
         <P>
             API en: <a href="https://healthup.alwaysdata.net/" target="_blank">https://healthup.alwaysdata.net/</a>
         </P>
