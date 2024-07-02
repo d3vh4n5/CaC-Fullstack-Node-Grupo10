@@ -2,9 +2,9 @@
 import axios from 'axios';
 import { API_URL } from '../../../constants/apiURL';
 import { ref, onMounted } from 'vue'
-import session from '../../../utils/session';
 import AddClinicHistory from '../components/AddClinicHistory.vue'
 import ClinicHistoryTemplate from '../components/ClinicHistoryTemplate.vue'
+import Callout from '../components/Callout.vue';
 
 const hardcodedMedicalHistory = {
     name: "pepe",
@@ -49,11 +49,10 @@ onMounted(()=>{
         </div>
         <!-- Si no hay cartilla cargada: -->
          <div v-else>
-            <div 
-                class="bg-warning-subtle text-warning-emphasis p-4
-                        border-start border-5 border-warning-subtle my-3">
-                &#9432; Advertencia: No has creado aún tu historial clínico, por favor, créalo con el siguiente formulario
-            </div>
+            <Callout type="warning">
+                No has creado aún tu historial clínico, por favor, 
+                créalo con el siguiente formulario
+            </Callout>
             <AddClinicHistory/>
         </div>
     </section>

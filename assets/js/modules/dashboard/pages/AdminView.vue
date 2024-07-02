@@ -10,6 +10,7 @@ onMounted(()=> router.push('/pages/dashboard/admin/info'))
 
 <template>
     <section class="p-3">
+        <h1>Admin</h1>
         <ul class="nav nav-tabs">
             <li class="nav-item">
                 <RouterLink 
