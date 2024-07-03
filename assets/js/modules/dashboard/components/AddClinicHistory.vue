@@ -1,20 +1,22 @@
 <script setup>
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import { API_URL } from '../../../constants/apiURL.js'
 import Callout from './Callout.vue'
 import LoadingSpinner from './LoadingSpinner.vue'
 
+const router = useRouter()
+
 const form = ref({})
+const loading = ref(false)
 
 const handleChange = (e) => {
     form.value = {
         ...form.value,
         [e.target.name]: e.target.value
     }
-
-    console.log(form.value)
 }
 const handleCheckbox = (e) => {
     form.value = {
@@ -27,9 +29,23 @@ const handleCheckbox = (e) => {
 
 const handleSubmit = async () => {
     try {
-        const result = await axios.post(API_URL + '/clinic-histories', { ...form.value })
-        alert("Todo salió bien")
+        loading.value = true
+        await axios.post(API_URL + '/clinic-histories', { ...form.value })
+        Swal.fire({
+            text: "Historia Clinica creada correctamente",
+            icon: "success",
+            toast: true,
+            position: 'bottom',
+            timer: 3000,
+            showConfirmButton: false
+        });
+        setTimeout(()=>{
+            loading.value = false
+            router.push('/pages/dashboard/clinic-history')
+        }, 3000)
     } catch (error) {
+        console.error(error)
+        loading.value = false
         Swal.fire({
             title: "Error",
             text: "Hubo un problema en el servidor.",
@@ -279,7 +295,10 @@ const handleSubmit = async () => {
             
             
         <div class="mb-2 d-flex gap-3">
-            <input class="btn btn-success col-md-2" type="submit" value="Registrar" >
+            <button class="btn btn-success col-md-2" type="submit" >
+                <span v-if="!loading">Registrar</span>
+                <LoadingSpinner  v-else />
+            </button>
             <input class="btn btn-warning col-md-2" type="reset" value="Resetear">
             <br>               
         </div>
