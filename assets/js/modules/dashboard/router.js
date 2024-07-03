@@ -10,6 +10,9 @@ import UsersTable from './components/UsersTable.vue'
 import AdminInfo from './components/AdminInfo.vue'
 import MedicalStudiesTable from './components/MedicalStudiesTable.vue'
 import AddMedicalStudy from './components/AddMedicalStudy.vue'
+import AddClinicHistory from './components/AddClinicHistory.vue'
+import EditClinicHistory from './components/EditClinicHistory.vue'
+import ClinicHistoryTemplate from './components/ClinicHistoryTemplate.vue'
 
 export const routes = [
   { 
@@ -20,7 +23,21 @@ export const routes = [
   { 
     path: '/pages/dashboard/clinic-history', 
     label: "👤 Historia Clínica", 
-    component: ClinicHistory 
+    component: ClinicHistory,
+    children: [
+      {
+        path: '',
+        component: ClinicHistoryTemplate
+      },
+      {
+        path: 'create-clinic-history',
+        component: AddClinicHistory
+      },
+      {
+        path: 'edit',
+        component: EditClinicHistory
+      },
+    ]
   },
   { 
     path: '/pages/dashboard/medical-studies', 

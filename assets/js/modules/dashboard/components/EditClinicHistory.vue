@@ -1,34 +1,22 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
+import { RouterLink } from 'vue-router'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import { API_URL } from '../../../constants/apiURL.js'
-import Callout from './Callout.vue'
 import LoadingSpinner from './LoadingSpinner.vue'
 
 const form = ref({})
+const queryStrings = new URLSearchParams(window.location.search)
+const id = queryStrings.get("id")
 
-const handleChange = (e) => {
-    form.value = {
-        ...form.value,
-        [e.target.name]: e.target.value
-    }
-
-    console.log(form.value)
-}
-const handleCheckbox = (e) => {
-    form.value = {
-        ...form.value,
-        [e.target.name]: e.target.checked
-    }
-
-    console.log(form.value)
-}
-
-const handleSubmit = async () => {
+const getUserClinicHistory = async () => {
     try {
-        const result = await axios.post(API_URL + '/clinic-histories', { ...form.value })
-        alert("Todo salió bien")
+        const { data } = await axios.get(API_URL + "/clinic-histories/" + id)
+        form.value = {
+            ...data,
+             dateOfBirth: formatDate(new Date(data.dateOfBirth))
+        }
     } catch (error) {
         Swal.fire({
             title: "Error",
@@ -38,9 +26,32 @@ const handleSubmit = async () => {
     }
 }
 
+function formatDate(date) {
+  const day = String(date.getDate()).padStart(2, '0');
+  const month = String(date.getMonth() + 1).padStart(2, '0'); // Mes es 0-indexado
+  const year = date.getFullYear();
+  
+  return `${year}-${month}-${day}`;
+}
+
+const handleSubmit = async () => {
+    try {
+        // const result = await axios.put(API_URL + '/clinic-histories/'+ id, { ...form.value })
+        alert("Este flujo aún no está listo")
+    } catch (error) {
+        Swal.fire({
+            title: "Error",
+            text: "No se pudo obtener la historia clinica",
+            icon: "error"
+        });
+    }
+}
+
+onMounted(()=>{getUserClinicHistory()})
+
 </script>
 <template>
-    <form @submit.prevent="handleSubmit">
+    <form v-if="form.name" @submit.prevent="handleSubmit">
         <pre>
             {{ form }}
         </pre>
@@ -52,11 +63,11 @@ const handleSubmit = async () => {
                 <div class="col-md-6">
                     <label for="inputNombre" class="form-label">Nombre y apellido</label>
                     <input 
+                        v-model="form.name"
                         type="text" 
                         class="form-control" 
                         id="name" 
                         name="name"
-                        @input="handleChange"
                         > 
                 </div>
             
@@ -65,7 +76,7 @@ const handleSubmit = async () => {
                 <div class="col-md-3">
                     <label for="inputFechaNacimiento" class="form-label">Fecha de Nacimiento</label>
                     <input 
-                        @change="handleChange"
+                        v-model="form.dateOfBirth"
                         type="date" 
                         id="dateOfBirth" 
                         class="form-control" 
@@ -76,7 +87,7 @@ const handleSubmit = async () => {
                 <div class="col">
                     <label for="inputSexo" class="form-label">Sexo</label>
                     <select 
-                        @change="handleChange"
+                        v-model="form.gender"
                         id="gender"
                         name="gender" 
                         class="form-select">
@@ -93,7 +104,7 @@ const handleSubmit = async () => {
                 <div class="col-md-3">
                     <label for="inputEstadoCivil" class="form-label">Estado Civil</label>
                     <select 
-                        @change="handleChange"
+                        v-model="form.maritalStatus"
                         id="maritalStatus" 
                         name="maritalStatus" 
                         class="form-select">
@@ -110,7 +121,7 @@ const handleSubmit = async () => {
                 <div class="col-md-3">
                     <label for="inputPeso" class="form-label">Peso</label>
                     <input 
-                        @change="handleChange"
+                        v-model="form.weight"
                         type="number" 
                         class="form-control" 
                         id="weight" 
@@ -121,7 +132,7 @@ const handleSubmit = async () => {
                 <div class="col-md-3">
                     <label for="inputAltura" class="form-label">Altura</label>
                     <input 
-                        @change="handleChange"
+                        v-model="form.height"
                         type="number" 
                         class="form-control" 
                         id="height" 
@@ -132,7 +143,7 @@ const handleSubmit = async () => {
                 <div class="col-md-3">
                     <label for="inputGrupoSanguineo" class="form-label">Grupo Sanguíneo</label>
                     <select 
-                        @change="handleChange"
+                        v-model="form.bloodType"
                         id="bloodType" 
                         name="bloodType" 
                         class="form-select">
@@ -160,7 +171,7 @@ const handleSubmit = async () => {
                         <h4>Antecedentes Familiares</h4> 
                         <div class="form-check">
                             <input 
-                                @input="handleCheckbox"
+                                v-model="form.hypertension"
                                 class="form-check-input" 
                                 type="checkbox" 
                                 id="hypertension" 
@@ -171,7 +182,7 @@ const handleSubmit = async () => {
                         </div>
                         <div class="form-check">
                             <input 
-                                @input="handleCheckbox"
+                                v-model="form.diabetes"
                                 class="form-check-input" 
                                 type="checkbox" 
                                 id="diabetes" 
@@ -182,7 +193,7 @@ const handleSubmit = async () => {
                         </div>
                         <div class="form-check">
                             <input 
-                                @input="handleCheckbox"
+                                v-model="form.asthma"
                                 class="form-check-input" 
                                 type="checkbox" 
                                 id="asthma" 
@@ -192,8 +203,8 @@ const handleSubmit = async () => {
                             </label>
                         </div>
                         <div class="form-check">
-                            <input 
-                                @input="handleCheckbox"
+                            <input
+                                v-model="form.allergies" 
                                 class="form-check-input" 
                                 type="checkbox" 
                                 id="allergies" 
@@ -204,7 +215,7 @@ const handleSubmit = async () => {
                         </div>
                         <div class="form-check">
                             <input 
-                                @input="handleCheckbox"
+                                v-model="form.heartFailure"
                                 class="form-check-input" 
                                 type="checkbox" 
                                 id="heartFailure" 
@@ -219,7 +230,7 @@ const handleSubmit = async () => {
                         <h4>Consumos Problemáticos</h4>  
                         <div class="form-check">
                             <input 
-                                @input="handleCheckbox"
+                                v-model="form.tobacco"
                                 class="form-check-input" 
                                 type="checkbox"  
                                 id="tobacco" 
@@ -230,7 +241,7 @@ const handleSubmit = async () => {
                         </div>
                         <div class="form-check">
                             <input 
-                                @input="handleCheckbox" 
+                                v-model="form.alcohol" 
                                 class="form-check-input" 
                                 type="checkbox" 
                                 id="alcohol" 
@@ -241,7 +252,7 @@ const handleSubmit = async () => {
                         </div>
                         <div class="form-check">
                             <input 
-                                @input="handleCheckbox" 
+                                v-model="form.dope"
                                 class="form-check-input" 
                                 type="checkbox" 
                                 id="dope" 
@@ -251,8 +262,8 @@ const handleSubmit = async () => {
                             </label>
                         </div>
                         <div class="form-check">
-                            <input 
-                                @input="handleCheckbox" 
+                            <input
+                                v-model="form.cocaine" 
                                 class="form-check-input" 
                                 type="checkbox" 
                                 id="cocaine" 
@@ -263,7 +274,7 @@ const handleSubmit = async () => {
                         </div>                        
                         <div class="form-check">
                             <input 
-                                @input="handleCheckbox" 
+                                v-model="form.otherDrugs"
                                 class="form-check-input" 
                                 type="checkbox" 
                                 id="otherDrugs" 
@@ -280,8 +291,13 @@ const handleSubmit = async () => {
             
         <div class="mb-2 d-flex gap-3">
             <input class="btn btn-success col-md-2" type="submit" value="Registrar" >
-            <input class="btn btn-warning col-md-2" type="reset" value="Resetear">
+            <RouterLink 
+                class="btn btn-outline-warning"
+                to="/pages/dashboard/clinic-history">Cancelar</RouterLink>
             <br>               
         </div>
     </form>   
+    <div v-else>
+        <LoadingSpinner />
+    </div>
 </template>

@@ -1,44 +1,14 @@
 <script setup>
-import { ref, onMounted } from 'vue'
-import { RouterLink, useRouter } from 'vue-router'
-import axios from 'axios';
-import Swal from 'sweetalert2'
-import { API_URL } from '../../../constants/apiURL';
+import { RouterLink } from 'vue-router'
+const props = defineProps(['clinicHistory'])
+const { clinicHistory } = props
 import LoadingSpinner from './LoadingSpinner.vue';
-
-const router = useRouter()
-
-const clinicHistory = ref(null)
-
-const getClinicHistory = async ()=> {
-    try {
-        const result = await axios.get(API_URL + '/clinic-histories/user-clinic-history')
-        const data = result.data
-        if (data === '') {
-            router.push('/pages/dashboard/clinic-history/create-clinic-history')
-        } else {
-            clinicHistory.value = data
-        }
-    } catch (error) {
-        console.error(error)
-        Swal.fire({
-            title: "Error",
-            text: "Hubo un problema en el servidor.",
-            icon: "error"
-        });
-    }
-}
-
-onMounted(()=>{
-    getClinicHistory()
-})
-
 
 </script>
 <template>
    <article v-if="clinicHistory !== null">
         <RouterLink 
-            :to="`/pages/dashboard/clinic-history/edit?id=${clinicHistory.id}`" 
+            to="/pages/dashboard/clinic-history/edit" 
             class="btn btn-warning mb-3">Editar</RouterLink>
         <div class="border rounded p-3">
             <h2>Datos Personales</h2>
