@@ -1,48 +1,10 @@
 <script setup>
-import axios from 'axios';
-import {API_URL} from '../../../constants/apiURL';
-import { ref, onMounted } from 'vue'
-
-const studies = ref([])
-
-async function loadTable (){
-const resp = await axios.get (API_URL + "/medical-studies")
-console.log(resp.data);
-studies.value = resp.data
-}
-
-onMounted(() => {loadTable()})
+import { RouterView } from 'vue-router'
 
 </script>
 
 <template>
     <div class="p-3">
-        <button class="btn btn-primary">+ Agregar estudio</button>
-        <table class="table table-striped table-hover">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Descripción</th>
-                    <th>Fecha</th>
-                    <th>Tipo</th>
-                    <th>Archivo</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="study in studies">
-                    <td>{{ study.name }}</td>
-                    <td>{{ study.description }}</td>
-                    <td>{{ study.date }}</td>
-                    <td>{{ study.type }}</td>
-                    <td>{{ study.file }}</td>
-                    <td>
-                        <button class="btn">✏️</button>
-                        <button class="btn">❌</button>
-                    </td>
-                </tr>
-            </tbody>
-            
-        </table>
+        <RouterView />
     </div>
 </template>

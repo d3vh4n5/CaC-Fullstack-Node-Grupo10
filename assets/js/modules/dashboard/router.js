@@ -8,6 +8,8 @@ import AdminView from './pages/AdminView.vue'
 import ContactMessagesTable from './components/ContactMessagesTable.vue'
 import UsersTable from './components/UsersTable.vue'
 import AdminInfo from './components/AdminInfo.vue'
+import MedicalStudiesTable from './components/MedicalStudiesTable.vue'
+import AddMedicalStudy from './components/AddMedicalStudy.vue'
 
 export const routes = [
   { 
@@ -23,7 +25,17 @@ export const routes = [
   { 
     path: '/pages/dashboard/medical-studies', 
     label: "📃 Estudios Médicos", 
-    component: MedicalStudies 
+    component: MedicalStudies,
+    children: [
+      {
+        path: "",
+        component: MedicalStudiesTable
+      },
+      {
+        path: "add-medical-study",
+        component: AddMedicalStudy
+      }
+    ]
   },
   { 
     path: '/pages/dashboard/admin', 
