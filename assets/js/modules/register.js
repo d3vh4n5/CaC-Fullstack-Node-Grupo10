@@ -1,6 +1,6 @@
-import { submitJsonData } from "../utils/formsSendingData.js"
 import { API_URL } from "../constants/apiURL.js"
 import { basePath } from "../constants/basePath.js"
+import LoadSpinner from "../components/LoadSpinner.js"
 
 window.addEventListener('load', () => {
     const $form = document.getElementById('formulario')
@@ -14,17 +14,47 @@ window.addEventListener('load', () => {
 
         const name = $nombre.value
         const email = $email.value
-        const password = CryptoJS.SHA256($password.value).toString()
-        const passwordConfirmation = CryptoJS.SHA256($passConfirma.value).toString()
+        const password = $password.value
+        const passwordConfirmation = $passConfirma.value
         
-        if (password === passwordConfirmation) {
+        const errors = []
 
-           
+        if (name.trim() === '') {
+            errors.push("Debe escribir un nombre de usuario")
+        }
+        if (email.trim() === '') {
+            errors.push("Debe escribir un email valido")
+        }
+        if (password.trim() === '') {
+            errors.push("Debe escribir una contraseña")
+        }
+        if (passwordConfirmation.trim() === '') {
+            errors.push("Debe escribir una confirmación de contraseña correcta")
+        }
+
+        if (errors.length > 0) {
+            const $errorsContainer = document.getElementById('errorsContainer')
+            
+            $errorsContainer.innerHTML = ''
+
+            errors.forEach(error => {
+                $errorsContainer.innerHTML += `
+                    <li class="text-danger my-2">${error}</li>
+                `
+            })
+            
+            return
+        }
+
+        if (password === passwordConfirmation) {
+            const $submitBtn = document.getElementById('submitBtn')
+            $submitBtn.innerHTML = LoadSpinner
+            $submitBtn.setAttribute("disabled", true)
 
             axios.post(API_URL + '/auth/register', {
                     name,
                     email,
-                    password
+                    password: CryptoJS.SHA256(password).toString()
                 })
                 .then(resp => {
                     
@@ -57,6 +87,8 @@ window.addEventListener('load', () => {
                         text: error.response.data.error,
                         icon: "error"
                     });
+                    $submitBtn.innerHTML = "Registrarme"
+                    $submitBtn.removeAttribute("disabled")
                 })
             
           

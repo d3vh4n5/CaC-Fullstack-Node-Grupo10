@@ -31,36 +31,36 @@
                         <label for="nombre" class="form-label">Nombre y apellido</label>
                         <input type="text" id="nombre" class="form-control" name="nombre"
                             placeholder="Nombre y Apellido">
-                        <p></p>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Correo electrónico</label>
                         <input type="email" class="form-control" id="email" name="email"
                             placeholder="nombre@ejemplo.com">
-                        <p></p>
                     </div>
                     <div class="mb-3">
-
                         <label for="password" class="form-label">Contraseña</label>
                         <input type="password" class="form-control" id="password" name="password"
                             placeholder="contraseña">
-                        <p></p>
                     </div>
                     <div class="mb-3">
 
                         <label for="passConfirma" class="form-label">Repetir contraseña</label>
                         <input type="password" class="form-control" id="passConfirma" name="passConfirma"
                             placeholder=" Repetir contraseña">
-                        <p></p>
+                    </div>
+                    <div >
+                        <ul id="errorsContainer">
+                            <!-- Aqui JS meterá los errores -->
+                        </ul>
                     </div>
                     <div class="text-center">
-                        <button class="btn btn-primary px-5 my-4" >Registrarme</button>
-                    </div>
-                    <div class="container-forgotten mb-3">
-                        <a class="subrayado" href="../index.html">Inicio</a>
+                        <button class="btn btn-primary px-5 my-4" id="submitBtn">Registrarme</button>
                     </div>
                     <div class="container-forgotten">
                         <a class="subrayado" href="../pages/login.html">Volver</a>
+                    </div>
+                    <div class="container-forgotten my-3">
+                        <a class="subrayado" href="../index.html">Inicio</a>
                     </div>
                     <!--<button>enviar</button>-->
                 </form>

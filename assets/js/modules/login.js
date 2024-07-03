@@ -18,10 +18,14 @@ window.addEventListener('load', () => {
     form.addEventListener('submit', async (e) => {
         e.preventDefault()
         const valid = validaCampos()
+        const $loginBtn = document.getElementById('loginBtn')
 
         if (!valid) return console.log("Campos no validos, reintentar")
         
         try {
+            $loginBtn.setAttribute("disabled", true)
+            $loginBtn.innerHTML = LoadSpinner
+
             const resp = await fetch(API_URL + '/auth/login', {
                 method: 'POST',
                 headers: { 
@@ -36,15 +40,6 @@ window.addEventListener('load', () => {
             console.log(resp.status)
 
             if (resp.status >= 200 && resp.status <= 300){
-                // Swal.fire({
-                //     title: "!Hecho!",
-                //     text: "Logeado correctamente, será redirigido en 3 segundos..",
-                //     icon: "success"
-                // });
-
-                const $loginBtn = document.getElementById('loginBtn')
-                $loginBtn.setAttribute("disabled", true)
-                $loginBtn.innerHTML = LoadSpinner
 
                 const data = await resp.json()
                 console.log(data)
@@ -54,9 +49,7 @@ window.addEventListener('load', () => {
                 localStorage.setItem("accessToken", accessToken)
                 localStorage.setItem("refreshToken", refreshToken)
 
-                setTimeout(()=>{
-                    document.location.href = basePath + '/pages/dashboard'
-                }, 2000)
+                document.location.href = basePath + '/pages/dashboard'
                 
             } else {
                 const data = await resp.json()
@@ -74,6 +67,8 @@ window.addEventListener('load', () => {
                 text: "Ocurrió un error inesperado.",
                 icon: "error"
             });
+            $loginBtn.removeAttribute("disabled")
+            $loginBtn.innerHTML = "Enviar"
         }
         
     })
