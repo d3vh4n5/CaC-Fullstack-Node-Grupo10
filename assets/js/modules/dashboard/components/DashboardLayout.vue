@@ -4,7 +4,6 @@ import session from '../../../utils/session.js'
 import { routes } from '../router'
 
 
-const userName = session.userName
 session.check()
 
 const logout = ()=>{
@@ -37,16 +36,22 @@ const sidebarCollapse = ()=> {
                   <button @click="sidebarCollapse" class="burger-menu" id="sidebarCollapseBtn">
                     <span class="navbar-toggler-icon"></span>
                   </button>
-                  <inside-link  class="navbar-brand ms-3" href="/pages/dashboard.html">HealthUp User Dashboard</inside-link >
+                  <inside-link  class="navbar-brand ms-3" href="/pages/dashboard.html">HealthUp</inside-link >
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                      <!-- Nada -->
+                      <li class="nave-item my-2" v-for="route in routes">
+                        <RouterLink 
+                          class="list-group-item list-group-item-action text-decoration-none text-light"
+                          :to="route.path" 
+                          >
+                          {{ route.label }}
+                        </RouterLink>
+                      </li>
                     </ul>
                     <div class="text-light">
-                      <span id="$userName" class="text-primary me-3">{{ 'Hola, ' + userName }}</span>
                       <button @click="logout" class="btn btn-danger">Cerrar Sesión</button>
                     </div>
                   </div>
@@ -69,8 +74,8 @@ const sidebarCollapse = ()=> {
 <style>
 body{
   height: 100vh;
-    margin-left: 250px;
-    transition: margin-left 0.3s ease-in-out;
+  margin-left: 250px;
+  transition: margin-left 0.3s ease-in-out;
 
     #app {
       height: 100%;
@@ -111,5 +116,24 @@ body{
     &:hover, &:focus, &:active{
         outline: 4px solid;
     }
+}
+
+.nave-item {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  body{
+    margin-left: 0px;
+  }
+
+  .nave-item {
+    display: block;
+  }
+
+  #sidebarCollapseBtn, 
+  #sidebar {
+    display: none;
+  }
 }
 </style>

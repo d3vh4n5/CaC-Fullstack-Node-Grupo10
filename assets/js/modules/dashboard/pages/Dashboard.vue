@@ -1,13 +1,16 @@
 <script setup>
 import { RouterLink } from 'vue-router';
 import Callout from '../components/Callout.vue'
+import session from '../../../utils/session';
+
+const userName = session.userName
 </script>
 
 <template>
     <div class="p-3">
         <article>
 
-            <h1 class="mb-5">Bienvenido usuario</h1>
+            <h1 class="mb-5">Bienvenido {{ userName }}</h1>
             <h5>
                 En este dashboard encontrará todo lo necesario para utilizar la aplicación
             </h5>

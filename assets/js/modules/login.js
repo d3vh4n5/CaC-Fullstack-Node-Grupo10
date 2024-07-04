@@ -58,6 +58,8 @@ window.addEventListener('load', () => {
                     text: data.error,
                     icon: "error"
                 });
+                $loginBtn.removeAttribute("disabled")
+                $loginBtn.innerHTML = "Enviar"
             }
             
         } catch (error) {
