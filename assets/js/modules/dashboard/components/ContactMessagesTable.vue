@@ -1,25 +1,13 @@
 <script setup>
 import { ref, onMounted  } from 'vue'
 import axios from 'axios'
-import Swal from 'sweetalert2'
 import { API_URL } from '../../../constants/apiURL.js'
-import session from '../../../utils/session'
+import { downloadFile } from '../utils/downloadFile'
+import { Toast } from '../utils/Toast.js'
 import Callout from './Callout.vue'
 import LoadingSpinner from './LoadingSpinner.vue'
 
 const contactMessages = ref(null)
-const Toast = Swal.mixin({
-  toast: true,
-  position: "bottom",
-  showConfirmButton: false,
-  timer: 3000,
-  timerProgressBar: true,
-  didOpen: (toast) => {
-    toast.onmouseenter = Swal.stopTimer;
-    toast.onmouseleave = Swal.resumeTimer;
-  }
-});
-
 
 const getAllMsgs = async () => {
     try {
@@ -50,38 +38,7 @@ const read = async (id) => {
 }
 
 const getFile = async (fileName)=> {
-    try {
-        // GPT anduvo por aqui...
-        console.log(fileName)
-        const response = await fetch('http://localhost:5000/' + fileName, {
-            method: 'GET',
-            headers: {
-                Authorization: `Bearer ${session.accessToken}`
-            }
-        })
-
-        if (!response.ok) {
-            throw new Error('Error al descargar el archivo');
-        }
-
-        console.log(response)
-
-        const blob = await response.blob();
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = "healthup_file";
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        window.URL.revokeObjectURL(url);
-    } catch (error) {
-        console.error(error)
-        Toast.fire({
-            icon: "error",
-            title: "Hubo un error al obtener el archivo"
-        });
-    }
+    downloadFile(fileName)
 }
 
 onMounted(() => {
