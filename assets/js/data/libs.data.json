@@ -2,6 +2,20 @@
     "Bootstrap",
     "Animtate.css",
     "WoW.js",
-    "Asesome Icons",
-    "Font Awesome"
+    "Awsesome Icons",
+    "Font Awesome",
+    "Sweet alert 2",
+    "Vue",
+    "Vue-Router",
+    "Express",
+    "Dotenv",
+    "Axios",
+    "Multer",
+    "JWT",
+    "Google reCAPTCHA",
+    "ejs",
+    "Sequelize",
+    "cors",
+    "bcrypt",
+    "CryptoJS"
 ]

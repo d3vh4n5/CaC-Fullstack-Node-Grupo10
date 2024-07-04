@@ -52,9 +52,6 @@ onMounted(()=>{getUserClinicHistory()})
 </script>
 <template>
     <form v-if="form.name" @submit.prevent="handleSubmit">
-        <pre>
-            {{ form }}
-        </pre>
         <fieldset class="border rounded p-3 mb-3">
             <legend>
                 <h3 class="form-titulo">Datos Personales</h3>

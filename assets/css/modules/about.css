@@ -103,7 +103,8 @@
     );
 }
 
-#techList{
+.techList, 
+.techList2{
     margin: 0;
     padding: 0;
     width: 200%;
@@ -113,12 +114,15 @@
     gap: 10px;
     
     
-    animation: infiniteSlide 20s linear infinite;
+    animation: infiniteSlide 15s linear infinite;
     
 
     &:hover {
         animation-play-state: paused;
     }
+}
+.techList2{
+    animation: infiniteSlide2 15s linear infinite;
 }
 
 .techPill {
@@ -139,7 +143,12 @@
 
 @keyframes infiniteSlide {
     to {
-        transform: translateX(-50.6%);
+        transform: translateX(-55%);
+    }
+}
+@keyframes infiniteSlide2 {
+    to {
+        transform: translateX(-58%);
     }
 }
 
