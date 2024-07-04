@@ -76,36 +76,38 @@ onMounted(()=>{
             nuestro proyecto, pueda modificar información de acceso de otro
              usuario.
         </Callout>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>email</th>
-                    <th>Rol</th>
-                    <th>Estado</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="user in users">
-                    <td>{{ user.name }}</td>
-                    <td>{{ user.email }}</td>
-                    <td>{{ user.role }}</td>
-                    <td>
-                        <span v-if="user.state" class="text-light bg-success p-1 rounded">Activo</span>
-                        <span v-else class="text-light bg-danger p-1 rounded">Baneado</span>
-                    </td>
-                    <td class="d-flex gap-2">
-                        <button class="btn bg-secondary-subtle" disabled>✏️</button>
-                        <!-- <button class="btn bg-warning-subtle">✏️</button> -->
-                        <button 
-                        title="Bloquear (eliminado lógico)"
-                            @click="deleteUser(user.id)"
-                            class="btn bg-danger-subtle"
-                        >❌</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="overflow-x-auto">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>email</th>
+                        <th>Rol</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="user in users">
+                        <td>{{ user.name }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.role }}</td>
+                        <td>
+                            <span v-if="user.state" class="text-light bg-success p-1 rounded">Activo</span>
+                            <span v-else class="text-light bg-danger p-1 rounded">Baneado</span>
+                        </td>
+                        <td class="d-flex gap-2">
+                            <button class="btn bg-secondary-subtle" disabled>✏️</button>
+                            <!-- <button class="btn bg-warning-subtle">✏️</button> -->
+                            <button 
+                            title="Bloquear (eliminado lógico)"
+                                @click="deleteUser(user.id)"
+                                class="btn bg-danger-subtle"
+                            >❌</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </template>

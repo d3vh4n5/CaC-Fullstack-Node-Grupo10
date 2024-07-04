@@ -3,6 +3,7 @@ import { ref, onMounted  } from 'vue'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import { API_URL } from '../../../constants/apiURL.js'
+import session from '../../../utils/session'
 import Callout from './Callout.vue'
 import LoadingSpinner from './LoadingSpinner.vue'
 
@@ -48,6 +49,41 @@ const read = async (id) => {
     }
 }
 
+const getFile = async (fileName)=> {
+    try {
+        // GPT anduvo por aqui...
+        console.log(fileName)
+        const response = await fetch('http://localhost:5000/' + fileName, {
+            method: 'GET',
+            headers: {
+                Authorization: `Bearer ${session.accessToken}`
+            }
+        })
+
+        if (!response.ok) {
+            throw new Error('Error al descargar el archivo');
+        }
+
+        console.log(response)
+
+        const blob = await response.blob();
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = "healthup_file";
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        window.URL.revokeObjectURL(url);
+    } catch (error) {
+        console.error(error)
+        Toast.fire({
+            icon: "error",
+            title: "Hubo un error al obtener el archivo"
+        });
+    }
+}
+
 onMounted(() => {
     getAllMsgs()
 })
@@ -63,49 +99,52 @@ onMounted(() => {
                 A efectos de esta DEMO, los mensajes no se pueden borrar, 
                 solo pueden marcarse como leídos
             </Callout>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>email</th>
-                        <th>Asunto</th>
-                        <th>Mensaje</th>
-                        <th>Archivo</th>
-                        <th>Leido</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="contactMessage in contactMessages">
-                        <td>{{ contactMessage.name }}</td>
-                        <td>{{ contactMessage.email }}</td>
-                        <td>{{ contactMessage.subject }}</td>
-                        <td>{{ contactMessage.message }}</td>
-                        <td>
-                            <button 
-                                class="btn bg-light"
-                                v-if=" contactMessage.file"
-                                :title="contactMessage.file"
-                            >
-                                📂
-                            </button>
-                        </td>
-                        <td>
-                            <span v-if="contactMessage.read" class="text-light bg-success p-1 rounded">Leído</span>
-                            <span v-else class="text-light bg-danger p-1 rounded">No</span>
-                        </td>
-                        <td class="d-flex gap-2">
-                            <button 
-                                v-if="!contactMessage.read"
-                                @click="read(contactMessage.id)"
-                                title="Marcar como leído"
-                                class="btn bg-warning-subtle">👁️</button>
-                            <button class="btn bg-secondary-subtle" disabled>❌</button>
-                            <!-- <button class="btn bg-danger-subtle">❌</button> -->
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="overflow-x-auto">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>email</th>
+                            <th>Asunto</th>
+                            <th>Mensaje</th>
+                            <th>Archivo</th>
+                            <th>Leido</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="contactMessage in contactMessages">
+                            <td>{{ contactMessage.name }}</td>
+                            <td>{{ contactMessage.email }}</td>
+                            <td>{{ contactMessage.subject }}</td>
+                            <td>{{ contactMessage.message }}</td>
+                            <td>
+                                <button 
+                                    @click="getFile(contactMessage.file)"
+                                    class="btn bg-light"
+                                    v-if=" contactMessage.file"
+                                    :title="contactMessage.file"
+                                >
+                                    📂
+                                </button>
+                            </td>
+                            <td>
+                                <span v-if="contactMessage.read" class="text-light bg-success p-1 rounded">Leído</span>
+                                <span v-else class="text-light bg-danger p-1 rounded">No</span>
+                            </td>
+                            <td class="d-flex gap-2">
+                                <button 
+                                    v-if="!contactMessage.read"
+                                    @click="read(contactMessage.id)"
+                                    title="Marcar como leído"
+                                    class="btn bg-warning-subtle">👁️</button>
+                                <button class="btn bg-secondary-subtle" disabled>❌</button>
+                                <!-- <button class="btn bg-danger-subtle">❌</button> -->
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 </template>
 <style scoped>

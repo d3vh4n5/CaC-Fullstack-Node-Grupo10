@@ -21,31 +21,34 @@ onMounted(() => {loadTable()})
             to="/pages/dashboard/medical-studies/add-medical-study"
             class="btn btn-primary"
         >+ Agregar estudio</RouterLink>
-        <table class="table table-striped table-hover">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Descripción</th>
-                    <th>Fecha</th>
-                    <th>Tipo</th>
-                    <th>Archivo</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="study in studies">
-                    <td>{{ study.name }}</td>
-                    <td>{{ study.description }}</td>
-                    <td>{{ study.date }}</td>
-                    <td>{{ study.type }}</td>
-                    <td>{{ study.file }}</td>
-                    <td>
-                        <button class="btn">✏️</button>
-                        <button class="btn">❌</button>
-                    </td>
-                </tr>
-            </tbody>
-            
-        </table>
+        <div class="overflow-x-auto">
+
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Fecha</th>
+                        <th>Tipo</th>
+                        <th>Archivo</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="study in studies">
+                        <td>{{ study.name }}</td>
+                        <td>{{ study.description }}</td>
+                        <td>{{ study.date }}</td>
+                        <td>{{ study.type }}</td>
+                        <td>{{ study.file }}</td>
+                        <td>
+                            <button class="btn">✏️</button>
+                            <button class="btn">❌</button>
+                        </td>
+                    </tr>
+                </tbody>
+                
+            </table>
+        </div>
     </div>
 </template>
