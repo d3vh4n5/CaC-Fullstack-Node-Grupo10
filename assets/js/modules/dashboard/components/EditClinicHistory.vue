@@ -1,10 +1,12 @@
 <script setup>
 import { ref, onMounted } from 'vue';
-import { RouterLink } from 'vue-router'
+import { RouterLink, useRouter } from 'vue-router'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import { API_URL } from '../../../constants/apiURL.js'
 import LoadingSpinner from './LoadingSpinner.vue'
+
+const router = useRouter()
 
 const form = ref({})
 const queryStrings = new URLSearchParams(window.location.search)
@@ -36,8 +38,16 @@ function formatDate(date) {
 
 const handleSubmit = async () => {
     try {
-        // const result = await axios.put(API_URL + '/clinic-histories/'+ id, { ...form.value })
-        alert("Este flujo aún no está listo")
+        const result = await axios.put(API_URL + '/clinic-histories/'+ id, { ...form.value })
+        console.log(result.status)
+        Swal.fire({
+            title: "¡Hecho!",
+            text: "Historia actualizada correctamente",
+            icon: "success"
+        });
+        setTimeout(()=>{
+            router.push('/pages/dashboard/clinic-history')
+        }, 2000)
     } catch (error) {
         Swal.fire({
             title: "Error",

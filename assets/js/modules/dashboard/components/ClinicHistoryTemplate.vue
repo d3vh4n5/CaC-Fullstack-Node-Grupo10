@@ -29,6 +29,27 @@ const getClinicHistory = async ()=> {
     }
 }
 
+const deleteClinicHistory = async (id) => {
+    try {
+        await axios.delete(API_URL + '/clinic-histories/' + id)
+        Swal.fire({
+            title: "¡Hecho!",
+            text: "Historia eliminada correctamente.",
+            icon: "success"
+        });
+        setTimeout(()=>{
+            router.push('/pages/dashboard/clinic-history/create-clinic-history')
+        }, 2000)
+    } catch (error) {
+        console.error(error)
+        Swal.fire({
+            title: "Error",
+            text: "Hubo un problema en el servidor.",
+            icon: "error"
+        });
+    }
+}
+
 onMounted(()=>{
     getClinicHistory()
 })
@@ -37,9 +58,15 @@ onMounted(()=>{
 </script>
 <template>
    <article v-if="clinicHistory !== null">
-        <RouterLink 
-            :to="`/pages/dashboard/clinic-history/edit?id=${clinicHistory.id}`" 
-            class="btn btn-warning mb-3">Editar</RouterLink>
+        <div class="d-flex justify-content-between">
+            <RouterLink 
+                :to="`/pages/dashboard/clinic-history/edit?id=${clinicHistory.id}`" 
+                class="btn btn-warning my-3">Editar</RouterLink>
+            <button 
+                @click="deleteClinicHistory(clinicHistory.id)"
+                class="btn btn-danger my-3"
+                >Eliminar</button>
+        </div>
         <div class="border rounded p-3">
             <h2>Datos Personales</h2>
             <table class="">

@@ -28,10 +28,7 @@ const userName = session.userName
             </p>
         </article>
         <Callout type="info">
-            Advertencia: Aplicacion en desarrollo, No se hicieron pruebas 
-            de responsive en el dashboard, ya que priorizamos el correcto 
-            funcionamiento de la integracion con el backend sobre todas las
-            demás cuestiones.
+            Advertencia: Aplicacion en desarrollo.
         </Callout>
         <article>
             <h1 class="text-danger my-5">INFORMACIÓN DESARROLLO - TESTING - PROFESOR:</h1>
