@@ -7,6 +7,8 @@ import Callout from '../components/Callout.vue'
 
 const dataGET = ref([])
 const dataPOST = ref([])
+const form = ref()
+const file = ref(null)
 
 const protectedGETRequestExample = async () => {
     try {    
@@ -40,6 +42,32 @@ const protectedPOSTRequestExample = async () => {
     }
 }
 
+const handleFile = (e) => {
+    console.log(e.target.files[0])
+    file.value = e.target.files[0]
+}
+
+const handleSubmit = async (e)=> {
+    const $form = e.currentTarget;
+    // const formData = new FormData($form)
+    const formData = new FormData(form.value)
+    console.log(formData)
+
+    try {
+        const resp = await fetch(API_URL + '/medical-studies', {
+            method: 'POST',
+            headers: {
+                Authorization: `Bearer ${session.accessToken}`
+            },
+            body : formData
+        })
+        console.log(await resp.json())
+        alert("Se envió bien")
+    } catch (error) {
+        alert("No se pudo enviar")
+    }
+
+}
 
 </script>
 <template>
@@ -67,5 +95,28 @@ const protectedPOSTRequestExample = async () => {
         <pre>
             {{ dataPOST }}
         </pre>
+
+        <div>
+            <form @submit.prevent="handleSubmit" ref="form">
+                <pre>
+                    {{ form }}
+                </pre>
+                <input  type="text" name="name" placeholder="Nombre">
+                <br>
+                <textarea  name="description" placeholder="Descripcion"></textarea>
+                <br>
+                <input type="date" name="date" id="">
+                <br>
+                <select  name="type" id="">
+                    <option selected disabled>Tipo de estudio</option>
+                    <option value=1>Dermatologica</option>
+                    <option value=2>Radiografía</option>
+                </select>
+                <br>
+                <input  type="file" name="file">
+                <br>
+                <button>Submit</button>
+            </form>
+        </div>
     </div>
 </template>

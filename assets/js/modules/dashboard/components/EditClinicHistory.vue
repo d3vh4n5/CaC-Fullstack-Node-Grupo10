@@ -8,7 +8,7 @@ import LoadingSpinner from './LoadingSpinner.vue'
 
 const router = useRouter()
 
-const form = ref({})
+const form = ref(null)
 const queryStrings = new URLSearchParams(window.location.search)
 const id = queryStrings.get("id")
 
@@ -61,7 +61,7 @@ onMounted(()=>{getUserClinicHistory()})
 
 </script>
 <template>
-    <form v-if="form.name" @submit.prevent="handleSubmit">
+    <form v-if="form !== null " @submit.prevent="handleSubmit">
         <fieldset class="border rounded p-3 mb-3">
             <legend>
                 <h3 class="form-titulo">Datos Personales</h3>

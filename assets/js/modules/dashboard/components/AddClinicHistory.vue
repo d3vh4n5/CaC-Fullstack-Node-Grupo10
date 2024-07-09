@@ -57,6 +57,9 @@ const handleSubmit = async () => {
 </script>
 <template>
     <form @submit.prevent="handleSubmit">
+        <!-- <pre>
+            {{ form }}
+        </pre> -->
         <fieldset class="border rounded p-3 mb-3">
             <legend>
                 <h3 class="form-titulo">Datos Personales</h3>

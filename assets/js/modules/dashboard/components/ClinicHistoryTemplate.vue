@@ -148,7 +148,7 @@ onMounted(()=>{
                         </tr>
                         <tr>
                             <th>Marihuana</th>
-                            <td class="ps-3">{{ clinicHistory.marijuana ? 'Sí' : 'No' }}</td>
+                            <td class="ps-3">{{ clinicHistory.dope ? 'Sí' : 'No' }}</td>
                         </tr>
                         <tr>
                             <th>Cocaína</th>

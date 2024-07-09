@@ -63,7 +63,8 @@ window.addEventListener('load', () => {
                     Swal.fire({
                         position: "center",
                         icon: "success",
-                        title: "¡Usuario creado con éxito! Será redirigido al login..",
+                        title: "¡Usuario creado con éxito!",
+                        text: "Será redirigido al login..",
                         showConfirmButton: false,
                         timer: 3000
                       });
