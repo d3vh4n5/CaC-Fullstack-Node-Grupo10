@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue';
 import { RouterLink, useRouter } from 'vue-router'
 import axios from 'axios'
+import { formatDate } from '../utils/formatDate'
 import Swal from 'sweetalert2'
 import { API_URL } from '../../../constants/apiURL.js'
 import LoadingSpinner from './LoadingSpinner.vue'
@@ -26,14 +27,6 @@ const getUserClinicHistory = async () => {
             icon: "error"
         });
     }
-}
-
-function formatDate(date) {
-  const day = String(date.getDate()).padStart(2, '0');
-  const month = String(date.getMonth() + 1).padStart(2, '0'); // Mes es 0-indexado
-  const year = date.getFullYear();
-  
-  return `${year}-${month}-${day}`;
 }
 
 const handleSubmit = async () => {

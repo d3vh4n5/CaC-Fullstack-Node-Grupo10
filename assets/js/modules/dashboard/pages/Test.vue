@@ -48,10 +48,10 @@ const handleFile = (e) => {
 }
 
 const handleSubmit = async (e)=> {
-    const $form = e.currentTarget;
+    // const $form = e.currentTarget;
     // const formData = new FormData($form)
     const formData = new FormData(form.value)
-    console.log(formData)
+    console.log(form.value)
 
     try {
         const resp = await fetch(API_URL + '/medical-studies', {
@@ -61,10 +61,16 @@ const handleSubmit = async (e)=> {
             },
             body : formData
         })
-        console.log(await resp.json())
+        const data = await resp.json()
+
+        if (resp.status >= 400){
+            throw new Error(data.error)
+        }
+
         alert("Se envió bien")
+
     } catch (error) {
-        alert("No se pudo enviar")
+        alert("No se pudo enviar. " + error)
     }
 
 }

@@ -30,7 +30,10 @@ const handleCheckbox = (e) => {
 const handleSubmit = async () => {
     try {
         loading.value = true
-        await axios.post(API_URL + '/clinic-histories', { ...form.value })
+        const resp = await axios.post(API_URL + '/clinic-histories', { ...form.value })
+        
+        console.log({ resp })
+        
         Swal.fire({
             text: "Historia Clinica creada correctamente",
             icon: "success",
@@ -45,12 +48,25 @@ const handleSubmit = async () => {
         }, 3000)
     } catch (error) {
         console.error(error)
+
+        if (error.response.status === 422) {
+            const errors = error.response.data.issues
+            errors.forEach(err => {
+                console.warn(`${err.path} invalid value`)
+            })
+            Swal.fire({
+                title: "Validation Error",
+                text: "Compruebe por favor que los datos requeridos estén correctos y completos.",
+                icon: "error"
+            });
+        } else {
+            Swal.fire({
+                title: "Error",
+                text: "Hubo un problema en el servidor.",
+                icon: "error"
+            });
+        }
         loading.value = false
-        Swal.fire({
-            title: "Error",
-            text: "Hubo un problema en el servidor.",
-            icon: "error"
-        });
     }
 }
 
@@ -73,6 +89,7 @@ const handleSubmit = async () => {
                         id="name" 
                         name="name"
                         @input="handleChange"
+                        required
                         > 
                 </div>
             
@@ -85,7 +102,8 @@ const handleSubmit = async () => {
                         type="date" 
                         id="dateOfBirth" 
                         class="form-control" 
-                        name="dateOfBirth">
+                        name="dateOfBirth"
+                        required>
                     
                 </div>
 
@@ -95,7 +113,8 @@ const handleSubmit = async () => {
                         @change="handleChange"
                         id="gender"
                         name="gender" 
-                        class="form-select">
+                        class="form-select"
+                        required>
                     <option disabled selected>Sexo</option>
                     <option>Femenino</option>
                     <option value="Masculino">Masculino</option>
@@ -112,7 +131,8 @@ const handleSubmit = async () => {
                         @change="handleChange"
                         id="maritalStatus" 
                         name="maritalStatus" 
-                        class="form-select">
+                        class="form-select"
+                        required>
                     <option disabled selected>Estado civil</option>
                     <option>Soltero/a</option>
                     <option>Casado/a</option>
@@ -151,7 +171,8 @@ const handleSubmit = async () => {
                         @change="handleChange"
                         id="bloodType" 
                         name="bloodType" 
-                        class="form-select">
+                        class="form-select"
+                        required>
                     <option value="" selected>Grupo Sanguíneo</option>
                     <option>A RH+</option>
                     <option>A RH-</option>

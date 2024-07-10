@@ -13,6 +13,8 @@ import AddMedicalStudy from './components/AddMedicalStudy.vue'
 import AddClinicHistory from './components/AddClinicHistory.vue'
 import EditClinicHistory from './components/EditClinicHistory.vue'
 import ClinicHistoryTemplate from './components/ClinicHistoryTemplate.vue'
+import EditMedicalStudy from './components/EditMedicalStudy.vue'
+
 
 export const routes = [
   { 
@@ -51,7 +53,11 @@ export const routes = [
       {
         path: "add-medical-study",
         component: AddMedicalStudy
-      }
+      },
+      {
+        path: "edit-medical-study",
+        component: EditMedicalStudy
+      },
     ]
   },
   { 

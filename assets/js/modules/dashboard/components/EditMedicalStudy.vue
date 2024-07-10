@@ -1,26 +1,51 @@
 <script setup>
-import { useRouter } from 'vue-router';
+import { ref, onMounted } from 'vue';
+import { RouterLink, useRouter } from 'vue-router';
+import axios from 'axios'
 import { API_URL } from '../../../constants/apiURL';
 import session from '../../../utils/session';
+import { formatDate } from '../utils/formatDate'
 import { Toast } from '../utils/Toast'
+import Swal from 'sweetalert2'
+import LoadingSpinner from './LoadingSpinner.vue'
 
 const router = useRouter()
 
-const handleSubmit = async (e)=> {
-    const $form = e.currentTarget;
-    const formData = new FormData($form)
+const form = ref(null)
+const queryStrings = new URLSearchParams(window.location.search)
+const id = queryStrings.get("id")
 
-    console.log($form )
+const getMedicalStudy = async () => {
+    try {
+        const { data } = await axios.get(API_URL + "/medical-studies/" + id)
+        form.value = {
+            ...data,
+             date: formatDate(new Date(data.date))
+        }
+        console.log(form.value)
+    } catch (error) {
+        console.error(error)
+        Swal.fire({
+            title: "Error",
+            text: "Hubo un problema en el servidor.",
+            icon: "error"
+        });
+    }
+}
+
+const handleSubmit = async (e)=> {
 
     try {
-        const resp = await fetch(API_URL + '/medical-studies', {
-            method: 'POST',
+        const resp = await fetch(API_URL + '/medical-studies/' + id, {
+            method: 'PUT',
             headers: {
+                'Content-type': "application/json",
                 Authorization: `Bearer ${session.accessToken}`
             },
-            body : formData
+            body : JSON.stringify(form.value)
         })
         const data = await resp.json()
+        console.log(data)
 
         if (resp.status >= 400){
             throw new Error(data.error)
@@ -39,7 +64,7 @@ const handleSubmit = async (e)=> {
         Toast.fire({
             icon: "error",
             title:  `No se pudo enviar
-        ${error}}`
+        ${error}`
         });
     }
 
@@ -76,40 +101,64 @@ const handleFile = (e) => {
     }
 }
 
+onMounted(()=> {getMedicalStudy()})
+
 </script>
 <template>
     <div>
-        <h2>Agregar estudio</h2>
-        <form class="w-50 mx-auto" @submit.prevent="handleSubmit">
+        <h2>Editar estudio</h2>
+        <pre>
+            {{ form }}
+        </pre>
+        <form class="w-50 mx-auto" @submit.prevent="handleSubmit" v-if="form !== null">
             <div class="mb-3">
                 <label for="name" class="form-label">Titulo</label>
-                <input type="text" class="form-control" id="name" required name="name">
+                <input 
+                    v-model="form.name"
+                    type="text" 
+                    class="form-control" 
+                    id="name" 
+                    required 
+                    name="name">
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">Descipción</label>
-                <textarea class="form-control" id="description" rows="3" required name="description"></textarea>
+                <textarea 
+                    v-model="form.description"
+                    class="form-control" 
+                    id="description" 
+                    rows="3" 
+                    required 
+                    name="description"></textarea>
             </div>
             <div class="mb-3">
                 <label for="date" class="form-label">Fecha del estudio</label>
-                <input type="date" name="date" id="date" class="form-control">
+                <input 
+                    v-model="form.date"
+                    type="date" 
+                    name="date" 
+                    id="date" 
+                    class="form-control" required>
             </div>
             <div class="mb-3">
-                <select name="type" class="form-select" aria-label="Default select example" required>
+                <select 
+                    v-model="form.type"
+                    name="type" 
+                    class="form-select" 
+                    required>
                     <option selected disabled>Seleccione el tipo de estudio</option>
                     <option value="1">Radiografía</option>
                     <option value="2">Resonancia</option>
                     <option value="3">Análisis de sangre</option>
                 </select>
             </div>
-            <div class="mb-5">
-                <input
-                    @change="handleFile" 
-                    type="file" 
-                    name="file"
-                    class="form-control" 
-                    required>
-            </div>
             <button type="submit" class="btn btn-primary">Cargar</button>
+            <RouterLink 
+                class="btn btn-outline-warning ms-2"
+                to="/pages/dashboard/medical-studies">Volver</RouterLink>
         </form>
+        <div v-else>
+            <LoadingSpinner />
+        </div>
     </div>
 </template>
