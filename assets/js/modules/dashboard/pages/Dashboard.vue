@@ -28,7 +28,13 @@ const userName = session.userName
             </p>
         </article>
         <Callout type="info">
-            Advertencia: Aplicacion en desarrollo.
+            <p>
+                <b>Advertencia:</b> Aplicacion en desarrollo. En caso de error en las peticiones, 
+                sugerimos reintentar las acciones varias veces, ya que nos hemos encontrado 
+                con "<b>problemas de servidor</b>" en ocaciones, siendo el código es correcto. 
+                Esto probablemente sea porque el backend es un servidor de pruebas que 
+                está en Francia, lo cual cause lentitud y errores en las solicitudes.
+            </p>
         </Callout>
         <article>
             <h1 class="text-danger my-5">INFORMACIÓN PARA VISITANTES:</h1>
