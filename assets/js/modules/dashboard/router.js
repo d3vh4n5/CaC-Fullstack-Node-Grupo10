@@ -83,11 +83,11 @@ export const routes = [
       },
     ]
   },
-  {
-    path: '/pages/dashboard/test',               
-    label: "🧪 Test",       
-    component: Test ,
-  }
+  // {
+  //   path: '/pages/dashboard/test',               
+  //   label: "🧪 Test",       
+  //   component: Test ,
+  // }
 ]
 
 export const router = createRouter({

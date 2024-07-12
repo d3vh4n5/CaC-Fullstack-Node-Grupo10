@@ -4,6 +4,7 @@ import axios from 'axios';
 import {API_URL} from '../../../constants/apiURL';
 import { ref, onMounted } from 'vue'
 import Swal from 'sweetalert2'
+import { downloadFile } from '../utils/downloadFile'
 
 const router = useRouter()
 
@@ -44,6 +45,10 @@ const deleteMedicalStudy = async (id) => {
     }
 }
 
+const getFile = async (fileName)=> {
+    downloadFile(fileName)
+}
+
 onMounted(() => {loadTable()})
 </script>
 
@@ -72,7 +77,16 @@ onMounted(() => {loadTable()})
                         <td>{{ study.description }}</td>
                         <td>{{ study.date }}</td>
                         <td>{{ study.type }}</td>
-                        <td>{{ study.file }}</td>
+                        <td>
+                            <button 
+                                @click="getFile(study.file)"
+                                class="btn bg-light"
+                                v-if=" study.file"
+                                :title="study.file"
+                            >
+                                📂
+                            </button>
+                        </td>
                         <td>
                             <button 
                                 @click="editMedicalStudy(study.id)"

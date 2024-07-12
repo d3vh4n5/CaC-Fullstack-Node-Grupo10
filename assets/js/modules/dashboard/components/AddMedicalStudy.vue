@@ -1,12 +1,18 @@
 <script setup>
+import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { API_URL } from '../../../constants/apiURL';
 import session from '../../../utils/session';
 import { Toast } from '../utils/Toast'
+import Callout from './Callout.vue'
+import LoadingSpinner from './LoadingSpinner.vue'
+
 
 const router = useRouter()
+const loading = ref(false)
 
 const handleSubmit = async (e)=> {
+    loading.value = true
     const $form = e.currentTarget;
     const formData = new FormData($form)
 
@@ -32,6 +38,7 @@ const handleSubmit = async (e)=> {
         });
 
         setTimeout(()=>{
+            loading.value = false
             router.push('/pages/dashboard/medical-studies')
         }, 1000)
 
@@ -39,8 +46,9 @@ const handleSubmit = async (e)=> {
         Toast.fire({
             icon: "error",
             title:  `No se pudo enviar
-        ${error}}`
+            ${error}}`
         });
+        loading.value = false
     }
 
 }
@@ -80,7 +88,7 @@ const handleFile = (e) => {
 <template>
     <div>
         <h2>Agregar estudio</h2>
-        <form class="w-50 mx-auto" @submit.prevent="handleSubmit">
+        <form class="col-12 col-md-6 mx-auto" @submit.prevent="handleSubmit">
             <div class="mb-3">
                 <label for="name" class="form-label">Titulo</label>
                 <input type="text" class="form-control" id="name" required name="name">
@@ -91,11 +99,11 @@ const handleFile = (e) => {
             </div>
             <div class="mb-3">
                 <label for="date" class="form-label">Fecha del estudio</label>
-                <input type="date" name="date" id="date" class="form-control">
+                <input type="date" name="date" id="date" class="form-control" required>
             </div>
             <div class="mb-3">
-                <select name="type" class="form-select" aria-label="Default select example" required>
-                    <option selected disabled>Seleccione el tipo de estudio</option>
+                <select name="type" class="form-select" required>
+                    <option value="" selected disabled>Seleccione el tipo de estudio</option>
                     <option value="1">Radiografía</option>
                     <option value="2">Resonancia</option>
                     <option value="3">Análisis de sangre</option>
@@ -109,7 +117,10 @@ const handleFile = (e) => {
                     class="form-control" 
                     required>
             </div>
-            <button type="submit" class="btn btn-primary">Cargar</button>
+            <button type="submit" class="btn btn-primary">
+                <span v-if="!loading">Cargar</span>
+                <LoadingSpinner  v-else />
+            </button>
         </form>
     </div>
 </template>

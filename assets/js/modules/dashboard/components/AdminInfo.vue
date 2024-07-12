@@ -4,8 +4,20 @@ import Callout from './Callout.vue'
 </script>
 <template>
     <section>
-        <h2>Esta será la vista de admin</h2>
-    
+        <h2>Información de utilidad</h2>
+        
+        <p class="text-danger">Usted es un usuario Admin, por favor, sea responsable en 
+            sus tareas.
+        </p>
+
+        <p>En esta sección podrás:</p>
+        <ul>
+            <li>Ver y administrar usuarios</li>
+            <li>Ver los mensajes ed contacto que envían los visitantes 
+                en el formulario de contacto.
+            </li>
+            <li>Administrar permisos de los usuarios.</li>
+        </ul>
         
         <Callout type="info" content="aasd">
             <span>

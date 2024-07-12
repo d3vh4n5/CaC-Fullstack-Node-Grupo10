@@ -31,7 +31,7 @@ const userName = session.userName
             Advertencia: Aplicacion en desarrollo.
         </Callout>
         <article>
-            <h1 class="text-danger my-5">INFORMACIÓN DESARROLLO - TESTING - PROFESOR:</h1>
+            <h1 class="text-danger my-5">INFORMACIÓN PARA VISITANTES:</h1>
             <p>
                 Para el desarrollo de este Dashboard se implemetó <b>Vue.js</b>, el cual está
                 en el material brindado por el aula virtual. Se agregó tambien el uso de un <b>bundler (Parcel)</b>
@@ -50,11 +50,14 @@ const userName = session.userName
                 y ahorrar trabajo al no tener que agregar en todas los headers de Auth.
             </p>
             <Callout type="warning">
-                Página de pruebas para requests
+                Para enriquecer la demo y que se pueda apreciar mejor nuestro trabajo 
+                dejamos activada por defecto la vision de "Admin". Pero con operaciones 
+                restringidas para no ocacionar problemas a otros visitantes, ni perder 
+                información de otros visitantes.
                 <RouterLink 
-                    to="/pages/dashboard/test"
-                    class="btn btn-primary"
-                    >AQUI</RouterLink>
+                    to="/pages/dashboard/admin"
+                    class="btn btn-primary m-2"
+                    >ADMIN</RouterLink>
             </Callout>
         </article>
     </div>

@@ -17,5 +17,6 @@
     "Sequelize",
     "cors",
     "bcrypt",
-    "CryptoJS"
+    "CryptoJS",
+    "Express-validator"
 ]

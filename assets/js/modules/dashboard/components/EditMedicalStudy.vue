@@ -7,6 +7,7 @@ import session from '../../../utils/session';
 import { formatDate } from '../utils/formatDate'
 import { Toast } from '../utils/Toast'
 import Swal from 'sweetalert2'
+import Callout from './Callout.vue'
 import LoadingSpinner from './LoadingSpinner.vue'
 
 const router = useRouter()
@@ -14,6 +15,7 @@ const router = useRouter()
 const form = ref(null)
 const queryStrings = new URLSearchParams(window.location.search)
 const id = queryStrings.get("id")
+const loading = ref(false)
 
 const getMedicalStudy = async () => {
     try {
@@ -34,7 +36,7 @@ const getMedicalStudy = async () => {
 }
 
 const handleSubmit = async (e)=> {
-
+    loading.value = true
     try {
         const resp = await fetch(API_URL + '/medical-studies/' + id, {
             method: 'PUT',
@@ -57,15 +59,18 @@ const handleSubmit = async (e)=> {
         });
 
         setTimeout(()=>{
+            loading.value = false
             router.push('/pages/dashboard/medical-studies')
         }, 1000)
 
     } catch (error) {
+        console.error(error)
         Toast.fire({
             icon: "error",
             title:  `No se pudo enviar
         ${error}`
         });
+        loading.value = false
     }
 
 }
@@ -107,10 +112,10 @@ onMounted(()=> {getMedicalStudy()})
 <template>
     <div>
         <h2>Editar estudio</h2>
-        <pre>
+        <!-- <pre>
             {{ form }}
-        </pre>
-        <form class="w-50 mx-auto" @submit.prevent="handleSubmit" v-if="form !== null">
+        </pre> -->
+        <form class="col-12 col-md-6 mx-auto" @submit.prevent="handleSubmit" v-if="form !== null">
             <div class="mb-3">
                 <label for="name" class="form-label">Titulo</label>
                 <input 
@@ -138,7 +143,8 @@ onMounted(()=> {getMedicalStudy()})
                     type="date" 
                     name="date" 
                     id="date" 
-                    class="form-control" required>
+                    class="form-control" 
+                    required>
             </div>
             <div class="mb-3">
                 <select 
@@ -146,13 +152,16 @@ onMounted(()=> {getMedicalStudy()})
                     name="type" 
                     class="form-select" 
                     required>
-                    <option selected disabled>Seleccione el tipo de estudio</option>
+                    <option value="" selected disabled>Seleccione el tipo de estudio</option>
                     <option value="1">Radiografía</option>
                     <option value="2">Resonancia</option>
                     <option value="3">Análisis de sangre</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-primary">Cargar</button>
+            <button type="submit" class="btn btn-primary">
+                <span v-if="!loading">Cargar</span>
+                <LoadingSpinner  v-else />
+            </button>
             <RouterLink 
                 class="btn btn-outline-warning ms-2"
                 to="/pages/dashboard/medical-studies">Volver</RouterLink>
