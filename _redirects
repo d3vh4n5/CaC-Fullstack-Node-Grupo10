@@ -8,3 +8,7 @@
 /pages/dashboard/admin               /pages/dashboard.html   200
 /pages/dashboard/admin/*             /pages/dashboard.html   200
 
+/pages/about.html                    /pages/about.html       200
+/pages/contacto.html                 /pages/contacto.html    200
+/pages/login.html                    /pages/login.html       200
+/pages/register.html                 /pages/register.html    200
