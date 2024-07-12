@@ -1,3 +1,10 @@
 # Redirigir todas las rutas bajo /pages/dashboard a /pages/dashboard.html
 /pages/dashboard    /pages/dashboard.html   200
 /pages/dashboard/*   /pages/dashboard.html   200
+/pages/dashboard/clinic-history      /pages/dashboard.html   200
+/pages/dashboard/clinic-history/*    /pages/dashboard.html   200
+/pages/dashboard/medical-studies     /pages/dashboard.html   200
+/pages/dashboard/medical-studies/*   /pages/dashboard.html   200
+/pages/dashboard/admin               /pages/dashboard.html   200
+/pages/dashboard/admin/*             /pages/dashboard.html   200
+
