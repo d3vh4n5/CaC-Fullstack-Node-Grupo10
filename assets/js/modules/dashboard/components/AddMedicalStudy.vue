@@ -109,14 +109,14 @@ const handleFile = (e) => {
                     <option value="3">Análisis de sangre</option>
                 </select>
             </div>
-            <div class="mb-5">
+            <!-- <div class="mb-5">
                 <input
                     @change="handleFile" 
                     type="file" 
                     name="file"
                     class="form-control" 
                     required>
-            </div>
+            </div> -->
             <button type="submit" class="btn btn-primary">
                 <span v-if="!loading">Cargar</span>
                 <LoadingSpinner  v-else />

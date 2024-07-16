@@ -59,7 +59,7 @@ $formFile.addEventListener('change', event => {
         // El usuario no pasó la prueba.
         const captcha = event.target[7].value
     
-        // console.log({ captcha })
+        console.log({ captcha })
         // console.log(captcha !== '')
         // console.log(captcha.length > 0 )
         // Validacion de los inputs
