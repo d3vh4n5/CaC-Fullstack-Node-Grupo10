@@ -205,11 +205,13 @@
     border-radius: 20px;
 }
 
-.home__guide-card1 iframe {
+.home__guide-card1 iframe,
+.ly {
     width: 100%;
     aspect-ratio: 16/9;
-    border-radius: 20px;
+    border-radius: 20px !important;
 }
+
 
 .home__phrase-container {
     flex: 6;
